@@ -27,3 +27,5 @@ markdown: kramdown
 paginate: 3
 gems: [jekyll-paginate]
 paginate_path: "/page/:num"
+
+theme: jekyll-theme-minimal
