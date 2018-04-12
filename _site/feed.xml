@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Apr 2018 16:36:31 +0800</pubDate>
-    <lastBuildDate>Wed, 11 Apr 2018 16:36:31 +0800</lastBuildDate>
+    <pubDate>Thu, 12 Apr 2018 15:25:25 +0800</pubDate>
+    <lastBuildDate>Thu, 12 Apr 2018 15:25:25 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -158,21 +158,46 @@
 
 &lt;p&gt;MCMC（Multi-Camera input &amp;amp; Mipi output Converter）was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCMC make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
 
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcmc-descript.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
+&lt;h3 id=&quot;摄像头&quot;&gt;摄像头&lt;/h3&gt;
+&lt;p&gt;板卡支持AHD 720P摄像头输入，AHD接口的摄像头市面上型号很多，AHD也广泛使用于安防监控，汽车倒车影像等领域。板卡的摄像头接口中，给摄像头供电是5V电源，因此，只要是市面上可以采购到的 5V供电、720P分辨率的AHD摄像头都能支持接入。&lt;/p&gt;
+
+&lt;p&gt;板卡最多支持6路AHD摄像头接入。介于输出接口带宽的限制，板卡并不保障任何场合都能够输出  6 x 720P@25fps的图像。只有在输出端使用 4lans MIPI 接口的时候，能够保证  6 * 1280*720@25fps的输出。&lt;/p&gt;
+
+&lt;p&gt;输出接口使用8bits DVP的时候，如果后端处理器能够支持148.5Mhz的 pclk时钟，那么板卡最大可以输出 6 x 1280x360@25fps 或者  6 x 640x720@25fps的图像。&lt;/p&gt;
+
+&lt;h3 id=&quot;nstc-or-pal&quot;&gt;Nstc or Pal&lt;/h3&gt;
+&lt;p&gt;板卡支持30fps和25fps的摄像头，但是目前所有的带宽测试都是基于25fps的摄像头进行计算和测试的。如果使用输出30fps的摄像图，可以正常工作，但是并不能保证在所有配置下都能达到 30fps的帧率输出。&lt;/p&gt;
+
+&lt;h3 id=&quot;输出接口&quot;&gt;输出接口&lt;/h3&gt;
+&lt;p&gt;输出接口支持8bits DVP，16 bits DVP，2lanes MIPI 或者 4lanes MIPI。&lt;/p&gt;
+
+&lt;h3 id=&quot;使用配置&quot;&gt;使用配置&lt;/h3&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;4 x half 720P    » 8bits dvp ,pclk &amp;lt;=  100M&lt;/li&gt;
-  &lt;li&gt;4 x half 720P  + 720P  »  8bit dvp, pclk = 148.5M&lt;/li&gt;
-  &lt;li&gt;4 x 720P » 16bit dvp, pclk = 148.5M&lt;/li&gt;
-  &lt;li&gt;4 x half 720p + 2 x 720P » 4 lanes mipi&lt;/li&gt;
-  &lt;li&gt;4 x 720P 				» 4 lanes mipi&lt;/li&gt;
-  &lt;li&gt;6 x 720P				» 4 lanes mipi&lt;/li&gt;
+  &lt;li&gt;4 x half 720P&lt;sup id=&quot;fnref:half720p&quot;&gt;&lt;a href=&quot;#fn:half720p&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;    »» 8bits dvp ,pclk &amp;lt;=  100M&lt;/li&gt;
+  &lt;li&gt;4 x half 720P  + 720P  »»  8bit dvp, pclk = 148.5M&lt;/li&gt;
+  &lt;li&gt;4 x 720P »» 16bit dvp, pclk = 148.5M&lt;/li&gt;
+  &lt;li&gt;4 x half 720p + 2 x 720P »» 4 lanes mipi&lt;/li&gt;
+  &lt;li&gt;4 x 720P 				»» 4 lanes mipi&lt;/li&gt;
+  &lt;li&gt;6 x 720P				»» 4 lanes mipi&lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:half720p&quot;&gt;
+      &lt;p&gt;1280x720的图像降采样为 640x720 或者 1280x360 &lt;a href=&quot;#fnref:half720p&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Fri, 01 Dec 2017 21:08:09 +0800</pubDate>
-        <link>http://localhost:4000//update/2017/12/01/mctmc.html</link>
-        <guid isPermaLink="true">http://localhost:4000//update/2017/12/01/mctmc.html</guid>
+        <link>http://localhost:4000//update/2017/12/01/mcmc.html</link>
+        <guid isPermaLink="true">http://localhost:4000//update/2017/12/01/mcmc.html</guid>
         
         
         <category>update</category>
