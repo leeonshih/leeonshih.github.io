@@ -1,11 +1,22 @@
 ---
 layout: page
-title: About
-permalink: /about/
+titles:
+  en: About
+  zh: 关于
+  zh-Hans: 关于
+  zh-Hant: 關於
+key: page-about
 ---
 
-Renge is designed by Junchao (www.junchaowang.com), inspired by the amination called "のんのんびより" and named by one of the Characters, Renge Miyauchi (宮内 れんげ). If you have any questions, you can reach me via <a href="https://github.com/billyfish152/Renge">Renge on GitHub</a> by submitting an issue or via email billyfish152[at]gmail.com.
+Welcome to my blog! :earth_asia: :earth_africa: :earth_americas:
 
-#### this issue head
+{% highlight javascript %}
+(() => console.log('hello, world!'))();
+{% endhighlight %}
 
-其实这只是一个养病呢
+## Skills
+
+- HTML5, CSS3(SASS), JavaScript(ES2017, Node.js), Bash(Zsh)
+- React, React Native, Vue.js
+- gulp, webpack
+- Adobe Photoshop, Sketch

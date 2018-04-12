@@ -1,54 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leo.Shih</title>
-    <description>This theme is modified from Renge, which is a Jekyll theme that is designed by Junchao (www.junchaowang.com)</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 04 Apr 2018 15:18:52 +0800</pubDate>
-    <lastBuildDate>Wed, 04 Apr 2018 15:18:52 +0800</lastBuildDate>
+    <title>LeoShih's blog</title>
+    <description>LeoShih's Blog
+</description>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 11 Apr 2018 16:36:31 +0800</pubDate>
+    <lastBuildDate>Wed, 11 Apr 2018 16:36:31 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
-        <title>test file</title>
-        <description>&lt;p&gt;Renge is designed by Junchao (www.junchaowang.com), inspired by the amination called “のんのんびより” and named by one of the Characters, Renge Miyauchi (宮内 れんげ). If you have any questions, you can reach me via &lt;a href=&quot;https://github.com/billyfish152/Renge&quot;&gt;Renge on GitHub&lt;/a&gt; by submitting an issue or via email billyfish152[at]gmail.com.&lt;/p&gt;
+        <title>About AVM（要不要联网）</title>
+        <description>&lt;h2 id=&quot;yes&quot;&gt;Yes&lt;/h2&gt;
 
-&lt;h3&gt;Original Jekyll instruction&lt;/h3&gt;
+&lt;p&gt;车载AVM系统跟其他车载设备一样，最终都会连接进入车联网。&lt;/p&gt;
 
-&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;h2 id=&quot;avm产品开发中的思考&quot;&gt;AVM产品开发中的思考&lt;/h2&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;其实联网不联网从大的趋势来说没啥可讨论的。在我的工作经历中，碰到一个很具体的案例，记录下来以资后续借鉴。&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;大概是不到两年前，我所在团队的AVM&lt;sup id=&quot;fnref:AVM&quot;&gt;&lt;a href=&quot;#fn:AVM&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;产品开发过程中，关于产品研发的后续走向，团队内部发生了分歧。当时正值一代产品缓慢退市，二代产品冒头的时期。简单说，一代产品就是模拟摄像头输入，模拟视频输出，低分辨率，二维俯视画面显示，主要方案要么是NXP的处理器，要么是TI的37xx系列+TVP5158 4模拟输入AD。二代产品有公司在用Freescale的IMX6开发，也有公司在用海思的监控芯片做开发。主要是实现高清摄像头输入，高清视频输出。显而易见的是IMX6性价比不高，海思的芯片性能有瓶颈。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def print_hi(name)
-  puts &quot;Hi, #{name}&quot;
-end
-print_hi('Tom')
-#=&amp;gt; prints 'Hi, Tom' to STDOUT.```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;当时我们团队的一代产品卖的并不好，因为一些原因，内部的合力并不能一致输出。而二代产品我们已经在IMX6上开发了个一半，效果已经实现，高清摄像头方案已经跑通，3D全景效果也运行起来了。接下来就碰到一个很现实的障碍，基于海思芯片的高清产品在价格上有极大的优势，已经占了一大半的市场份额，我们的产品怎么定义，针对什么目标客户，怎么回避海思方案的优势，这就成了一个问题。&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;海思方案的效果能够达到高清摄像头输入，600*480@15fps分辨率的输出（这个片子的极限），硬件成本不超过￥600，在车载小屏幕上观看效果很好。而IMX6的方案，硬件成本远远超过￥1K，但是软件上可优化改善和增加功能的地方很多，基本不受限制。&lt;/p&gt;
 
+&lt;h3 id=&quot;联网&quot;&gt;联网&lt;/h3&gt;
+
+&lt;p&gt;团队内小部分人的思路是增加4G功能，把车载AVM产品连接到互联网里，让车载摄像头的视频可以像监控系统那样被分享。通过连接来极大的增加产品的附加价值并准备后续与互联网应用接轨。理由很高端，很充沛：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;互联产生价值增值。&lt;/li&gt;
+  &lt;li&gt;联网了就能往互联网靠，有利于后续的融资和发展。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;不联网&quot;&gt;不联网&lt;/h3&gt;
+
+&lt;p&gt;另外大部分人的思路是不联网，或者联网做个选配件，爱连连，不爱连拉倒。理由很具体，很客观：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;给本来性价比就不高的产品再增加一个4G模块，这个成本先不考虑，联网的流量费，客户是否愿意支付。&lt;/li&gt;
+  &lt;li&gt;联网假设出来的应用场景意味着车辆静止的时候，也可能需要实时联网，是否会导致车辆电瓶亏电，给用户带来麻烦。如果对电平进行监控，没电了就不联网，做不到全时段，那么连还是不连是否有差别。&lt;/li&gt;
+  &lt;li&gt;AVM产品的核心功能是辅助司机驾驶，现阶段的首要需求是提升分辨率，提升用户体验，这个核心功能都没有解决，做联网的功能开发是本末倒置。&lt;/li&gt;
+  &lt;li&gt;海思方案是有明显缺陷的，IMX6产品向着高清输入，高清输出，3D显示的目标走，同时考虑使用替代摄像头来降低成本。最终就会跟海思方案抢占不同的市场，海思方案卖后装，IMX6方案卖前装，互相并不挤压。所以应该抓紧时间完善IMX6高清，3D的软硬件。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;结论是联网&quot;&gt;结论是联网&lt;/h3&gt;
+
+&lt;p&gt;后来我们团队的开发工作确定先做4G联网功能，并把中心转向APP的开发，视频的回传和分享。&lt;/p&gt;
+
+&lt;h3 id=&quot;结果&quot;&gt;结果&lt;/h3&gt;
+
+&lt;p&gt;结果是4G联网并非很强的用户需求，确实没有达到预期的设想。并且因为4G通信稳定性，速率的问题，在使用体验上一直有BUG。&lt;/p&gt;
+
+&lt;h2 id=&quot;后续思考&quot;&gt;后续思考&lt;/h2&gt;
+
+&lt;p&gt;之所以把这个案例记下来，并非上述几条分析对比很有参考意义，而是下边的思考。之所以一个团队在两年前的那个时刻会定义AVM去做4G联网功能，简单的几条正反意见对比就能得出结论，是团队里没有人仔细思考过产品的本质。&lt;/p&gt;
+
+&lt;h3 id=&quot;互联产生价值并不成立&quot;&gt;互联产生价值并不成立&lt;/h3&gt;
+
+&lt;p&gt;两年前虽然正值互联网+概念大热，但是大家都已经意识到，联了这么多东西，这么多数据进来。网络里全是冗余的信号和垃圾数据，互联网公司都在思考如何挖掘数据的意义，如何通过大数据产生价值。在这种情况下，接入一堆车上的重复冗余视频数据并没有太大的价值。就如同大佬们所说”互联网红利终结了“，”上半场结束了“。大家并非没有数据，而是没有有价值的数据，以及从数据获得价值的方法。&lt;/p&gt;
+
+&lt;h3 id=&quot;对汽车的不间断监控并不会为客户带来价值&quot;&gt;对汽车的不间断监控并不会为客户带来价值&lt;/h3&gt;
+
+&lt;p&gt;我们定义的产品使用场景是，连接4G网络之后，用户可以通过手机随时监控车辆的状况，确认车辆是否被损坏，并且在车辆被蓄意破坏的时候还可以连接车主手机，报告车主。随着汽车销量的逐年攀升和生活品质提升，我们已经开始慢慢有了正常的汽车文化和汽车价值观，越来越多的车主把汽车当作工具而不是奢侈品对待。80后90后买中低档车就是为了上班方便，富二代跑车是为了泡妞方便，中年人买中高档车就是为了在高强度的社会压力下，出行的时候身体会比较舒服。你看，大家都把车当作手段而不是目的，这真是让人欣慰。&lt;/p&gt;
+
+&lt;p&gt;我很着急的把车停在窄巷里边的非正规停车位，是要着急赶紧去我深爱的客户，我要帮他把上周起草的合同里一处细节解释清楚。这个客户跟我关系很好，没有亏待过我，同样，我从来没有让他失望给他制造麻烦。你要保护我的汽车不被刮蹭或者破坏，随便吧，但是我跟张所长说话的时候你TM最好别打扰我，张所长时间很忙，我不想太打扰他。&lt;/p&gt;
+
+&lt;p&gt;我刚刚做完今年3季度的销售部署，三个区域经理都不会有问题，但是华南区我们今年才设立，前两个季度很不理想，小张虽然聪明，但是没有狠劲，下半年啊，下半年……。“……嘀嘀嘀，嘀嘀嘀，您的车辆检测到有震动，可能是人为破坏……”（来自Iphone APP推送），“小王，手机说我车被破坏了，去看看”。（十分钟后）“X总，没事，车库好好的，啥事都没有”，“这软件老是打扰我，你帮我删一下。” “……下半年，下半年……”&lt;/p&gt;
+
+&lt;p&gt;我们推崇的正常汽车文化，汽车应该是工具，而不是奢侈品，不是需要供奉的佛像，在这种情况下，正确的价值观应该是汽车坏了走保险修好就行，如果我还需要装一个软件，每个月支付一大笔流量费，整天提心吊胆汽车被人剐了，每两个小时打开APP看一下汽车周围都有什么人，那车主就成孙子了。&lt;/p&gt;
+
+&lt;h2 id=&quot;那应该怎么选择&quot;&gt;那应该怎么选择&lt;/h2&gt;
+
+&lt;p&gt;我的意见是，深入到产品的本质来取舍联网与否，而不是为了联网去假设应用场景。首先，车载电子部件联网是必然的趋势，有价值的车载电子部件所产生的数据一定会被更加频繁的采集，保存和二次使用。但是没用的传感器联网并不会增加其有用程度，虽然有的数据，开始没什么用，但是联网形成大数据之后发现，我X，太有价值了。这种情况，并非原始数据没用，而是原始数据最开始不知道怎么用。AVM产品如果分辨率低，可视范围很窄，那就是典型的用处不大的数据，站在这个角度讲，想辙让AVM更清晰，更流畅，延时更低，视图更直观有效那就是第一位的需求。在视频清晰度和显示直观有效的问题解决之前考虑如何联网，数据怎么用，其实就是再次接入了一堆无用的数据进入网路，如果解决了产品的清晰度，可用性等问题，那么再之后，联与不联，怎麽联，你随便吧。&lt;/p&gt;
+
+&lt;p&gt;正如老罗所说，现在的问题是没有流量。因为社会的总时间是固定的，一旦被占用就不可再生的资源，在这种情况下，所有的APP都要解决一个问题，怎么替用户节省时间，而不是去占用用户的时间。车辆监控APP，就是额外占用用户时间的典型案例，大家不会喜欢你的，只会讨厌你。&lt;/p&gt;
+
+&lt;p&gt;如果站在这个角度思考问题的话，AVM就好像是小妾或者妃子，应该在车主看你的时候，尽可能的花枝招展，让车主产生额外的需求。而不是在车主本来没事可以休息一下的时候，搞个APP，去招人烦。&lt;/p&gt;
+
+&lt;p&gt;总结一下：
+从&lt;strong&gt;价值观&lt;/strong&gt;的角度出发，我们应该建议车主用车随意一点，不要为车的事情烦恼，因为车是工具，是消耗品，整天担心车碰了划了，那就不要开车了，要么公共交通，要么雇专职司机，都会让生活更美好。从&lt;strong&gt;用户体验&lt;/strong&gt;的角度出发，我们不应该强行推广一个占用用户时间，流量费用，心情的APP，去做所谓的保护车辆的功能。从&lt;strong&gt;产品设计&lt;/strong&gt;的角度出发，一个高清，交互好的AVM就是极致的产品，而一个坐在车上看不太清楚，用手机也看不太清楚，还要耗电耗流量的产品，就只能呵呵了。&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:AVM&quot;&gt;
+      &lt;p&gt;环视显示器，在国内的汽车电子圈，又经常被称作“车载360”。指的是通过在车身安装的4-6个摄像头拼接出一个汽车周边完整实时视频的辅助驾驶系统。 &lt;a href=&quot;#fnref:AVM&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </description>
-        <pubDate>Fri, 17 Jun 2016 04:08:09 +0800</pubDate>
-        <link>http://localhost:4000/renge/2016/06/17/tst.html</link>
-        <guid isPermaLink="true">http://localhost:4000/renge/2016/06/17/tst.html</guid>
+        <pubDate>Thu, 18 Jan 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//update/2018/01/18/About-AVM-(does-avm-need-network-or-not).html</link>
+        <guid isPermaLink="true">http://localhost:4000//update/2018/01/18/About-AVM-(does-avm-need-network-or-not).html</guid>
         
-        <category>jekyll</category>
+        <category>产品思考</category>
         
-        <category>Renge</category>
+        <category>车载环视</category>
         
         
-        <category>Renge</category>
+        <category>update</category>
         
       </item>
     
       <item>
-        <title>Welcome to Jekyll and Renge!</title>
-        <description>&lt;p&gt;Renge is designed by Junchao (www.junchaowang.com), inspired by the amination called “のんのんびより” and named by one of the Characters, Renge Miyauchi (宮内 れんげ). If you have any questions, you can reach me via &lt;a href=&quot;https://github.com/billyfish152/Renge&quot;&gt;Renge on GitHub&lt;/a&gt; by submitting an issue or via email billyfish152[at]gmail.com.&lt;/p&gt;
+        <title>Aodai</title>
+        <description>&lt;h2 id=&quot;what-is-aodai&quot;&gt;What is AoDai&lt;/h2&gt;
+&lt;hr /&gt;
 
-&lt;h3&gt;Original Jekyll instruction&lt;/h3&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/zk2.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;AoDai is add-on drive-assistant &amp;amp; infotainment&lt;sup id=&quot;fnref:infotainment&quot;&gt;&lt;a href=&quot;#fn:infotainment&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;我们已经有了各种各样的车载系统和车载终端，后装的或者原厂的，旋钮的或者触摸的，8寸的或者13寸的，嵌在中控台的或者卡在后视镜上的，支持手势命令的或者支持语音交互的…&lt;/p&gt;
+
+&lt;p&gt;但是不管尝试过多少种，我们总是觉得，那些让人炫目的功能总是很少用到，那些有用的功能仍然不是$200产品能够具备的。很多时候，只需要两三天或者两三个小时，我们就会意识到 &lt;strong&gt;这只是个没用的低端山寨手机&lt;/strong&gt;而已，他还不如我的手机好用。&lt;/p&gt;
+
+&lt;p&gt;我们需要为我的老旧座驾加装一个中控导航，一个行车记录仪，一个倒车影像或者车载环视系统，这一切都装上之后，好像才有那么一点管用了。&lt;/p&gt;
+
+&lt;p&gt;为什么要加装这么多东西，所有这些东西本质上都是一个linux或者android或者其他某个系统的终端设备而已。理论上说，我们只需要有一个专门为汽车定制的Performance Version平板电脑就可以了。没有丑陋的中控台框架，没有专车专用的古怪界面，就是一个最简洁的车载平板。&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-different&quot;&gt;What is different&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;极简的操作界面。&lt;/p&gt;
+
+&lt;p&gt;支持多种车辆的中控台结构。&lt;/p&gt;
+
+&lt;p&gt;所有车载功能一键切换，无需繁琐的操作。&lt;/p&gt;
+
+&lt;p&gt;6x高清摄像头输入，集成AVM，行车记录仪，流媒体后视镜。&lt;/p&gt;
+
+&lt;p&gt;可旋转，可上下移动，不遮挡车辆原始中控台。&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:infotainment&quot;&gt;
+      &lt;p&gt;this is generally called ivi. &lt;a href=&quot;#fnref:infotainment&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 22 Dec 2017 21:08:09 +0800</pubDate>
+        <link>http://localhost:4000//update/2017/12/22/Aodai.html</link>
+        <guid isPermaLink="true">http://localhost:4000//update/2017/12/22/Aodai.html</guid>
+        
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>MCMC(Multi-Camera input &amp; Mipi output Converter)</title>
+        <description>&lt;h2 id=&quot;mcmc&quot;&gt;MCMC&lt;/h2&gt;
+
+&lt;p&gt;MCMC（Multi-Camera input &amp;amp; Mipi output Converter）was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCMC make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
+
+&lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;4 x half 720P    » 8bits dvp ,pclk &amp;lt;=  100M&lt;/li&gt;
+  &lt;li&gt;4 x half 720P  + 720P  »  8bit dvp, pclk = 148.5M&lt;/li&gt;
+  &lt;li&gt;4 x 720P » 16bit dvp, pclk = 148.5M&lt;/li&gt;
+  &lt;li&gt;4 x half 720p + 2 x 720P » 4 lanes mipi&lt;/li&gt;
+  &lt;li&gt;4 x 720P 				» 4 lanes mipi&lt;/li&gt;
+  &lt;li&gt;6 x 720P				» 4 lanes mipi&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Fri, 01 Dec 2017 21:08:09 +0800</pubDate>
+        <link>http://localhost:4000//update/2017/12/01/mctmc.html</link>
+        <guid isPermaLink="true">http://localhost:4000//update/2017/12/01/mctmc.html</guid>
+        
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;h3&gt;Original Jekyll instruction&lt;/h3&gt;
 
 &lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
@@ -65,18 +198,135 @@ print_hi('Tom')
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 17 Jun 2016 04:08:09 +0800</pubDate>
-        <link>http://localhost:4000/update/renge/2016/06/17/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000/update/renge/2016/06/17/welcome-to-jekyll.html</guid>
-        
-        <category>jekyll</category>
-        
-        <category>Renge</category>
+        <pubDate>Thu, 16 Jun 2016 21:08:09 +0800</pubDate>
+        <link>http://localhost:4000//2016/06/16/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2016/06/16/welcome-to-jekyll.html</guid>
         
         
-        <category>update</category>
+      </item>
+    
+      <item>
+        <title>About AVM（产品的本质）</title>
+        <description>&lt;h3 id=&quot;无线视频监控&quot;&gt;无线视频监控&lt;/h3&gt;
+
+&lt;p&gt;07年~10年在XX院XX所跟孙总共事了四年，做无线视频传输产品。当年这个组是所里的搞产业化成立的一个独立事业部，区别于研究室，这个事业部磕磕绊绊到现在还在运行，而且也在不断的走上新台阶，我离开后没多久，孙总，彪哥，H，C，我们这一帮最早成员都陆续离开了。在这个事业部的四年里，我们搞了两个产品，无线视频传输设备（至今还没有正式发布的名字和系列编号）和智能视频平台。&lt;/p&gt;
+
+&lt;p&gt;无线视频监控，是前几年安防行业很火的时候，产生的一个产品概念，设想用2.5G或者3G及以上的无线公网传输视频，实现运动目标上的实时视频监控。产品剖开很简单，一个模拟摄像头，一个H.264图像压缩的盒子（最早主要采用DM642和海思351X系列），一个无线数据模块，还有就是公网上的一个网络服务器。06年还是GPRS网络的时候，孙总就开始搭环境，测试并评估这么一套系统。后来做了成型的产品，自己搞生产和推广应用，又去上海参加了运营商的测试。中间穿插着无数管理上的错误和缺失，事业部内人人吐槽的管理，最终导致了项目组非正式解散。但这不重要了。&lt;/p&gt;
+
+&lt;h3 id=&quot;还是无线视频监控&quot;&gt;还是无线视频监控&lt;/h3&gt;
+
+&lt;p&gt;就在我们事业部非正式解散的前一年，X哥也从XAX离职，跟同事搞了一家叫LPY的公司，也做无线视频传输产品。不同的是，他们既没有采用无线公网的传输方案，也没有走微波通信这个高端路线，而是用类似cdma的通信模块，自己修改了协议，做了一套私有的通信链路。公司在6个月内就实现了盈利，目前在一个小众市场活的也还算滋润。&lt;/p&gt;
+
+&lt;h3 id=&quot;xa6800&quot;&gt;XA6800&lt;/h3&gt;
+
+&lt;p&gt;XA6800是XAX的A类验钞机。是国内第一台A类验钞机，具备判别变色油墨真假，识别并记录钞票冠字号码的能力。我在XAX只呆了1年出头，完成了项目组的原理样机的实现和测试。后来唐总用了5年时间实现了真正意义上的产品——XA6800，并且怀着极大的热情去培育市场，推广产品。2013年，唐总曾经的合作伙伴成了国内A类机市场最大的赢家，而XAX数字图像技术有限公司也在四大行招标全线失利局面下，成了股东矛盾的牺牲品。我对此事的细节了解也就这么多，虽然对金融设备领域一直毫无感情，但是对XAX图像技术的解散却觉得颇为可惜。前瞻的技术设想，优秀的团队，模糊的管理和权利结构，但这些也不重要了。&lt;/p&gt;
+
+&lt;h3 id=&quot;产品的本质&quot;&gt;产品的本质&lt;/h3&gt;
+
+&lt;p&gt;我们看到很多小团队或者个人，没什么技术或者拿得出手的东西，人品也很槽糕，却赚得很high。很多人，认认真真，兢兢业业，勤勤勉勉，很多公司，竭力研发，竭力销售，最后却无所回报。
+在进化的世界里，成功与否跟勤奋本来就毫无关系，只取决于你是否狗屎运处在即将胜利的进化路线上。就产品来说，取决于是否演进出了关键的功能和形态。前者，往往是抓住了产业链上比较关键的资源或者关键的一环工序。用20%的付出就获取了80%的收益，产业上剩下的环节只剩下20%的收益，却有80%的工作量。&lt;/p&gt;
+
+&lt;p&gt;50,60年代，所有人都认为视频电话必将出现，也一定会出现。顶级的公司也都投入巨大的资源去实现这一产品，视频电话系统也短暂的投入过使用。最终，视频电话也确实出现了，如所有人预料的那样，却以所有人预料之外的方式出现了。我们在任何地方都买不到视频电话机，我们却可以在电脑，手机，平板多种设备上轻松的使用视频电话这一功能。换而言之，所有搞可视电话的公司都没有赚到钱，现在用户免费就可以用上可视电话。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;产品的本质是，我想要满足某种需求，设计了一个或者几个功能，我用几个部件实现了所设计的功能。产品的本质有三个要素，构成 功能 需求。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;那些忙忙碌碌的98%的小公司，至少有一半，并没有把产品拆成三段仔细想过，他们大多数时候创业的动机不是三句话，而是一句话：   &lt;br /&gt;
+这个***的需求很大，以后***都会用这个。
+这个***的市场前景很好，市场规模非常大。
+整个***行业都会升级使用***技术。&lt;br /&gt;
+我特别看好***的发展前景。&lt;/p&gt;
+
+&lt;h3 id=&quot;无线视频传输和无线视频传输的区别&quot;&gt;无线视频传输和无线视频传输的区别&lt;/h3&gt;
+
+&lt;p&gt;我们搞的无线视频监控     &lt;br /&gt;
+构成——摄像头+图像压缩模块+edge/evdo模块+RTP协议+视频server； &lt;br /&gt;
+功能——在公网覆盖范围内提供一般稳定一般流畅，延时不大的视频监控；  &lt;br /&gt;
+需求——警察政务的实时录像监控，车辆的实时监控……。&lt;/p&gt;
+
+&lt;p&gt;X哥搞得无线视频监控    &lt;br /&gt;
+构成——摄像头+图像压缩模块+OFDM通信模块+RTP协议+OFDM通信模块+视频显示终端；     &lt;br /&gt;
+功能——在任何地方提供2~10公里范围内的稳定视频传输；      &lt;br /&gt;
+需求——任何需要临时视频传输和监视的应用。&lt;/p&gt;
+
+&lt;p&gt;同样是无线视频监控产品，在构成上可能只是部分部件或者形态上有的差异，在功能和需求上却产生了完全的不同，命运上也走向了相反。这个结果说明几点：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;同类型的产品，早期的需求定位和功能规划即使有巨大的差异，在产品构成定义上也大同小异。&lt;/li&gt;
+  &lt;li&gt;早期在产品定义上的细微差别，随着产品的演进和发展，最终可能产生完全不同的功能和需求。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这样来看，产品的研发过程，是符合进化过程及其理论的。人跟猩猩基因只差1,2点，人跟黑猩猩分开的那一刻就再也不是一个物种了。产品也是这样，早期的思路粗糙一点并不会影响产品的定义，有些应用场景和需求想不想清楚，甚至于想或者不想，都会得出同样的原始设计方案。但是需求和功能定义的差异，会影响产品定义方方面面的细节，某个功能是必须还是可选，或者某个功能的使用条件不一样，研发人员在实现阶段都会使用不同的策略，说的具体一点，如果某个功能的技术指标要求很严格，作为研发人员，我一定会保留充分的设计冗余，如果某个功能的应用场景很不频繁，作为研发人员，我可能会直接把想关的电路或者代码直接删掉，用其他模拟的方案保留个虚拟的功能。这种实现细节上差异的积累，最终导致产品进化出完全不同的适用性。等到发现产品适用性并不迎合市场需求的时候，再来调整所付出的代价，基本上等同于推翻从来。&lt;/p&gt;
+
+&lt;p&gt;再去看看上面的无线视频监控和无线视频监控，如果不拆成三段，根本看不出明显的差异。两个公司，都在做无线视频传输类的产品，把摄像头接入图像压缩主板，压缩后走网络接口，通过RTP协议传到服务器上，A公司想，用2.5G公网模块吧，以后会有3G，4G速度低不了，覆盖也好，全国都能用。B公司想，自己做个传输模块吧，反正就用类似3G模块的空口协议，自己改改就能用，不走公网，不用考虑数据流量费，后续还能加个放大器增加距离。最初他们都没有明确的客户目标，只是觉得视频能传输就可以卖了。到这个阶段，两家公司其实生产的完全就是同一类型同一品种的产品，只不过在通信参数上有差别。然后呢，A公司因为用了公网，就开始想法跟运营商合作，研发也想法设法提高公网环境下的速率稳定性。B公司因为使用了自己的传输链路，开始考虑运营商覆盖不好的地方或者特殊情况需要应急公网又性能不够的运用场景，开始考虑如果转型为特种装备。再后来，A没了B还在。&lt;/p&gt;
+
+&lt;h3 id=&quot;为什么不是可视电话&quot;&gt;为什么不是可视电话&lt;/h3&gt;
+
+&lt;p&gt;可视电话人人都觉得好，人人都想要，最终没有出现可视电话这样的产品。从电话到可视电话，就缺一样东西，能够把视频信号加载上去的电话通信线路。&lt;/p&gt;
+
+&lt;p&gt;构成上看，可视电话=电话+电话线扩容+视频传输协议+摄像头。电话和摄像头60，70年代都有了，电话线扩容是运营商和设备商的事情，视频传输协议，如果是可视电话这种点对点的应用场景，基本没什么技术需要研发。在构成上，可视电话跟可视电话技术没什么关系，只要通信条件提升了，谁都可以生产可视电话，通信条件不行的时候，谁都生产不了可视电话，因此，可视电话并不是可视电话系统的核心组件。&lt;/p&gt;
+
+&lt;p&gt;功能上看，可视电话比传统电话就是多一个图像实时传输的功能。需求上看，打电话的时候需要看到对方么？如果打电话的不需要看到对方，那么为什么这么多人都设想可视电话这一功能概念呢。实际上打电话的时候，看不看到对方并不传递额外的信息。看到对方可以确认这是否是某个特定的对象还是冒牌的，可以确认对方是否健康，除此之外图像并不传递额外的信息。在马斯洛需求层次上，我也无法确定打电话看到对方能在哪一个层次上获得满足。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;从上面的分析来看，可视电话确实无法构成一个具有商业价值的独立产品。可视电话做为功能性的属性，寄生于网络产品，软件产品上，倒是产生了很强的生命力，但是，它确实无法独立作为一个商业产品存在。至少在目前的技术和产业结构下是这样的。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;车载全景产品的本质&quot;&gt;车载全景产品的本质&lt;/h3&gt;
+
+&lt;p&gt;那么问题来了，车载全景产品（也有车载360可视，车载环视系统等名称）会不会跟可视电话一样呢。&lt;/p&gt;
+
+&lt;p&gt;从需求上看，车载全景产品能够帮助低手司机停车入位，能够帮助司机在低速条件下观察极端路况比如街角巷口，能够记录行驶过程中的录像作为事故时的证据。这三点需求都算不上刚需。没有全景产品，没有倒车摄像头，没有雷达，司机硬着头皮车也一样开。街角巷口的极端路况下，开慢点，或者吼一嗓子，或者刹一脚车，也都能解决问题；记录证据有行车记录仪，成熟可靠易安装。&lt;/p&gt;
+
+&lt;p&gt;从结构上说，09年我刚开始做这个产品的时候，确实有很多技术门槛，用DM642做6路视频输入，再扩展一路视频输出；642的内存是sdram，顶多到64M，合成4路图像得规划内存使用……车载全景视频确实有很多独特性的属性，它的功能，只能出现在车载全景产品上，离开了车载全景产品，这些功能性就不能存在。五年之后，Cortex-A9/A15已经成为市场主流，其处理能力已经不比TI主流DSP差，图像加速能力更是远超DSP。视频AD也更加丰富，各种接口类型的产品都有公司推出。现在的情况是，用一个主流的AP电路板，加上一个6视频采集芯片的扩展板，剩下的就是按照网络搜索获得的论文资料写写软件。车载全景视频的功能就完备了。而且成本更低。&lt;/p&gt;
+
+&lt;p&gt;需求上没有刚需，结构上不具备独特性。那车载全景产品怎么定位呢。   &lt;br /&gt;
+如果要说车载全景产品是安全类产品，那绝对没有市场，车厂和车主都不会接受把汽车安全交给“加装品，附加件”。如果说车载全景产品是ADAS产品，那后装市场绝对没戏，跟车厂不在一个系统，做ADAS就没有市场。如果说车载全景产品是车载电子配件，定位等同GPS，电子狗，车载DVD，那不用讨论了，这些产品都是马上被淘汰的对象。       &lt;br /&gt;
+除此之外，我所看到的车载全景产品还有两条路可走——往小了做就做专业改装路线，往大了做就走IT互联网产品的路线。这是我所能看到的道路。&lt;/p&gt;
+
+&lt;h3 id=&quot;再定义&quot;&gt;再定义&lt;/h3&gt;
+
+&lt;p&gt;好吧，如果车载全景产品，不能卖安全，不能卖保险，那这个产品卖什么。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;插一句，其实我们都知道，车载电子未来的趋势和潜力，也有无数的概念，想法，从我们的脑子或者互联网上冒出来。各种概念设计，新颖的功能，和交互体验，各种未来风格的设计。但是这些概念，设计，功能都必须附加在车辆上，功能性才能实现。所以说现在做IT产品的，做互联网产品的，在汽车电子行业一点话语权都没有。车厂说，老子就是不装你的产品，你就是个屁。那这个行业，小公司更没法混了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;反过来，我们如果卖不了安全，卖不了保险，卖不了ADAS，卖电子产品配套又不赚钱（国内车场利润在20%左右，配套厂利润6~15%左右，大部分配套厂都在6~10%上下挣扎），那我们只能走改装厂路线或者卖互联网概念。&lt;/p&gt;
+
+&lt;h3 id=&quot;想想上网本&quot;&gt;想想上网本&lt;/h3&gt;
+
+&lt;p&gt;还有一个例子，03,04年的时候我们都知道一个概念，上网本，我们所有人也都相信并且预测，上网本将迎来市场的爆发，上网本将是笔记本行业的一次巨大变化和革新。后来事实却是如预期发生了，但是却换了一个名字——PAD。而早期做上网本的一些小公司，大多没能在PAD时代赚到钱。&lt;/p&gt;
+
+&lt;p&gt;同样的现实，摆在我们面前，车载全景产品必然也必须会很快爆发，但是早期做车载全景产品的公司未必能赚到钱。因为当他爆发的时候，未必叫“车载全景产品”。它可能是个APP，可能是个接口卡，可能是图像采集卡，甚至可能是一种免费服务。谁能预测它以什么形态出现，谁就能卡住这个产业的脖子。如果不能准确预测它出现的形态，那再多的努力也是白费。&lt;/p&gt;
+
+&lt;h4 id=&quot;如何给360嫁接互联网的概念&quot;&gt;如何给360嫁接互联网的概念&lt;/h4&gt;
+
+&lt;p&gt;产品升级和产品转型，升级，是对现有产品的强化和扩展，适用于现有产品生命周期执行到一定阶段的时候。产品转型，是对产品概念和定位，对产品的定义的变化，它应该包含层次，观念或者视角的转变。
+产品转型最常规的思路就是，当早期产品功能不够全面或者适应性已经不够的时候，继续下一代产品的研发，而在下一代产品中，上一代产品的整体只作为一个功能或者部件。
+给360产品嫁接互联网的概念，我现在可以想到的思路就是，做带有车载全景功能的13~17寸平板。用车载全景功能去异化平板，定义一款差异化的平板电脑，并在后装市场推广。&lt;/p&gt;
+
+&lt;h3 id=&quot;智能家居的模式&quot;&gt;智能家居的模式&lt;/h3&gt;
+
+&lt;p&gt;智能家居也炒了很多年了。今年听说国内有几家只能家居公司已经盈利或者拿到投资，颇感有趣。早先的时候，智能家居的概念总是在设想，有了智能家居，电视会怎么样，空调会怎么样，电灯会怎么样。所有的智能家居都迈不过一个门槛，那就是得改造家电。一涉及到改造家电，这事基本就没谱了。再过50年也不会有中央控制的智能家居出现，大家都是家电大厂，谁会把家电的控制权交给第三方的一家公司呢，这简直就是割自己的肉养肥别人。所以，看着这么些吵吵智能家居概念的人，我觉得他们都没有找到智能家居的本质，没有找到产品的切入点。绕过家电厂做智能家居，才能做大做成。&lt;/p&gt;
+
+&lt;p&gt;因此，智能家居第一步是做智能插座和智能开关，有了智能插座和智能开关，无需任何改造，家里的电器就可以实现通电断电，开灯关灯。智能家居的第二步是做智能遥控器。一个小模块，扣到家电的红外接收器上，但是又不影响家电原始遥控器的使用，通过学习获得特定家电的遥控命令，这样，既可以用遥控器控制家电，也可以用手机，电脑去连接智能遥控器集中控制所有家电。这些东西都有了，自主控制，网络控制，远程遥控，云服务，都可以有了。无需谈判任何一家家电厂，也无需一个一个家电厂做对接和合作。这才是智能家居的正确发展道路。听说的两家做起来的公司基本都是这个思路。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;面对行业巨擘，如果能找到不合作也能做事的道路，那一定是最好的道路。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Sun, 07 Dec 2014 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//updata/2014/12/07/About-AVM-(essence-of-product).html</link>
+        <guid isPermaLink="true">http://localhost:4000//updata/2014/12/07/About-AVM-(essence-of-product).html</guid>
         
-        <category>Renge</category>
+        <category>产品思考</category>
+        
+        <category>车载环视</category>
+        
+        
+        <category>updata</category>
         
       </item>
     
