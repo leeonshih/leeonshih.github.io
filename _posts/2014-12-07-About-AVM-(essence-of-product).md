@@ -1,9 +1,9 @@
 ---
 layout: post
 data: 2014-12-07 
-title:  About AVM（产品的本质）
+title:  车载环视-产品的本质
 categories:  updata
-tags:  产品思考 车载环视
+tags:  车载环视
 ---
 
 ### 无线视频监控

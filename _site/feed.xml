@@ -6,12 +6,12 @@
 </description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 12 Apr 2018 15:25:25 +0800</pubDate>
-    <lastBuildDate>Thu, 12 Apr 2018 15:25:25 +0800</lastBuildDate>
+    <pubDate>Sun, 15 Apr 2018 12:10:25 +0800</pubDate>
+    <lastBuildDate>Sun, 15 Apr 2018 12:10:25 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
-        <title>About AVM（要不要联网）</title>
+        <title>车载环视-要不要联网</title>
         <description>&lt;h2 id=&quot;yes&quot;&gt;Yes&lt;/h2&gt;
 
 &lt;p&gt;车载AVM系统跟其他车载设备一样，最终都会连接进入车联网。&lt;/p&gt;
@@ -95,8 +95,6 @@
         <link>http://localhost:4000//update/2018/01/18/About-AVM-(does-avm-need-network-or-not).html</link>
         <guid isPermaLink="true">http://localhost:4000//update/2018/01/18/About-AVM-(does-avm-need-network-or-not).html</guid>
         
-        <category>产品思考</category>
-        
         <category>车载环视</category>
         
         
@@ -153,10 +151,10 @@
       </item>
     
       <item>
-        <title>MCMC(Multi-Camera input &amp; Mipi output Converter)</title>
-        <description>&lt;h2 id=&quot;mcmc&quot;&gt;MCMC&lt;/h2&gt;
+        <title>MCMM(Multi-Camera input &amp; Mipi output Module)</title>
+        <description>&lt;h2 id=&quot;mcmm&quot;&gt;MCMM&lt;/h2&gt;
 
-&lt;p&gt;MCMC（Multi-Camera input &amp;amp; Mipi output Converter）was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCMC make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
+&lt;p&gt;MCMM（Multi-Camera input &amp;amp; Mipi output Module）was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCMM make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;
 &lt;img src=&quot;/images/mcmc-descript.jpg&quot; width=&quot;600&quot; /&gt;
@@ -196,17 +194,617 @@
 &lt;/div&gt;
 </description>
         <pubDate>Fri, 01 Dec 2017 21:08:09 +0800</pubDate>
-        <link>http://localhost:4000//update/2017/12/01/mcmc.html</link>
-        <guid isPermaLink="true">http://localhost:4000//update/2017/12/01/mcmc.html</guid>
+        <link>http://localhost:4000//project/2017/12/01/mcmm.html</link>
+        <guid isPermaLink="true">http://localhost:4000//project/2017/12/01/mcmm.html</guid>
+        
+        <category>Board</category>
         
         
-        <category>update</category>
+        <category>Project</category>
         
       </item>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;h3&gt;Original Jekyll instruction&lt;/h3&gt;
+        <title>MCIM驱动CVI输出</title>
+        <description>&lt;h2 id=&quot;dh9801&quot;&gt;DH9801&lt;/h2&gt;
+
+&lt;p&gt;碰到一个需求，希望将4个摄像头视频集成到一路CVI输出（我也没有办法，人家的设备上只有一个CVI输入接口，想要连接额外的摄像头，只能通过CVI信号输入），于是就上手开始调试DH9801，本来打算是三周时间连硬件带软件全部调试完成，但是中间碰到一个糟心的地方，前后花了两个月时间才调通。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcmm-to-cvi-1.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 15 Oct 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//hardware/2017/10/15/mcmm-to-cvi.html</link>
+        <guid isPermaLink="true">http://localhost:4000//hardware/2017/10/15/mcmm-to-cvi.html</guid>
+        
+        <category>Hardware</category>
+        
+        
+        <category>Hardware</category>
+        
+      </item>
+    
+      <item>
+        <title>Dvp接口调试记录汇总</title>
+        <description>&lt;p&gt;手头有一个Imx6的开发板E9，带有Dvp摄像头接口，这个板子上Dvp接口是双排针，飞线很方便，查看Imx6的TRM，确认Imx6的Dvp接口支持的pclk非常高，最高能到240Mhz，于是再这个Dvp接口上做了很多并行摄像头接口的测试工作，这里把前期的调试记录汇总到一起，以便参考。&lt;/p&gt;
+
+&lt;h3 id=&quot;fpag-dvp输出极限频率&quot;&gt;Fpag dvp输出极限频率&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2017-08&lt;/strong&gt;&lt;br /&gt;
+后续又做了一下测试，对spartan6输出管脚的信号约束进行了各种尝试。确认，在3.3V IO电平的情况下，Imx6端可以稳定接收到图像信号的频率大概是160Mhz，如果pclk高于这个频率，则图像就会时序错乱，输出各种样式的花屏。应该是更高的频率必须使用更低的IO电平了才能实现了。&lt;br /&gt;
+另外就是E9这个板子 dvp接口的干扰问题，io之间串扰能到好几百mv，中间测试的过程中，反复因为这个串扰导致 图像错乱。 dvp不工作，  iic跑不通。出过两次之后就系统的定位了一下，确认串扰是在E9板子上产生的。&lt;/p&gt;
+
+&lt;h3 id=&quot;fpga输出dvp信号约束&quot;&gt;Fpga输出dvp信号约束&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2017-05-17&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;dvp输出信号，pclk 小于等于130Mhz，imx6接收图像无绿条纹，pclk大于135Mhz，则imx6接收到的图像有绿条，少则十来条，多则整屏都是，只能看到小部分图像。&lt;/li&gt;
+  &lt;li&gt;修改 ucf，DRIVE = 2，8 两个值都没用。&lt;/li&gt;
+  &lt;li&gt;去掉 DRIVE 约束， 增加 SLEW = fast， PCLK=150M，4路图象输入，图像显示正常
+4，去掉 DRIVE 约束， 增加 SLEW = fast ，PCLK =150M，5路图像输入，图像显示正常&lt;/li&gt;
+  &lt;li&gt;修改为16bit，720PX5 输出，时序无问题，图像稳定（基本确定后续上MIPI接口，带宽足够）  &lt;strong&gt;存在起始位置对不齐的bug，后续还要修改&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;fpga-fifo容量测试&quot;&gt;Fpga Fifo容量测试&lt;/h3&gt;
+&lt;p&gt;Dvp输出时，dvp输出时序跟ddr之间需要一个输出行缓存usbfifo，这个行缓存最初设计时64bits x 1K。&lt;br /&gt;
+Camera输入时，cam输入时序跟ddr之间需要一个输入行缓存camfifo，这个行缓存最初设计是32bit x 2k。&lt;/p&gt;
+
+&lt;p&gt;减小usbfifo大小，usbfifo减小到 64bits*512，工作正常，总的ramb16b块为30个，满足 xc6slx16的容量，修改fifo的过程中，发现 dr_fifo.v 中整个逻辑的 fifo空满判断的大量运算是错的。但是整个工程长时间也运行下来了，真是奇葩。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;20170518&lt;/strong&gt;&lt;br /&gt;
+减小camfifo大小，camfifo减小到 32bit*1K，目前看工作也正常。 总得ramb16bit块为20个。&lt;/p&gt;
+
+&lt;h3 id=&quot;e9板干扰1&quot;&gt;E9板干扰1&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2015-05-05&lt;/strong&gt;&lt;br /&gt;
+在fpga中将CK的逻辑测试完成后，需要LZ(BB)协助调试驱动的bug，然后再飞线焊接了2块电路板，准备提供给LZ(BB)测试，结果发现新的板子，逻辑时钟不对，VS没有信号输出。新板子跟老板子都是排线飞的，唯一的差别是老板子飞线长4cm左右，新板子的线稍微长1cm左右。
+这个时候主要怀疑是PWDN，RSTn的问题，因为CK的逻辑依赖的外部控制信号就是这俩，但是示波器发现这俩信号电平都对，只是干扰有些大，有+-六七百mV。在测试的过程中，时不时碰到VS,HS,PWDN信号，VS就会有输出，逻辑就会正常工作，这样就更怀疑是干扰的问题了。&lt;/p&gt;
+
+&lt;p&gt;然后给PWDN对地接了100pF电容，问题解决，时序工作正常。
+估计是PWDN在逻辑中的工作方式和作用，导致了逻辑对这个信号的干扰敏感。&lt;/p&gt;
+
+&lt;h3 id=&quot;ov3640-on-imx6&quot;&gt;OV3640 on IMX6&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2014-12-01&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;使用ov3640摄像头，仔细确认了i2c配置结果，确认，有三个地方涉及到分辨率：&lt;strong&gt;1.i2c配置摄像头的输出分辨率， 2.驱动程序采集的宽高，3. 应用层获取的图像分辨率。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;2014-06-24调试时，&lt;strong&gt;第3处不能设置高于1024分辨率的问题还是存在，可能需要改MXC的配置程序。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;如果2的分辨率比1小，图像会被截断。&lt;br /&gt;
+如果2的分辨率比1大，则程序应该采不到足够的数据无法进入终端（还没严格测试实验）。&lt;br /&gt;
+如果2和3的分辨率不一致，则ISP会对图像进行拉伸。&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;ov3640，配置为1280*720分辨率时，驱动配置[0][4]，VS是7.5hz，负脉冲。200f用时26S。&lt;/p&gt;
+
+&lt;p&gt;PO3100摄像头，输出为逐行的1280x720，VS是25hz，负脉冲，200f用时8S。&lt;br /&gt;
+xclk是24M，pclk72M，飞线的信号质量很差，不停的掉行跳帧，示波器探头碰到VS或者HS就能稳定一些。&lt;/p&gt;
+
+&lt;h3 id=&quot;po3100飞线-on-imx6&quot;&gt;PO3100飞线 on IMX6&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2014-11-28&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;飞线调试PO3100摄像头，可以采到图像，但是感觉clk跟hs信号质量都不好，丢行，掉数据，如果将示波器探针放到hs上，图像就会稳定很多。&lt;/li&gt;
+  &lt;li&gt;按照示波器探头的参数（输入阻抗1MΩ，寄生电容24pF），在clk跟hs信号上接一个100pF的对地电容，信号就稳定很多。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;ov7725-on-imx6&quot;&gt;OV7725 on IMX6&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2014-11-27&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;用ov7725摄像头连接到imx6上测试，imx6默认输出YUV视频信号，因此略过IIC部分工作。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ov7725使用imx6提供的24M时钟，采集到的图像会有噪点（噪声样式与fpga驱动vga屏幕，时钟域没约束好时一样，零星的出现绿色噪点分布在轮廓线上），将示波器点到xclk信号上，噪点成倍加剧。使用板上的24M晶振，采集到的图像无噪点。但是出过一次异常，下半截有1/6左右的图像于上本部分不同步，重新焊接晶振后问题解决。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;用外接24M时钟的时候，图像很问题，感觉以前ov3640，mt9v034程序跑飞可能是imx6输出的24M时钟质量不好。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;imx6上接tvp5158-iic问题&quot;&gt;imx6上接tvp5158 iic问题&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2014.08.21&lt;/strong&gt;  &lt;br /&gt;
+硬件环境：fpga扩展板跟imx6主板连接，接口为fpga输出camera接口到imx6，imx6的i2c接口连接到fpga板子上的tvp5158芯片，配置其工作状态。
+早先用相同的方法连接过fpga板子与dm3730主板。接口仍然是1个camera接口，1个i2c。
+dm3730与fpga相连，3730的程序能够正常的配置tvp5158，毫无问题。
+imx6在连接fpga之间，也连接了ov3640，mt9v034两个摄像头板，i2c工作都没有问题。&lt;/p&gt;
+
+&lt;p&gt;将imx6跟fpga相连，把3730上的i2c配置tvp5158的程序移植到imx6上（去掉两个多余的头文件，改变一下i2c通道设备号，其余完全不变）。i2c程序始终运行不通，用示波器查看波形，也有clk信号，但是clk波形只有1个byte，感觉像是ack没有回来，让host逻辑卡住了。但是示波器只有一个探头，无法同时观察sclk，sda信号，没法确认ack的问题。后来发现，用示波器测试的过程中，偶尔能够配置成功1,2个寄存器。因此，觉得是imx6跟fpga相连，阻抗或者上下拉有不匹配造成的，仔细查看原理图，i2c连接巨简单，fpga上就是一个设备，imx6上就俩设备，没有任何可能产生问题的地方。&lt;/p&gt;
+
+&lt;p&gt;因为无法查看波形，根据现象看，只要用示波器探头点住，偶尔能成功一下。5158 i2c前串了22欧的电阻，尝试把这个电阻改小，改大，都故障依旧。后来用万用表测量了示波器探头的电容，大概是0.7nF。根据这个值，在5158 i2c 的sda端跟地之间接了1nF电容。i2c正常工作，毫无问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;示波器探头的实际寄生电容是12pF，探头上清清楚楚标记的。&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 17 May 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//hardware/2017/05/17/dvp-camera-test-memo.html</link>
+        <guid isPermaLink="true">http://localhost:4000//hardware/2017/05/17/dvp-camera-test-memo.html</guid>
+        
+        <category>Hardware</category>
+        
+        
+        <category>Hardware</category>
+        
+      </item>
+    
+      <item>
+        <title>xu3 qt编译</title>
+        <description>&lt;h3 id=&quot;参考资料&quot;&gt;&lt;font color=&quot;#bb6688&quot;&gt;参考资料&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://wiki.qt.io/ODROID-XU3&quot;&gt;Qt5 on Xu3 官方资料&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://wiki.qt.io/Building_Qt_5_from_Git&quot;&gt;Qt5 Xu3 依赖&lt;/a&gt;&lt;br /&gt;
+https://doc-snapshots.qt.io/qt5-dev/embedded-linux.html&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;没有现成的Qt for OdroidXu3，所以需要自己编译。可以在OdroidXu3上编译，但是不实用，因为性能时间的关系（实际测试，在Xu3上编译Qt5，用时刚好 &lt;strong&gt;2小时&lt;/strong&gt; 上下）。或者进行交叉编译，不管是哪种方法，OdroidXu3都需要一些 development dependecies。&lt;/p&gt;
+
+&lt;h3 id=&quot;development-dependencies&quot;&gt;&lt;font color=&quot;#bb6688&quot;&gt;Development Dependencies&lt;/font&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;桌面系统&quot;&gt;桌面系统&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Git(&amp;gt;=1.6)&lt;/li&gt;
+  &lt;li&gt;Perl(&amp;gt;=5.14)&lt;/li&gt;
+  &lt;li&gt;Python(&amp;gt;=2.6x)&lt;/li&gt;
+  &lt;li&gt;C Compiler&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;ssl&quot;&gt;SSL&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/ssl.html#enabling-and-disabling-ssl-support&quot;&gt;ssl-support&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;webkit&quot;&gt;WebKit&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;bison&lt;/li&gt;
+  &lt;li&gt;flex&lt;/li&gt;
+  &lt;li&gt;gperf&lt;/li&gt;
+  &lt;li&gt;Ruby&lt;/li&gt;
+  &lt;li&gt;ICU&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;linuxx11&quot;&gt;Linux/X11&lt;/h4&gt;
+&lt;p&gt;Ubuntu/Debian 可以通过一个方便的方式安装Qt5的所有依赖&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get build-dep qt5-default  
+sudo apt-get install libxcb-xinerama0-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;或者是通过分开的组件进行安装&lt;br /&gt;
+&lt;strong&gt;Build Essential&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install build-essential erl python git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Libxcb&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;OpenGL&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Accessibility&lt;/strong&gt;&lt;br /&gt;
+推荐enable accessibility, 安装 libatspi2, libdbus-1 development包。&lt;br /&gt;
+&lt;strong&gt;Qt Webkit&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install flex bison gperf libicu-dev libxslt-dev ruby
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;QtWebEngine&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev \
+libpulse-dev libudev-dev libpci-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev gperf bison
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;如果是ubuntu14.04 还额外需要&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install libbz2-dev libgcrypt11-dev libdrm-dev libcups2-dev libatkmm-1.6-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;QtMultiMedia&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install libasound2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;在目标板上编译qt&quot;&gt;&lt;font color=&quot;#bb6688&quot;&gt;在目标板上编译Qt&lt;/font&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;git获取源码&quot;&gt;git获取源码&lt;/h4&gt;
+
+&lt;p&gt;我是直接下载的qt-everywhere-opensource 包，而不是通过git&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git://code.git.io/qt/qt5.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;或者&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://code.git.io/qt/qt5.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Check out target branch&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd qt5
+git checkout 5.9
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;初始化仓库&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;perl init-repository
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;如果不需要WebKit，WebEngine，可以加参数,推荐去掉这几个模块，除非确信需要使用WebKit，这几个部分庞大耗时，又容易出错。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;--module-subset=default,-qtwebkit,-qtwebkit-examples,-qtwebengine
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;指定发布版本（after init-repository）&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd qt5
+git checkout v5.8.0
+git submodule update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;或者还有一个完整的方法&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://code.qt.io/qt/qt5.git # cloning the repo  
+cd qt5  
+git checkout v5.8.0 # checking out the specific release or branch  
+git submodule update --init # updating each submodule to match the supermodule
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;configure&quot;&gt;Configure&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./configure -developer-build -opensource -nomake examples -nomake tests
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;build&quot;&gt;Build&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make -j4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;在Xu3上编译总共用时 &lt;strong&gt;2小时&lt;/strong&gt; 。&lt;/p&gt;
+
+&lt;h3 id=&quot;交叉编译qt&quot;&gt;&lt;font color=&quot;#bb6688&quot;&gt;交叉编译Qt&lt;/font&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;交叉编译toolchain&quot;&gt;交叉编译toolchain&lt;/h4&gt;
+&lt;p&gt;我下载了 arm-linaro-linux-gnueabihf-4.7&lt;/p&gt;
+&lt;h4 id=&quot;根文件系统&quot;&gt;根文件系统&lt;/h4&gt;
+&lt;p&gt;获得sysroot. 一种方法是将OdroidXu3 的emmc或者tf 安装到主机。二是拷贝一份。更复杂的方法是，可以通过ssh使用ssfs mount到主机。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//#assuming Ubuntu/debian  
+sudo apt-get install sshfs  
+ssh-copy-id odroid@&amp;lt;insert ip or hostname of ODROID-XU3&amp;gt;  
+ssh-copy-id root@&amp;lt;insert ip or hostname of ODROID-XU3&amp;gt;  
+mkdir -p ~/Code/Odroid/sysroot  
+sshfs root@&amp;lt;insert ip or hostname of ODROID-XU3&amp;gt;:/ ~/Code/Odroid/sysroot  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;如果使用sshfs，任何到系统image库文件夹的链接都需要将绝对地址改为相对地址，可以使用脚本&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ~/Code/Odroid/  
+wget https://gist.githubusercontent.com/nezticle/affaee3d3905489c95f7/raw/3190bcb3ac6e9173fcfd4f305a551dc767eb1666/fixQualifiedLibraryPaths.sh  
+chmod a+x fixQualifiedLibraryPaths.sh  
+./fixQualifiedLibraryPaths.sh ./sysroot arm-linux-gnueabihf  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;configure-1&quot;&gt;Configure&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/yuexiaxiaoxi27172319/article/details/51992371?locationNum=5&amp;amp;fps=1&quot;&gt;Qt Configure 说明&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;http://www.cppblog.com/lauer3912/articles/136423.html&quot;&gt;Qt Configure 详解&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;http://blog.csdn.net/shell_albert/article/details/45690653&quot;&gt;qt5 everywhere 编译 summary&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-prefix [dir]&lt;/strong&gt; …… The deployment directory, as seen on the target device.(default /usr/local/Qt-5.6.2, $PWD if -developer-build is active)
+部署目录，目标设备所见。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-extprefix [dir]&lt;/strong&gt; …… The installation directory, as seen on the host machine. (default SYSROOT/PREFIX)
+安装目录，主机上所见。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-hostprefix [dir]&lt;/strong&gt; …… The installation directory for build tools running on the host machine. If [dir] is not given, the current build directory will be used. (default EXTPREFIX)
+在主机上运行的build工具的安装目录。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-sysroot [dir]&amp;gt;&lt;/strong&gt; …… Sets [dir] as the target compiler’s and qmake’s sysroot and also sets pkg-config paths.&lt;/p&gt;
+
+&lt;font color=&quot;#ee2222&quot;&gt;
+这几个目录设置太JB绕了，完全不知所谓，经过翻看其他人的帖子，记录，已经编译过程中的设置，我的理解如下.
+
+**prefix**：部署路径，也就是编译的时候，编译输出放置的地方。如果这个路径被设置为 /usr/local/qt 之类的名字，那么自然编译完成后就无需 make install 了。因为已经放在使用时的路径了，但是如果编译的时候有 -developer-build 参数，则 prefix = $PWD。
+
+**hostprefix**：安装路径，如果编译的结果并未放置到使用时的地方，那么 make 完之后再 make install 一下，所有的编译输出就被 mv 到对应的文件夹结构下了。默认值是EXTPREFIX。
+
+**extprefix**：安装路径，如果-sysroot 有指定，则使用 此地址，否则使用 SYSROOT/PREFIX。则他妈说不通啊，如果 -sysroot 没指定，那 SYSROOT/PREFIX 等于JB啊。可能的意思是，如果 -sysroot被指定了，如果extprefix有值，则使用此路径，否则，使用 SYSROOT/PREFIX。这就能理解了，比如我交叉编译的时候，设置 prefix 为 /usr/local, 编译完成时，所有的编译结果都在主机的 /usr/local 路径下边，我的目标板 sd卡或者emmc 卡的文件系统（rootfs）通过Usb转接器 mount 在 /media/xx/Upan/ 目录，那么我就设置 sysroot 为 /media/xx/upan, 当我执行make install 操作时，就自然复制到 目标板的文件系统中了。（/media/xx/upan/usr/local/).
+而extprefix生效的前提是 hostprefix 未设置，于是默认就使用 EXTPREFIX。 
+&lt;/font&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/Code/qt5/configure -commercial -confirm-license -debug -developer-build -prefix /usr/local -hostprefix ~/Code/Odroid/qt5-build \  
+-extprefix ~/Code/Odroid/sysroot/usr/local -device odroid-xu3 -device-option \  
+CROSS_COMPILE=~/Code/Odroid/toolchain/bin/arm-linux-gnueabihf- \  
+-sysroot ~/Code/Odroid/sysroot -nomake tests -no-pch -skip qtwebkit -opengl es2 -xcb -eglfs -qpa xcb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;上面这段configure的路径是官方参考链接中给的参考路径，实际使用时请根据实际情况修改。&lt;/p&gt;
+
+&lt;h3 id=&quot;issue&quot;&gt;&lt;font color=&quot;#bb6688&quot;&gt;ISSUE&lt;/font&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;could-not-get-lock-varlibdpkglock&quot;&gt;could not get lock /var/lib/dpkg/lock&lt;/h4&gt;
+&lt;p&gt;通过终端安装程序sudo apt-get install xxx时出错：&lt;br /&gt;
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)&lt;br /&gt;
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?&lt;/p&gt;
+
+&lt;p&gt;出现这个问题可能是有另外一个程序正在运行，导致资源被锁不可用。而导致资源被锁的原因可能是上次运行安装或更新时没有正常完成，进而出现此状况，解决的办法其实很简单：&lt;br /&gt;
+在终端中敲入以下两句&lt;br /&gt;
+sudo rm /var/cache/apt/archives/lock&lt;br /&gt;
+sudo rm /var/lib/dpkg/lock&lt;/p&gt;
+
+&lt;p&gt;再试着安装，问题解决。&lt;br /&gt;
+来源： http://blog.csdn.net/kevin_android_123456/article/details/8174343&lt;/p&gt;
+
+&lt;h4 id=&quot;configure-fail-no-qpa-platform-plugin-enabled&quot;&gt;configure fail “No QPA platform plugin enabled!”&lt;/h4&gt;
+&lt;p&gt;需要install libxcb 及相关包&lt;/p&gt;
+
+&lt;h4 id=&quot;configure-error--cannot-stat-file--&quot;&gt;configure error “ cannot stat file … “&lt;/h4&gt;
+&lt;p&gt;perl version too old&lt;/p&gt;
+&lt;h4 id=&quot;qmlscene-segfaults-cannot-create-paltform-gl-context-none-of-glx-dri2-is-enable&quot;&gt;qmlscene segfaults “cannot create paltform GL context, none of GLX, DRI2 is enable”&lt;/h4&gt;
+&lt;p&gt;需要 libx11-xcb-dev&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install libx11-xcb-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;webkit-doesnt-compile-missing-icu&quot;&gt;WebKit doesn’t compile, missing ICU&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install libicu-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;qt-d-bus-fails-to-build-due-to-inconsistent-user-defined-literal-suffixs&quot;&gt;Qt D-Bus fails to build due to “inconsistent user-defined literal suffixs”&lt;/h4&gt;
+&lt;p&gt;使用gcc-4.7 编译Qt5 并且 D-Bus&amp;lt;1.4.20 。&lt;br /&gt;
+升级D-BUS，或者手动修改，参考 原始链接。&lt;/p&gt;
+&lt;h4 id=&quot;isnull-is-not-definedfrom-qvariant_ph&quot;&gt;…::isNull is not defined(from qvariant_p.h)&lt;/h4&gt;
+&lt;p&gt;C++11在GCC里支持不好，configure时增加参数 -no-c11&lt;/p&gt;
+
+&lt;h4 id=&quot;cc1fatal-error-pchrelease-sharedqtgui-no-such-file-or-directory&quot;&gt;cc1：fatal error: .pch/release-shared/QtGui: No such file or directory&lt;/h4&gt;
+&lt;p&gt;暂时未解决得bug，增加配置参数 -no-pch&lt;/p&gt;
+
+&lt;h4 id=&quot;touchscreenor-wacon-tablet-doesnt-work&quot;&gt;Touchscreen(or Wacon tablet) doesn’t work&lt;/h4&gt;
+&lt;p&gt;见原始链接。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 10 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//devel/2017/02/10/xu3-qt-setup.html</link>
+        <guid isPermaLink="true">http://localhost:4000//devel/2017/02/10/xu3-qt-setup.html</guid>
+        
+        <category>Devel</category>
+        
+        <category>Xu3</category>
+        
+        
+        <category>Devel</category>
+        
+      </item>
+    
+      <item>
+        <title>xu3 开发环境相关</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/linux7985/article/details/6005267&quot;&gt;pkg-config&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://wayland.freedesktop.org/building.html&quot;&gt;wayland build&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=96&amp;amp;t=20026&quot;&gt;wayland driver for xu4&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://odroid.com/dokuwiki/doku.php?id=en:odroid-xu3&quot;&gt;xu3主页&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;http://www.embeddedlinux.org.cn/emb-linux/entry-level/201009/08-896.html&quot;&gt;猪哥工房菜&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://developer.arm.com/products/software/mali-drivers/user-space&quot;&gt;mali drivers&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+&lt;p&gt;Xu4开发环境搭建  &lt;a href=&quot;http://www.zhimengzhe.com/linux/50121.html&quot;&gt;http://www.zhimengzhe.com/linux/50121.html&lt;/a&gt;&lt;br /&gt; 
+Xu3 Uboot编译 &lt;a href=&quot;http://odroid.com/dokuwiki/doku.php?id=en:xu3_building_u-boot&quot;&gt;http://odroid.com/dokuwiki/doku.php?id=en:xu3_building_u-boot&lt;/a&gt;&lt;br /&gt;
+Xu3编译环境搭建 &lt;a href=&quot;http://blog.csdn.net/aganlengzi/article/details/50036951&quot;&gt;http://blog.csdn.net/aganlengzi/article/details/50036951&lt;/a&gt;&lt;br /&gt;
+QtPro文件说明 &lt;a href=&quot;http://blog.csdn.net/woniuye/article/details/54927792&quot;&gt;http://blog.csdn.net/woniuye/article/details/54927792&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;image-burning&quot;&gt;Image burning&lt;/h3&gt;
+&lt;p&gt;从 www.odroid.com , www.hardkernel.com 都可以下载到完整的image 文件，lubuntu14.04, ubuntu16.04-mate 都有，windows下使用 &lt;strong&gt;Win32DiskImager_odroid_v13&lt;/strong&gt; 写入到 tf 卡或者 emmc 中，然后可以直接从 tf 或者 emmc 中启动。&lt;/p&gt;
+
+&lt;h3 id=&quot;understanding-mesa--mali&quot;&gt;Understanding Mesa &amp;amp; Mali&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=83&amp;amp;t=6933&quot;&gt;http://forum.odroid.com/viewtopic.php?f=83&amp;amp;t=6933&lt;/a&gt;&lt;br /&gt;
+这个帖子说了以下4点内容&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;xu3平台上，硬件加速依赖的是 mali driver，而不是 mesa。mali driver包括&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;开源内核驱动&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;开源的EXA for X11&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;二进制 libMali.so, 替代 libEGL（libEGL 是一个指向libMali 的符号链接）&lt;br /&gt;
+参考：&lt;a href=&quot;http://malideveloper.arm.com/develop-for-mali/drivers/&quot;&gt;http://malideveloper.arm.com/develop-for-mali/drivers/&lt;/a&gt;&lt;br /&gt;
+另外还有一个 fbdev 版本的 libMali.so , 这个版本仅需要内核驱动。可以下载并安装mali SDK，包含EGL的例子。&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;libMali 在 /usr/lib/arm-linux-gnueabihf/mali-egl. /usr/lib/arm-linux-gnueabihf/libGEL.so 是一个指向前者的符号链接，可以手动修改这个符号链接，指向 /usr/lib/arm-linux-gnueabihf/mesa-egl/libEGL.so ,这时就是使用mesa的opengl-es软件了。mali 是作为alterantive 安装的，所以可以使用 update-alternatives 来切换 mesa 跟 mali。&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;hardkernel 的 Odroid 支持 GLES2.0（3.0 for XU3），EGL under X11； and fbdev版本需要自行下载替换。&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;可以在odroid上边直接编译，无需交叉编译，慢不了太多。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;qt-for-embeded-linux&quot;&gt;&lt;a href=&quot;https://doc-snapshots.qt.io/qt5-dev/embedded-linux.html&quot;&gt;Qt for embeded linux&lt;/a&gt;&lt;/h3&gt;
+&lt;font color=&quot;#44bb44&quot;&gt;这个帖子中间再次解释了configure时，prefix，hostprefix，extprefix的意思，基本说清楚了。 &lt;/font&gt;
+&lt;p&gt;这个帖子介绍了在嵌入式平台上，QT的一些系统性原理&lt;/p&gt;
+&lt;h4 id=&quot;configure&quot;&gt;configure&lt;/h4&gt;
+&lt;p&gt;编译Qt需要 toolchain，sysroot，额外可能还需要第三方的 EGL，OpenGL ES2.0 库。
+&lt;strong&gt;qtbase/mkspecs/devices&lt;/strong&gt; 包含了数个设备的配置和显卡适配代码，比如 linux-rasp-pi2-g++ mkspec 包含了树莓派2设备的各项设置，同时也包含了相关设备的eglfs hooks实现或者eglfs 集成插件。通过 &lt;strong&gt;-device&lt;/strong&gt; 参数可以选择设备型号。下边是树莓派编译Qt的参考配置代码&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./configure -release -opengl es2 -device linux-rasp-pi2-g++ -device-option CROSS_COMPILE=$TOOLCHAIN/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- -sysroot $ROOTFS -prefix /usr/local/qt5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;有两个重要参数，&lt;strong&gt;-device&lt;/strong&gt; , &lt;strong&gt;-sysroot&lt;/strong&gt;. Configure 的属性探测，会到 &lt;strong&gt;-sysroot&lt;/strong&gt; 指定的目录，而不是使用PC机上的标准位置，这种场景意味着主机上有什么跟我们的编译并不相关，我们是为一个目标系统进行编译，所以我们需要到目标系统的 根目录，也就是&lt;strong&gt;-sysroot&lt;/strong&gt;下边，去寻找libs 和headers。&lt;/p&gt;
+
+&lt;p&gt;在交叉编译情况下，configure自动设置 &lt;strong&gt;PKG_CONFIG_LIBDIR&lt;/strong&gt;,让&lt;strong&gt;pkg-configs&lt;/strong&gt;报告编译链接设置，基于&lt;strong&gt;-sysroot&lt;/strong&gt;而不是主机。需要注意的是，主机不能设置 PKG_CONFIG_PATH 变量，否则会指向主机的相关目录&lt;br /&gt;
+指定&lt;strong&gt;-sysroot&lt;/strong&gt;会自动设置&lt;strong&gt;--ysroot&lt;/strong&gt;参数，一些情况下，可以使用 &lt;strong&gt;-no-gcc-sysroot&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-prefix&lt;/strong&gt; , 目标设备上想要部署的路径，&lt;strong&gt;实际上 make install 并不往 prefix 上部署任何东西，而是往 extprefix 上部署&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-extprefix&lt;/strong&gt;, 如果不指定，那么默认是 &lt;strong&gt;sysroot + prefix&lt;/strong&gt;，但是sysroot经常可能会被 “污染”, 因此可以专门指定一下 extprefix（个人感觉好像没这么危险，基本没见指定extprefix的）。
+&lt;strong&gt;-hostprefix&lt;/strong&gt;, 如果指定，那么 qmake，rcc，uic 等二进制文件会放置到此路径，而不是 extprefix 路径。&lt;/p&gt;
+
+&lt;h4 id=&quot;platform&quot;&gt;platform&lt;/h4&gt;
+&lt;p&gt;从 &lt;strong&gt;Qt5.0&lt;/strong&gt; 开始，Qt不再包含自己的窗口系统 QWS 。嵌入式linux系统有多种platfrom可用：EGLFS（EGL FullScreen），LinuxFB，DirectFB，Wayland。依赖于Qt的配置，很多板子上，EGLFS是默认的选项。如果要用其他platfrom，可以修改QT_QPA_PLATFORM 环境变量或者 -platfrom 参数。&lt;/p&gt;
+
+&lt;p&gt;EGL是OpenGL和原生窗口系统之间的一个接口。EGL并不包含平台相关性，窗口的创建仍然由平台相关的方式来实现，所以EGL仍然需要GPU相关代码，或者EGL设备集成插件。&lt;/p&gt;
+
+&lt;p&gt;EGLFS是QT与EGL，OpenGL ES2.0 之间的一个插件，用来实现不依赖确定的原生窗口系统（比如X11，Wayland）的Qt应用。在带有GPU的嵌入式系统上，这是推荐的方案。&lt;/p&gt;
+
+&lt;p&gt;EGLFS强制top-level窗口全屏，并且，后续窗口都是其子窗口。因此EGLFS只有一个原生窗口，和EGL surface。因此EGLFS也带了进一步限制，就是不能再打开额外的OpenGL windows或者混合类似 windows的content。&lt;/p&gt;
+
+&lt;p&gt;LinuxFB，使用fbdev进行绘图，只能软件渲染，没法使用硬件加速。&lt;/p&gt;
+
+&lt;p&gt;XCB，是X11的一个插件，主要用于桌面Linux platform，&lt;strong&gt;在嵌入式系统中，XCB不推荐&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;Wayland， X11的潜在替代品。很多嵌入式ubuntu使用Wayland，并且有更好的性能，主要是为了解决 X11 冗余复杂和低性能的问题。&lt;/p&gt;
+
+&lt;p&gt;另，应该还有minimal，offscreen等，也就是用于测试qt程序，应该是没有显示的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=6615&quot;&gt;Mali SDK&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=23010&quot;&gt;Link OpenGL ES3.0 on ubuntu&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=21315&quot;&gt;Qt5.6 Mali&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=16305&quot;&gt;Qt5 for xu3/xu4&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=15528&quot;&gt;OpenGL ES demo&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=15524&quot;&gt;EGL problem&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=12484&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=12115&quot;&gt;can’t run OpenGL es&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=11919&quot;&gt;ES3.0 game load fail&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=8679&quot;&gt;glmark2-es2 score&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=8114&quot;&gt;OpenGL speed up&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=6020&quot;&gt;odroid forum&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?p=140416&quot;&gt;wayland&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;https://devtalk.nvidia.com/default/topic/803737/qt-opengl-eglfs-egl-xcb-x11-wayland-jetson-board-tk1/&quot;&gt;egl error&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;issues-&quot;&gt;&lt;font color=&quot;#bb6688&quot;&gt;ISSUES &lt;/font&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;不能启动&quot;&gt;不能启动&lt;/h4&gt;
+&lt;p&gt;中间碰到过一次问题，系统启动到  &lt;strong&gt;&lt;em&gt;Freeing unused kernel memory：***K&lt;/em&gt;&lt;/strong&gt; 时就卡死了， 网上搜索都是说什么文件系统 page size 不对或者其他问题，但是本身又没有对文件系统进行操作，只好重新烧写 image 文件，还是卡在这个位置，再次重新写入 image，但是写入之间将 tf 卡分区完全删除，格式化一下，再次写入后可以正常启动。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/u010162887/article/details/52081369&quot;&gt;ubuntu16.04 wifi设置&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/hzkdac1007/article/details/46813673&quot;&gt;xu3wifi和远程的例子&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/l_backkom/article/details/39780935&quot;&gt;wpa_supplicant安装&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_65aee6e801018ida.html&quot;&gt;vi上下左右变ABCD&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//devel/2017/02/09/xu3-enviroment-setup.html</link>
+        <guid isPermaLink="true">http://localhost:4000//devel/2017/02/09/xu3-enviroment-setup.html</guid>
+        
+        <category>Devel</category>
+        
+        <category>Xu3</category>
+        
+        
+        <category>Devel</category>
+        
+      </item>
+    
+      <item>
+        <title>MCIM-U3(Multi-Camera Input Module with Usb3.0 Output)</title>
+        <description>&lt;h2 id=&quot;mcim-u3&quot;&gt;MCIM-U3&lt;/h2&gt;
+
+&lt;p&gt;MCIM-U3(Multi-Camera Input Module with Usb3.0 Output)实现了多路高清数字摄像头输入，同步，打包和USB3.0 接口输出的功能。带有USB3.0接口的设备，通过MCIM-U3即可实现4路720P摄像头的实时Capture和Preview。&lt;/p&gt;
+
+&lt;p&gt;MCIM-U3针对的是需要实时视频采集处理并且对视频延时敏感的场合，因此MCIM-U3并不对视频进行压缩编码，而是直接将原始数据以最小的延时扔给Host设备。&lt;/p&gt;
+
+&lt;p&gt;MCIM-U3使用了TI DS90UB914作为摄像头接收端，只能连接使用TI DS90UB913作为发送端的LVDS接口摄像头。如果要使用其他传输接口的摄像头，需要定制对应接口芯片的接口板。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcu3c-shot1.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
+&lt;h3 id=&quot;帧同步&quot;&gt;帧同步&lt;/h3&gt;
+&lt;p&gt;MCIM-U3硬件上实现了多路摄像头图像的同步功能，在实现方法上使用了FIFO的机制，以便保证灵活的Host端设备适配。这里的图像同步功能并非通过Sync信号实现不同摄像头之间的真正同步，而是指在图像缓存中，通过FIFO对图像进行时序对齐，传输给Host端的图像已经是数据头部对齐的，Host端无需通过软件对摄像头进行图像头对齐。通过FIFO方法实现图像头对齐的缺陷是显而易见的，虽然在应用层取得的图像是同步的，但是实际上，这些摄像头之间的图像一定存在或多或少（一般是+-20ms之间）的时间差，对于需要摄像头严格时间同步的应用来说，是不可用的，但是对于时序要求不严格的应用，就不存在大问题。毕竟，能够摄像头之间硬件帧同步的方案在成本上要高很多。需要Sensor支持 Sync信号同时传输方案支持 反向传输下发Sync信号，市面上可能找到的方案，不管是T家的还是M家的，成本都不低。&lt;/p&gt;
+
+&lt;h3 id=&quot;丢帧&quot;&gt;丢帧&lt;/h3&gt;
+&lt;p&gt;MCIM-U3使用了USB3.0作为与Host端通信的接口，不同于DVP（并行数字视频端口）或者MIPI这样的标准摄像头接口输出固定的信号时序，USB是无法保障稳定带宽的。多个设备之间的占用竞争会导致带宽变化，如果同一个USB接口上连接了其他高速设备，也有可能出现MCIM-U3可以占用的带宽波动。而视频又是需要保证带宽的，因此MCIM-U3根据USB带宽不稳定的特点，设计了丢帧机制，也就是说，如果Host端读取摄像头视频的速度赶不上视频的帧率，造成数据堆积，MCIM-U3会丢弃无法读取的图像帧，从而实现自动的帧率调节。&lt;/p&gt;
+
+&lt;h3 id=&quot;速率&quot;&gt;速率&lt;/h3&gt;
+&lt;p&gt;USB3.0的最高传输速率应该可以达到接近500MB。
+Cypress 的CYUSB3014芯片 FIFO接口的最大速率是400MB。理论上来说，通过CYUSB3014芯片的USB3.0可以实时传输7路 720P@25fps的摄像头图像，但是因为Host端USB3.0硬件带宽瓶颈，Host端驱动软件效率等问题，实际上可以达到的速度远远低于这个理论速度。通常情况下，根据Host端硬件的同步，传输2~4路 720P@25fps 的实时视频数据 是完全没问题的。&lt;/p&gt;
+
+&lt;h3 id=&quot;测试&quot;&gt;测试&lt;/h3&gt;
+&lt;p&gt;在MCIM-U3开发之前，我们对不同的硬件平台进行了USB3.0的速率测试，以便评估在不同的方案上，是否可以通过USB3.0实时传输多路高清视频，测试过的软硬件和结果如下。所有的测试都是Host 端 Bulk in。测试的是数据上传的速率。&lt;/p&gt;
+
+&lt;h4 id=&quot;2015-03-01&quot;&gt;2015-03-01&lt;/h4&gt;
+&lt;p&gt;测试方法，win7下使用的是cypress自带的带宽测试程序，ubuntu使用的是测试demo，自己修改了源码，测量204800个包，每个包16KB，然后记录时间。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;T430 win7 »»» 440MB/s &lt;br /&gt;
+T430 ubuntu »»» 240MB/s  (16KB x 200K次 = 13s) &lt;br /&gt;
+TK1 ubuntu »»» 80MB/s (16KB x 200K次 = 40s）&lt;br /&gt;
+XU3 Lubuntu »»» 107MB/s (16KB x 200K次 = 30s)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;2015-07-01&quot;&gt;2015-07-01&lt;/h4&gt;
+&lt;p&gt;最初以为libusb库的包大小最大是16KB，后来进一步测试，发现包的大小可以改大，改大之后，速度明显有了提升。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;T430 ubuntu »»» 305MB/s  ( 1MB x 10K次 = 33s)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;2016-10-18&quot;&gt;2016-10-18&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;QT + libusb-win32-1.2.6.0    （16KB x 100K次 =  12.6s）= 126MB/s&lt;br /&gt;
+VS2013 + libusb-win32-1.2.6.0  （16KB x 100K次 =  12.6s)      约= 126MB/s&lt;br /&gt;
+cypress streamer     310MB/s&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;2016-12&quot;&gt;2016-12&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;TK1 ubuntu »» 125MB/s (1MB包 Bulkin )&lt;br /&gt;
+XU3 ubuntu »» 175MB/s (1MB包 Bulkin）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;2017-03&quot;&gt;2017-03&lt;/h4&gt;
+&lt;p&gt;手头正好有两个intel Atom 芯片的二合一平板（台电X16），于是也进行了测试。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;RK3399 ubuntu »» usb3.0 bulk transfer 报错，后续没有再跟进测试，可以识别设备，可以枚举设备，但是程序执行到提交 bulk_transfer就会宕掉。&lt;br /&gt;
+Intel Z8350 , Z8750 win7 »» USB3.0使用Libub-win均不能正常工作，可以识别设备，可以枚举设备，但是一开始 bulk tranfser，设备就会出错丢失，重新连接。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;测试结果发现libusb-win32速度比较慢，在win7上，直接用streamer测试，一个速度达到320MB/s的slavefifo控件，用libusb-win32 只能跑到126MB/s左右，感觉应该是libusb-win32底层接口的机制限制了性能。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;关于在不同的平台上测试USB3.0 速率的过程，请参考 标签USB30 下的其他文章。&lt;/p&gt;
+
+&lt;h2 id=&quot;多路图像采集效果双路&quot;&gt;多路图像采集效果（双路）&lt;/h2&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/capture-shot1.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 02 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//project/2017/02/02/mcim-u3.html</link>
+        <guid isPermaLink="true">http://localhost:4000//project/2017/02/02/mcim-u3.html</guid>
+        
+        <category>Board</category>
+        
+        <category>USB3.0</category>
+        
+        
+        <category>Project</category>
+        
+      </item>
+    
+      <item>
+        <title>MCIM-D(Multi-Camera Input Module with Dvp Output)</title>
+        <description>&lt;h2 id=&quot;mcim-d&quot;&gt;MCIM-D&lt;/h2&gt;
+
+&lt;p&gt;MCIM-D只是MCMM开发过程中的中间版本，使用了LVDS接口的摄像头输入，最多支持6路视频输入，8bits或者16bits DVP输出。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/capture-shot2.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;测试图片为MCIM-D跟E9( IMX6Q )开发板连接采集图片拍摄，因为只显示了Y分量，所以是绿色的。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 30 Aug 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//project/2016/08/30/mcim-d.html</link>
+        <guid isPermaLink="true">http://localhost:4000//project/2016/08/30/mcim-d.html</guid>
+        
+        <category>Board</category>
+        
+        
+        <category>Project</category>
+        
+      </item>
+    
+      <item>
+        <title>Capture Code Porting</title>
+        <description>&lt;h3 id=&quot;后续追加&quot;&gt;后续追加&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2015&lt;/strong&gt;&lt;br /&gt;
+后续有修改过几次，从ti板子上移植到imx6板子上的capture完全跑通，并正常了，其中核心的问题是需要设置系统中关于图像采集的几个参数，包括每行内存大小，最大行Size，最大mem大小，以及还有一个参数是涉及图像是原始数据还是ISP scale的数据，都会对图像分辨率，显示产生影响。最开始调试，图像总是不对，还是没搞清这些参数所致。&lt;/p&gt;
+
+&lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
+&lt;p&gt;http://bbs.csdn.net/topics/390362302   imx6q上调cmos的帖子&lt;/p&gt;
+
+&lt;h3 id=&quot;nfs不能挂载问题&quot;&gt;NFS不能挂载问题&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2014-06-05&lt;/strong&gt;&lt;br /&gt;
+今天打算在imx6板子上跑nfs，计划是在windows下coding，然后再vm下跑ubuntu编译，然后imx6通过nfs直接挂目标所在目录运行。按照网上的教程在ubuntu上安装nfs server，把exports目录指向vm共享的windows目录，结果客户端不能加载，在ubuntu下自己加载nfs也挂不上。更换其他目录之后，可以挂载上，看来不能使用vm的windows共享目录。&lt;/p&gt;
+
+&lt;p&gt;在imx6下挂载nfs时，也遇到问题。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ # mount -t nfs 192.168.0.164:/opt/Embedsky/Tools /mnt   
+svc: failed to register lockdv1 RPC service (errno 111).  
+mount: mounting 192.168.0.164:/opt/Embedsky/Tools on /mnt failed: Connection refused
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;后来按照网上搜索的提示，mount命令增加“-o nolock”参数，问题解决&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ # mount -t nfs -o nolock 192.168.0.164:/opt/Embedsky/Tools /mnt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;输出图像分辨率问题和调试&quot;&gt;输出图像分辨率问题和调试&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2014-06-24&lt;/strong&gt;&lt;br /&gt;
+这几天在imx6q板子（E9）上调试cmos采集和显示，抽间隙时间调了2周多，终于完成。&lt;/p&gt;
+
+&lt;p&gt;在linux中，使用v4l2这一层调试图像采集和显示，不用考虑底层具体硬件，只需要了解v4l2相关的接口即可。手头的imx6q只有android下的摄像头demo，在linux下没有相应的demo。通过文件比对，和menuconfig浏览配置，确认在linux下也是有ov3640驱动程序的。于是开始进行。&lt;/p&gt;
+
+&lt;p&gt;找了两三个其他版本其他系统上cmos采集显示的程序，后来使用的是DEVKIT8500（DM3730）开发板上的一个demo程序。先花了几天研究demo程序，学习了v4l2的接口和流程。然后将demo程序挪到imx6q的开发环境中，程序中有几个设备文件的绝对路径，但是是#undefine掉的，所以直接删除掉，程序没有大改，即可编译运行，然后报错，ok，第一步完成。&lt;/p&gt;
+
+&lt;p&gt;搜索linux文件目录，/driver下有 video0，video1，video16，video17 4个文件，估计camara应该是0,1，display应该是16，17。然后屏蔽掉capture代码，修改了宽高等display的参数，display功能就循环跑起来了，读了一个图片进行显示，一切正常。display基本没有多大改动就运行了。&lt;/p&gt;
+
+&lt;p&gt;开始打开capture部分代码，最开始在ioctl阶段，有很多命令都过去不，DQBUF, G_INPUT, EMU_STD……。查看了一下v4l2的文档，适当调整了代码顺序，修改了配置参数，逐个测试，后来所有的ioctl都能正确执行。这个阶段很混乱，到最后我也搞不清楚是怎么就跑通了。有点晕&lt;/p&gt;
+
+&lt;p&gt;问题1：如图所示（图中图标的文件名里，6~8位数字是分辨率，宽高挨着写的）&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/capture-ov3640-bug1.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在采图时，只要设置参数fmt的宽或者高超过1024，就会出现格子状的效果，而且确定，格子其实是由n帧图像构成的，同一行，可能是一帧图像的数据交错乱序了，但是从上往下，有多少行，就有多少帧图像。只要将宽高设置小于1024，图像采集就完全没问题，而且缩放也正常。但是需要注意，图像的宽度设置小于1024时，图像buffer的每一行，仍然是1024的宽度。如上图所示，当宽度小于1024时，用1024的宽度保存图像就能看到正常的图像，但是多出的宽度就是灰色的，如果按实际fmt设置的宽度保存图像，图像就会错乱了。&lt;/p&gt;
+
+&lt;p&gt;当行列数设置超过1024时，但是跟1024是整数比例关系，例如1280x720，1536x1152，2048x1536，就能看到格子状的采集图像，如果是其他比例的宽高，可能就看不到格子状，就是完全乱了，看不到轮廓和规则的条纹。&lt;/p&gt;
+
+&lt;p&gt;网上找到一个哥们在imx6q上调ov3640的例子&lt;a href=&quot;http://bbs.csdn.net/topics/390362302&quot;&gt;http://bbs.csdn.net/topics/390362302&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;他说是full 分辨率的时候，得设置 S_INPUT 参数为1，按这个修改后无效，图像全乱了。后来我又主动去修改fmt中的bytesperline参数，扩大为两倍，从4096改为8192，没有效果。又尝试将sizeimage参数改大，扩大一倍，从6291456（4K x 1536）改为12582912，但是这时就提示IOCTL分配不了这么大的缓冲区给视频capture，参照上面的贴子，应该是需要修改一个8M限制的地方。目前还没有继续去修改跟进。&lt;/p&gt;
+
+&lt;p&gt;所以目前我调通的3640，只能采集1024x1024分辨率以下的图像。&lt;/p&gt;
+
+&lt;p&gt;但是应该也问题不大，3640的最大分辨率是2048x1536，但是实际上embedsky提供的驱动，不论在linux还是android下面采集图像，都明显只能采集到右半边（摄像头正对墙壁，拍摄的图像明显是偏右的半边墙），所以有可能其实embedsky提供的驱动程序配置的3640就是输出1024x768的（如果full输出，还得改采集端的驱动，所以embedsky图省事，直接开窗输出，设置ov3640寄存器直接输出半拉图像，并且开窗连startx，starty寄存器也都没考虑修改过，所以就直接输出偏右的半边图像）。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/matou.jpg&quot; alt=&quot;picture&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Original Jekyll instruction&lt;/h3&gt;
 
 &lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
@@ -214,144 +812,24 @@
 
 &lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;def print_hi(name)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def print_hi(name)
   puts &quot;Hi, #{name}&quot;
 end
 print_hi('Tom')
-#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/code&gt;&lt;/p&gt;
+#=&amp;gt; prints 'Hi, Tom' to STDOUT.```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 16 Jun 2016 21:08:09 +0800</pubDate>
-        <link>http://localhost:4000//2016/06/16/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2016/06/16/welcome-to-jekyll.html</guid>
+        <pubDate>Fri, 24 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//drivers/2016/06/24/capture-code-debug.html</link>
+        <guid isPermaLink="true">http://localhost:4000//drivers/2016/06/24/capture-code-debug.html</guid>
+        
+        <category>Drivers</category>
         
         
-      </item>
-    
-      <item>
-        <title>About AVM（产品的本质）</title>
-        <description>&lt;h3 id=&quot;无线视频监控&quot;&gt;无线视频监控&lt;/h3&gt;
-
-&lt;p&gt;07年~10年在XX院XX所跟孙总共事了四年，做无线视频传输产品。当年这个组是所里的搞产业化成立的一个独立事业部，区别于研究室，这个事业部磕磕绊绊到现在还在运行，而且也在不断的走上新台阶，我离开后没多久，孙总，彪哥，H，C，我们这一帮最早成员都陆续离开了。在这个事业部的四年里，我们搞了两个产品，无线视频传输设备（至今还没有正式发布的名字和系列编号）和智能视频平台。&lt;/p&gt;
-
-&lt;p&gt;无线视频监控，是前几年安防行业很火的时候，产生的一个产品概念，设想用2.5G或者3G及以上的无线公网传输视频，实现运动目标上的实时视频监控。产品剖开很简单，一个模拟摄像头，一个H.264图像压缩的盒子（最早主要采用DM642和海思351X系列），一个无线数据模块，还有就是公网上的一个网络服务器。06年还是GPRS网络的时候，孙总就开始搭环境，测试并评估这么一套系统。后来做了成型的产品，自己搞生产和推广应用，又去上海参加了运营商的测试。中间穿插着无数管理上的错误和缺失，事业部内人人吐槽的管理，最终导致了项目组非正式解散。但这不重要了。&lt;/p&gt;
-
-&lt;h3 id=&quot;还是无线视频监控&quot;&gt;还是无线视频监控&lt;/h3&gt;
-
-&lt;p&gt;就在我们事业部非正式解散的前一年，X哥也从XAX离职，跟同事搞了一家叫LPY的公司，也做无线视频传输产品。不同的是，他们既没有采用无线公网的传输方案，也没有走微波通信这个高端路线，而是用类似cdma的通信模块，自己修改了协议，做了一套私有的通信链路。公司在6个月内就实现了盈利，目前在一个小众市场活的也还算滋润。&lt;/p&gt;
-
-&lt;h3 id=&quot;xa6800&quot;&gt;XA6800&lt;/h3&gt;
-
-&lt;p&gt;XA6800是XAX的A类验钞机。是国内第一台A类验钞机，具备判别变色油墨真假，识别并记录钞票冠字号码的能力。我在XAX只呆了1年出头，完成了项目组的原理样机的实现和测试。后来唐总用了5年时间实现了真正意义上的产品——XA6800，并且怀着极大的热情去培育市场，推广产品。2013年，唐总曾经的合作伙伴成了国内A类机市场最大的赢家，而XAX数字图像技术有限公司也在四大行招标全线失利局面下，成了股东矛盾的牺牲品。我对此事的细节了解也就这么多，虽然对金融设备领域一直毫无感情，但是对XAX图像技术的解散却觉得颇为可惜。前瞻的技术设想，优秀的团队，模糊的管理和权利结构，但这些也不重要了。&lt;/p&gt;
-
-&lt;h3 id=&quot;产品的本质&quot;&gt;产品的本质&lt;/h3&gt;
-
-&lt;p&gt;我们看到很多小团队或者个人，没什么技术或者拿得出手的东西，人品也很槽糕，却赚得很high。很多人，认认真真，兢兢业业，勤勤勉勉，很多公司，竭力研发，竭力销售，最后却无所回报。
-在进化的世界里，成功与否跟勤奋本来就毫无关系，只取决于你是否狗屎运处在即将胜利的进化路线上。就产品来说，取决于是否演进出了关键的功能和形态。前者，往往是抓住了产业链上比较关键的资源或者关键的一环工序。用20%的付出就获取了80%的收益，产业上剩下的环节只剩下20%的收益，却有80%的工作量。&lt;/p&gt;
-
-&lt;p&gt;50,60年代，所有人都认为视频电话必将出现，也一定会出现。顶级的公司也都投入巨大的资源去实现这一产品，视频电话系统也短暂的投入过使用。最终，视频电话也确实出现了，如所有人预料的那样，却以所有人预料之外的方式出现了。我们在任何地方都买不到视频电话机，我们却可以在电脑，手机，平板多种设备上轻松的使用视频电话这一功能。换而言之，所有搞可视电话的公司都没有赚到钱，现在用户免费就可以用上可视电话。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;产品的本质是，我想要满足某种需求，设计了一个或者几个功能，我用几个部件实现了所设计的功能。产品的本质有三个要素，构成 功能 需求。&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;那些忙忙碌碌的98%的小公司，至少有一半，并没有把产品拆成三段仔细想过，他们大多数时候创业的动机不是三句话，而是一句话：   &lt;br /&gt;
-这个***的需求很大，以后***都会用这个。
-这个***的市场前景很好，市场规模非常大。
-整个***行业都会升级使用***技术。&lt;br /&gt;
-我特别看好***的发展前景。&lt;/p&gt;
-
-&lt;h3 id=&quot;无线视频传输和无线视频传输的区别&quot;&gt;无线视频传输和无线视频传输的区别&lt;/h3&gt;
-
-&lt;p&gt;我们搞的无线视频监控     &lt;br /&gt;
-构成——摄像头+图像压缩模块+edge/evdo模块+RTP协议+视频server； &lt;br /&gt;
-功能——在公网覆盖范围内提供一般稳定一般流畅，延时不大的视频监控；  &lt;br /&gt;
-需求——警察政务的实时录像监控，车辆的实时监控……。&lt;/p&gt;
-
-&lt;p&gt;X哥搞得无线视频监控    &lt;br /&gt;
-构成——摄像头+图像压缩模块+OFDM通信模块+RTP协议+OFDM通信模块+视频显示终端；     &lt;br /&gt;
-功能——在任何地方提供2~10公里范围内的稳定视频传输；      &lt;br /&gt;
-需求——任何需要临时视频传输和监视的应用。&lt;/p&gt;
-
-&lt;p&gt;同样是无线视频监控产品，在构成上可能只是部分部件或者形态上有的差异，在功能和需求上却产生了完全的不同，命运上也走向了相反。这个结果说明几点：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;同类型的产品，早期的需求定位和功能规划即使有巨大的差异，在产品构成定义上也大同小异。&lt;/li&gt;
-  &lt;li&gt;早期在产品定义上的细微差别，随着产品的演进和发展，最终可能产生完全不同的功能和需求。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;这样来看，产品的研发过程，是符合进化过程及其理论的。人跟猩猩基因只差1,2点，人跟黑猩猩分开的那一刻就再也不是一个物种了。产品也是这样，早期的思路粗糙一点并不会影响产品的定义，有些应用场景和需求想不想清楚，甚至于想或者不想，都会得出同样的原始设计方案。但是需求和功能定义的差异，会影响产品定义方方面面的细节，某个功能是必须还是可选，或者某个功能的使用条件不一样，研发人员在实现阶段都会使用不同的策略，说的具体一点，如果某个功能的技术指标要求很严格，作为研发人员，我一定会保留充分的设计冗余，如果某个功能的应用场景很不频繁，作为研发人员，我可能会直接把想关的电路或者代码直接删掉，用其他模拟的方案保留个虚拟的功能。这种实现细节上差异的积累，最终导致产品进化出完全不同的适用性。等到发现产品适用性并不迎合市场需求的时候，再来调整所付出的代价，基本上等同于推翻从来。&lt;/p&gt;
-
-&lt;p&gt;再去看看上面的无线视频监控和无线视频监控，如果不拆成三段，根本看不出明显的差异。两个公司，都在做无线视频传输类的产品，把摄像头接入图像压缩主板，压缩后走网络接口，通过RTP协议传到服务器上，A公司想，用2.5G公网模块吧，以后会有3G，4G速度低不了，覆盖也好，全国都能用。B公司想，自己做个传输模块吧，反正就用类似3G模块的空口协议，自己改改就能用，不走公网，不用考虑数据流量费，后续还能加个放大器增加距离。最初他们都没有明确的客户目标，只是觉得视频能传输就可以卖了。到这个阶段，两家公司其实生产的完全就是同一类型同一品种的产品，只不过在通信参数上有差别。然后呢，A公司因为用了公网，就开始想法跟运营商合作，研发也想法设法提高公网环境下的速率稳定性。B公司因为使用了自己的传输链路，开始考虑运营商覆盖不好的地方或者特殊情况需要应急公网又性能不够的运用场景，开始考虑如果转型为特种装备。再后来，A没了B还在。&lt;/p&gt;
-
-&lt;h3 id=&quot;为什么不是可视电话&quot;&gt;为什么不是可视电话&lt;/h3&gt;
-
-&lt;p&gt;可视电话人人都觉得好，人人都想要，最终没有出现可视电话这样的产品。从电话到可视电话，就缺一样东西，能够把视频信号加载上去的电话通信线路。&lt;/p&gt;
-
-&lt;p&gt;构成上看，可视电话=电话+电话线扩容+视频传输协议+摄像头。电话和摄像头60，70年代都有了，电话线扩容是运营商和设备商的事情，视频传输协议，如果是可视电话这种点对点的应用场景，基本没什么技术需要研发。在构成上，可视电话跟可视电话技术没什么关系，只要通信条件提升了，谁都可以生产可视电话，通信条件不行的时候，谁都生产不了可视电话，因此，可视电话并不是可视电话系统的核心组件。&lt;/p&gt;
-
-&lt;p&gt;功能上看，可视电话比传统电话就是多一个图像实时传输的功能。需求上看，打电话的时候需要看到对方么？如果打电话的不需要看到对方，那么为什么这么多人都设想可视电话这一功能概念呢。实际上打电话的时候，看不看到对方并不传递额外的信息。看到对方可以确认这是否是某个特定的对象还是冒牌的，可以确认对方是否健康，除此之外图像并不传递额外的信息。在马斯洛需求层次上，我也无法确定打电话看到对方能在哪一个层次上获得满足。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;从上面的分析来看，可视电话确实无法构成一个具有商业价值的独立产品。可视电话做为功能性的属性，寄生于网络产品，软件产品上，倒是产生了很强的生命力，但是，它确实无法独立作为一个商业产品存在。至少在目前的技术和产业结构下是这样的。&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;车载全景产品的本质&quot;&gt;车载全景产品的本质&lt;/h3&gt;
-
-&lt;p&gt;那么问题来了，车载全景产品（也有车载360可视，车载环视系统等名称）会不会跟可视电话一样呢。&lt;/p&gt;
-
-&lt;p&gt;从需求上看，车载全景产品能够帮助低手司机停车入位，能够帮助司机在低速条件下观察极端路况比如街角巷口，能够记录行驶过程中的录像作为事故时的证据。这三点需求都算不上刚需。没有全景产品，没有倒车摄像头，没有雷达，司机硬着头皮车也一样开。街角巷口的极端路况下，开慢点，或者吼一嗓子，或者刹一脚车，也都能解决问题；记录证据有行车记录仪，成熟可靠易安装。&lt;/p&gt;
-
-&lt;p&gt;从结构上说，09年我刚开始做这个产品的时候，确实有很多技术门槛，用DM642做6路视频输入，再扩展一路视频输出；642的内存是sdram，顶多到64M，合成4路图像得规划内存使用……车载全景视频确实有很多独特性的属性，它的功能，只能出现在车载全景产品上，离开了车载全景产品，这些功能性就不能存在。五年之后，Cortex-A9/A15已经成为市场主流，其处理能力已经不比TI主流DSP差，图像加速能力更是远超DSP。视频AD也更加丰富，各种接口类型的产品都有公司推出。现在的情况是，用一个主流的AP电路板，加上一个6视频采集芯片的扩展板，剩下的就是按照网络搜索获得的论文资料写写软件。车载全景视频的功能就完备了。而且成本更低。&lt;/p&gt;
-
-&lt;p&gt;需求上没有刚需，结构上不具备独特性。那车载全景产品怎么定位呢。   &lt;br /&gt;
-如果要说车载全景产品是安全类产品，那绝对没有市场，车厂和车主都不会接受把汽车安全交给“加装品，附加件”。如果说车载全景产品是ADAS产品，那后装市场绝对没戏，跟车厂不在一个系统，做ADAS就没有市场。如果说车载全景产品是车载电子配件，定位等同GPS，电子狗，车载DVD，那不用讨论了，这些产品都是马上被淘汰的对象。       &lt;br /&gt;
-除此之外，我所看到的车载全景产品还有两条路可走——往小了做就做专业改装路线，往大了做就走IT互联网产品的路线。这是我所能看到的道路。&lt;/p&gt;
-
-&lt;h3 id=&quot;再定义&quot;&gt;再定义&lt;/h3&gt;
-
-&lt;p&gt;好吧，如果车载全景产品，不能卖安全，不能卖保险，那这个产品卖什么。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;插一句，其实我们都知道，车载电子未来的趋势和潜力，也有无数的概念，想法，从我们的脑子或者互联网上冒出来。各种概念设计，新颖的功能，和交互体验，各种未来风格的设计。但是这些概念，设计，功能都必须附加在车辆上，功能性才能实现。所以说现在做IT产品的，做互联网产品的，在汽车电子行业一点话语权都没有。车厂说，老子就是不装你的产品，你就是个屁。那这个行业，小公司更没法混了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;反过来，我们如果卖不了安全，卖不了保险，卖不了ADAS，卖电子产品配套又不赚钱（国内车场利润在20%左右，配套厂利润6~15%左右，大部分配套厂都在6~10%上下挣扎），那我们只能走改装厂路线或者卖互联网概念。&lt;/p&gt;
-
-&lt;h3 id=&quot;想想上网本&quot;&gt;想想上网本&lt;/h3&gt;
-
-&lt;p&gt;还有一个例子，03,04年的时候我们都知道一个概念，上网本，我们所有人也都相信并且预测，上网本将迎来市场的爆发，上网本将是笔记本行业的一次巨大变化和革新。后来事实却是如预期发生了，但是却换了一个名字——PAD。而早期做上网本的一些小公司，大多没能在PAD时代赚到钱。&lt;/p&gt;
-
-&lt;p&gt;同样的现实，摆在我们面前，车载全景产品必然也必须会很快爆发，但是早期做车载全景产品的公司未必能赚到钱。因为当他爆发的时候，未必叫“车载全景产品”。它可能是个APP，可能是个接口卡，可能是图像采集卡，甚至可能是一种免费服务。谁能预测它以什么形态出现，谁就能卡住这个产业的脖子。如果不能准确预测它出现的形态，那再多的努力也是白费。&lt;/p&gt;
-
-&lt;h4 id=&quot;如何给360嫁接互联网的概念&quot;&gt;如何给360嫁接互联网的概念&lt;/h4&gt;
-
-&lt;p&gt;产品升级和产品转型，升级，是对现有产品的强化和扩展，适用于现有产品生命周期执行到一定阶段的时候。产品转型，是对产品概念和定位，对产品的定义的变化，它应该包含层次，观念或者视角的转变。
-产品转型最常规的思路就是，当早期产品功能不够全面或者适应性已经不够的时候，继续下一代产品的研发，而在下一代产品中，上一代产品的整体只作为一个功能或者部件。
-给360产品嫁接互联网的概念，我现在可以想到的思路就是，做带有车载全景功能的13~17寸平板。用车载全景功能去异化平板，定义一款差异化的平板电脑，并在后装市场推广。&lt;/p&gt;
-
-&lt;h3 id=&quot;智能家居的模式&quot;&gt;智能家居的模式&lt;/h3&gt;
-
-&lt;p&gt;智能家居也炒了很多年了。今年听说国内有几家只能家居公司已经盈利或者拿到投资，颇感有趣。早先的时候，智能家居的概念总是在设想，有了智能家居，电视会怎么样，空调会怎么样，电灯会怎么样。所有的智能家居都迈不过一个门槛，那就是得改造家电。一涉及到改造家电，这事基本就没谱了。再过50年也不会有中央控制的智能家居出现，大家都是家电大厂，谁会把家电的控制权交给第三方的一家公司呢，这简直就是割自己的肉养肥别人。所以，看着这么些吵吵智能家居概念的人，我觉得他们都没有找到智能家居的本质，没有找到产品的切入点。绕过家电厂做智能家居，才能做大做成。&lt;/p&gt;
-
-&lt;p&gt;因此，智能家居第一步是做智能插座和智能开关，有了智能插座和智能开关，无需任何改造，家里的电器就可以实现通电断电，开灯关灯。智能家居的第二步是做智能遥控器。一个小模块，扣到家电的红外接收器上，但是又不影响家电原始遥控器的使用，通过学习获得特定家电的遥控命令，这样，既可以用遥控器控制家电，也可以用手机，电脑去连接智能遥控器集中控制所有家电。这些东西都有了，自主控制，网络控制，远程遥控，云服务，都可以有了。无需谈判任何一家家电厂，也无需一个一个家电厂做对接和合作。这才是智能家居的正确发展道路。听说的两家做起来的公司基本都是这个思路。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;面对行业巨擘，如果能找到不合作也能做事的道路，那一定是最好的道路。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        <pubDate>Sun, 07 Dec 2014 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//updata/2014/12/07/About-AVM-(essence-of-product).html</link>
-        <guid isPermaLink="true">http://localhost:4000//updata/2014/12/07/About-AVM-(essence-of-product).html</guid>
-        
-        <category>产品思考</category>
-        
-        <category>车载环视</category>
-        
-        
-        <category>updata</category>
+        <category>Drivers</category>
         
       </item>
     

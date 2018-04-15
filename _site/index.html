@@ -232,7 +232,7 @@
 </header>
 <div class="m-page-main"><div class="m-home">
   <div class="main">
-    <div class="m-post-list"><article><h1><a href="/update/2018/01/18/About-AVM-(does-avm-need-network-or-not).html">About AVM（要不要联网）</a></h1>
+    <div class="m-post-list"><article><h1><a href="/update/2018/01/18/About-AVM-(does-avm-need-network-or-not).html">车载环视-要不要联网</a></h1>
           <div class="m-article-content">Yes
 
 车载AVM系统跟其他车载设备一样，最终都会连接进入车联网。
@@ -242,8 +242,6 @@ AVM产品开发中的思考
 其实联网不联网从大的趋势来说没啥可讨论的。在我的工作经历中，碰到一个很具体的案例，记录下来以资后续借鉴。
 
 大概是不到两年前，我所在团队的AVM1产品开发过程中，关于产品研发的后续走向，团队内部发生了分歧。当时正值一代产品缓慢退市，二代产品冒头的时期。简单说，一代产品就是模拟摄像头输入，模拟视频输出，低分辨率，二维俯视画面显示，主要方案要么是NXP的处理器，要么是TI的37xx系列+TVP5158 4模拟输入AD。二代产品有公司在用Freescale的IMX6开发，也有公司在用海思的监控芯片做开发。主要是实现高清摄像头输入，高清视频输出。显而易见的是IMX6性价比不高，海思的芯片性能有瓶颈...</div><a href="/update/2018/01/18/About-AVM-(does-avm-need-network-or-not).html">点我阅读更多...</a><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="LeoShih"/></meta><ul class="tag-wrapper"><li>
-          <a class="pill-button" href="/all.html?tag=%E4%BA%A7%E5%93%81%E6%80%9D%E8%80%83">产品思考</a>
-        </li><li>
           <a class="pill-button" href="/all.html?tag=%E8%BD%A6%E8%BD%BD%E7%8E%AF%E8%A7%86">车载环视</a>
         </li></ul><div class="other-wrapper"><div class="date-wrapper"><span class="article-meta">2018年 01月18日</span></div>
   </div>
@@ -267,33 +265,106 @@ AoDai is add-on drive-assistant &amp; infotainment1.
 为什么要加装这么多东...</div><a href="/update/2017/12/22/Aodai.html">点我阅读更多...</a><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="LeoShih"/></meta><div class="other-wrapper"><div class="date-wrapper"><span class="article-meta">2017年 12月22日</span></div>
   </div>
 </div>
-</article><article><h1><a href="/update/2017/12/01/mcmc.html">MCMC(Multi-Camera input & Mipi output Converter)</a></h1>
-          <div class="m-article-content">MCMC
+</article><article><h1><a href="/project/2017/12/01/mcmm.html">MCMM(Multi-Camera input & Mipi output Module)</a></h1>
+          <div class="m-article-content">MCMM
 
-MCMC（Multi-Camera input &amp; Mipi output Converter）was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCMC make the soc captures four or five or six videos , and make some special need ...</div><a href="/update/2017/12/01/mcmc.html">点我阅读更多...</a><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="LeoShih"/></meta><div class="other-wrapper"><div class="date-wrapper"><span class="article-meta">2017年 12月01日</span></div>
+MCMM（Multi-Camera input &amp; Mipi output Module）was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCMM make the soc captures four or five or six videos , and make some special need pos...</div><a href="/project/2017/12/01/mcmm.html">点我阅读更多...</a><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="LeoShih"/></meta><ul class="tag-wrapper"><li>
+          <a class="pill-button" href="/all.html?tag=Board">Board</a>
+        </li></ul><div class="other-wrapper"><div class="date-wrapper"><span class="article-meta">2017年 12月01日</span></div>
   </div>
 </div>
-</article><article><h1><a href="/2016/06/16/welcome-to-jekyll.html">Welcome to Jekyll!</a></h1>
-          <div class="m-article-content">Original Jekyll instruction
+</article><article><h1><a href="/hardware/2017/10/15/mcmm-to-cvi.html">MCIM驱动CVI输出</a></h1>
+          <div class="m-article-content">DH9801
 
-You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.
+碰到一个需求，希望将4个摄像头视频集成到一路CVI输出（我也没有办法，人家的设备上只有一个CVI输入接口，想要连接额外的摄像头，只能通过CVI信号输入），于是就上手开始调试DH9801，本来打算是三周时间连硬件带软件全部调试完成，但是中间碰到一个糟心的地方，前后花了两个月时间才调通。
 
-To add new posts, simply ...</div><a href="/2016/06/16/welcome-to-jekyll.html">点我阅读更多...</a><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="LeoShih"/></meta><div class="other-wrapper"><div class="date-wrapper"><span class="article-meta">2016年 06月16日</span></div>
+
+
+
+
+</div><a href="/hardware/2017/10/15/mcmm-to-cvi.html">点我阅读更多...</a><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="LeoShih"/></meta><ul class="tag-wrapper"><li>
+          <a class="pill-button" href="/all.html?tag=Hardware">Hardware</a>
+        </li></ul><div class="other-wrapper"><div class="date-wrapper"><span class="article-meta">2017年 10月15日</span></div>
   </div>
 </div>
-</article><article><h1><a href="/updata/2014/12/07/About-AVM-(essence-of-product).html">About AVM（产品的本质）</a></h1>
-          <div class="m-article-content">无线视频监控
+</article><article><h1><a href="/hardware/2017/05/17/dvp-camera-test-memo.html">Dvp接口调试记录汇总</a></h1>
+          <div class="m-article-content">手头有一个Imx6的开发板E9，带有Dvp摄像头接口，这个板子上Dvp接口是双排针，飞线很方便，查看Imx6的TRM，确认Imx6的Dvp接口支持的pclk非常高，最高能到240Mhz，于是再这个Dvp接口上做了很多并行摄像头接口的测试工作，这里把前期的调试记录汇总到一起，以便参考。
 
-07年~10年在XX院XX所跟孙总共事了四年，做无线视频传输产品。当年这个组是所里的搞产业化成立的一个独立事业部，区别于研究室，这个事业部磕磕绊绊到现在还在运行，而且也在不断的走上新台阶，我离开后没多久，孙总，彪哥，H，C，我们这一帮最早成员都陆续离开了。在这个事业部的四年里，我们搞了两个产品，无线视频传输设备（至今还没有正式发布的名字和系列编号）和智能视频平台。
+Fpag dvp输出极限频率
+2017-08
+后续又做了一下测试，对spartan6输出管脚的信号约束进行了各种尝试。确认，在3.3V IO电平的情况下，Imx6端可以稳定接收到图像信号的频率大概是160Mhz，如果pclk高于这个频率，则图像就会时序错乱，输出各种样式的花屏。应该是更高的频率必须使用更低的IO电平了才能实现了。
+另外就是E9这个板子 dvp接口的干扰问题，io之间串扰能到好几百mv，中...</div><a href="/hardware/2017/05/17/dvp-camera-test-memo.html">点我阅读更多...</a><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="LeoShih"/></meta><ul class="tag-wrapper"><li>
+          <a class="pill-button" href="/all.html?tag=Hardware">Hardware</a>
+        </li></ul><div class="other-wrapper"><div class="date-wrapper"><span class="article-meta">2017年 05月17日</span></div>
+  </div>
+</div>
+</article><article><h1><a href="/devel/2017/02/10/xu3-qt-setup.html">xu3 qt编译</a></h1>
+          <div class="m-article-content">参考资料
+Qt5 on Xu3 官方资料
+Qt5 Xu3 依赖
+https://doc-snapshots.qt.io/qt5-dev/embedded-linux.html
 
-无线视频监控，是前几年安防行业很火的时候，产生的一个产品概念，设想用2.5G或者3G及以上的无线公网传输视频，实现运动目标上的实时视频监控。产品剖开很简单，一个模拟摄像头，一个H.264图像压缩的盒子（最早主要采用DM642和海思351X系列），一个无线数据模块，还有就是公网上的一个网络服务器。06年还是G...</div><a href="/updata/2014/12/07/About-AVM-(essence-of-product).html">点我阅读更多...</a><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="LeoShih"/></meta><ul class="tag-wrapper"><li>
-          <a class="pill-button" href="/all.html?tag=%E4%BA%A7%E5%93%81%E6%80%9D%E8%80%83">产品思考</a>
+没有现成的Qt for OdroidXu3，所以需要自己编译。可以在OdroidXu3上编译，但是不实用，因为性能时间的关系（实际测试，在Xu3上编译Qt5，用时刚好 2小时 上下）。或者进行交叉编译，不管是哪种方法，OdroidXu3都需要一些 development dependecies。
+
+Development Dependencies
+桌面系统
+
+  Git(&gt;=1.6)
+  Perl(&gt;=5.14)
+  Python(&gt;=2.6x)
+  C Compiler
+
+
+SSL
+ssl-...</div><a href="/devel/2017/02/10/xu3-qt-setup.html">点我阅读更多...</a><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="LeoShih"/></meta><ul class="tag-wrapper"><li>
+          <a class="pill-button" href="/all.html?tag=Devel">Devel</a>
         </li><li>
-          <a class="pill-button" href="/all.html?tag=%E8%BD%A6%E8%BD%BD%E7%8E%AF%E8%A7%86">车载环视</a>
-        </li></ul><div class="other-wrapper"><div class="date-wrapper"><span class="article-meta">2014年 12月07日</span></div>
+          <a class="pill-button" href="/all.html?tag=Xu3">Xu3</a>
+        </li></ul><div class="other-wrapper"><div class="date-wrapper"><span class="article-meta">2017年 02月10日</span></div>
   </div>
 </div>
-</article></div></div>
+</article><article><h1><a href="/devel/2017/02/09/xu3-enviroment-setup.html">xu3 开发环境相关</a></h1>
+          <div class="m-article-content">pkg-config
+wayland build
+wayland driver for xu4
+xu3主页 
+猪哥工房菜
+mali drivers
+
+参考资料
+Xu4开发环境搭建  http://www.zhimengzhe.com/linux/50121.html 
+Xu3 Uboot编译 http://odroid.com/dokuwiki/doku.php?id=en:xu3_building_u-boot
+Xu3编译环境搭建 http://blog.csdn.net/aganlengzi/article/details/50036951
+QtPro文件说明 http://blog.csdn.net/woniuye/article/details/54927792
+
+Image ...</div><a href="/devel/2017/02/09/xu3-enviroment-setup.html">点我阅读更多...</a><div class="m-article-data clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="LeoShih"/></meta><ul class="tag-wrapper"><li>
+          <a class="pill-button" href="/all.html?tag=Devel">Devel</a>
+        </li><li>
+          <a class="pill-button" href="/all.html?tag=Xu3">Xu3</a>
+        </li></ul><div class="other-wrapper"><div class="date-wrapper"><span class="article-meta">2017年 02月09日</span></div>
+  </div>
+</div>
+</article></div><nav class="m-pagination"><p>共计 19 篇文章，3 页。</p>
+          <ul><li><div class="round-button inactive">
+                <div class="icon icon--prrevious"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+</svg>
+</div></div>
+              </li><li>
+                  <div class="round-button cur"><span>1</span></div>
+                </li><li>
+                    <a class="round-button" href="/blog/page2"><span>2</span></a>
+                  </li><li>
+                    <a class="round-button" href="/blog/page3"><span>3</span></a>
+                  </li><li>
+                <a class="round-button" href="/blog/page2">
+                  <div class="icon icon--next"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+</svg>
+</div>
+                </a>
+              </li></ul>
+        </nav></div>
 </div>
 </div>
       </div>

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: About AVM（要不要联网）
+title: 车载环视-要不要联网
 data: 2018-01-18
 categories: update
-tags: 产品思考 车载环视
+tags: 车载环视
 ---
 
 ## Yes
