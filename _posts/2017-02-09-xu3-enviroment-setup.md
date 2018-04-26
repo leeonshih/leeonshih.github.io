@@ -5,6 +5,8 @@ date:   2017-02-09
 categories: Devel
 tags: Devel Xu3
 ---
+<!--more-->
+
 [pkg-config](http://blog.csdn.net/linux7985/article/details/6005267)<br>
 [wayland build](https://wayland.freedesktop.org/building.html)<br>
 [wayland driver for xu4](http://forum.odroid.com/viewtopic.php?f=96&t=20026)<br>

@@ -5,7 +5,7 @@ date:   2015-07-10 13:08:09
 categories: Hardware
 tags:  USB3.0 Hardware
 ---
-
+<!--more-->
 前段时间已经调通了 cypress例程跟slavefifo--fpga的通信，但是cypress的例程使用的是syncIO方式，对cpu有一些占用，因此打算使用asyncIO的方式。
 
 网上使劲找资料，没有任何例子，只有 www.libusb.info 网站上有一个asyncIO的说明，已经网上能找到几篇这个说明的中文翻译，就再也找不到其他例子或者demo了。

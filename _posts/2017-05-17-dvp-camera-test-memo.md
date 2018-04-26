@@ -6,6 +6,8 @@ categories: Hardware
 tags: Hardware
 ---
 
+<!--more-->
+
 手头有一个Imx6的开发板E9，带有Dvp摄像头接口，这个板子上Dvp接口是双排针，飞线很方便，查看Imx6的TRM，确认Imx6的Dvp接口支持的pclk非常高，最高能到240Mhz，于是再这个Dvp接口上做了很多并行摄像头接口的测试工作，这里把前期的调试记录汇总到一起，以便参考。
 
 ### Fpag dvp输出极限频率

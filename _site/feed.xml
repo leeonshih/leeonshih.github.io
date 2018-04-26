@@ -6,16 +6,16 @@
 </description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Apr 2018 12:10:25 +0800</pubDate>
-    <lastBuildDate>Sun, 15 Apr 2018 12:10:25 +0800</lastBuildDate>
+    <pubDate>Thu, 19 Apr 2018 16:10:16 +0800</pubDate>
+    <lastBuildDate>Thu, 19 Apr 2018 16:10:16 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
         <title>车载环视-要不要联网</title>
         <description>&lt;h2 id=&quot;yes&quot;&gt;Yes&lt;/h2&gt;
 
-&lt;p&gt;车载AVM系统跟其他车载设备一样，最终都会连接进入车联网。&lt;/p&gt;
-
+&lt;p&gt;车载AVM系统跟其他车载设备一样，最终都会连接进入车联网。
+&lt;!--more--&gt;&lt;/p&gt;
 &lt;h2 id=&quot;avm产品开发中的思考&quot;&gt;AVM产品开发中的思考&lt;/h2&gt;
 
 &lt;p&gt;其实联网不联网从大的趋势来说没啥可讨论的。在我的工作经历中，碰到一个很具体的案例，记录下来以资后续借鉴。&lt;/p&gt;
@@ -108,10 +108,24 @@
 &lt;hr /&gt;
 
 &lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/zk2.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;img src=&quot;/images/zk2.jpg&quot; /&gt;
+&lt;img src=&quot;/images/zk2.jpg&quot; /&gt;
 &lt;/div&gt;
 
 &lt;p&gt;AoDai is add-on drive-assistant &amp;amp; infotainment&lt;sup id=&quot;fnref:infotainment&quot;&gt;&lt;a href=&quot;#fn:infotainment&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-flow&quot;&gt;st=&amp;gt;start: 注册印象笔记  
+e=&amp;gt;end: 您可以使用markdown  
+op1=&amp;gt;operation: 登录印象笔记  
+op2=&amp;gt;operation: 购买并登录马克飞象  
+cond=&amp;gt;condition: 是否已经购买并登录了马克飞象?  
+
+st-&amp;gt;op1-&amp;gt;cond
+cond(yes)-&amp;gt;e
+cond(no)-&amp;gt;op2-&amp;gt;e  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;我们已经有了各种各样的车载系统和车载终端，后装的或者原厂的，旋钮的或者触摸的，8寸的或者13寸的，嵌在中控台的或者卡在后视镜上的，支持手势命令的或者支持语音交互的…&lt;/p&gt;
 
@@ -157,8 +171,9 @@
 &lt;p&gt;MCMM（Multi-Camera input &amp;amp; Mipi output Module）was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCMM make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/mcmc-descript.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;img src=&quot;/images/mcmc-descript.jpg&quot; /&gt;
 &lt;/div&gt;
+&lt;!--more--&gt;
 
 &lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
 &lt;h3 id=&quot;摄像头&quot;&gt;摄像头&lt;/h3&gt;
@@ -205,14 +220,49 @@
       </item>
     
       <item>
-        <title>MCIM驱动CVI输出</title>
-        <description>&lt;h2 id=&quot;dh9801&quot;&gt;DH9801&lt;/h2&gt;
+        <title>MCMM驱动CVI输出</title>
+        <description>&lt;h3 id=&quot;mcmm对接dh9801实现cvi输出&quot;&gt;MCMM对接DH9801实现CVI输出&lt;/h3&gt;
 
-&lt;p&gt;碰到一个需求，希望将4个摄像头视频集成到一路CVI输出（我也没有办法，人家的设备上只有一个CVI输入接口，想要连接额外的摄像头，只能通过CVI信号输入），于是就上手开始调试DH9801，本来打算是三周时间连硬件带软件全部调试完成，但是中间碰到一个糟心的地方，前后花了两个月时间才调通。&lt;/p&gt;
+&lt;p&gt;碰到一个需求，希望将4个摄像头视频集成到一路CVI输出（我也没有办法，人家的设备上只有一个CVI输入接口，想要连接额外的摄像头，只能通过CVI信号输入），于是就上手开始调试DH9801，本来打算是三周时间连硬件带软件全部调试完成，但是中间碰到一个糟心的地方，前后花了三周多时间才调通。&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/mcmm-to-cvi-1.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;img src=&quot;/images/mcmm-to-cvi-1.jpg&quot; /&gt;
 &lt;/div&gt;
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;测试模式工作不稳定&quot;&gt;测试模式工作不稳定&lt;/h3&gt;
+
+&lt;p&gt;DH9801的接口板是由合作方制作的，焊接完成后我拿到板子跟MCMM连接到一起，进行测试。DH9801的驱动程序是由原厂的工程师提供，所以不需要查看PDF，也不需要研究DH9801的工作原理，工作配置和杂七杂八的东西。同时原厂还提供了一个二十来页的的调试说明手册，这个手册很有帮助，虽然很简单，但是官方能够提供这么一个简单的文档，基本上就能把芯片的工作说清楚，让使用者很快把芯片用起来。还提供了一个调试说明，以流程图的形式指导使用者怎么对芯片进行调试，不过这个流程图基本没什么用处。因为如果开发人员没有做错什么事情的话，那一定完全不需要这个流程图，如果开发人员做了错误的事情，那么一定不会按照教科书里的样式出现错误。&lt;/p&gt;
+
+&lt;p&gt;上电，外围信号检查一遍，没什么问题，就修改FPGA逻辑，按照BT1120时序输出720P时序。调了一天并没有图像输出，把可能出错的地方都检查了，就回过去做芯片自检测试，芯片有一个test pattern。调到test pattern输出后，CVI接收器能够显示彩条图像，但是图像持续的抖动。心想测试输出都不稳定，那正常信号没输出是正常的，于是开始各种方法检测test pattern，包括想办法调整晶振信号质量（换好晶振，换成fpga输出时钟），结果test pattern始终要持续的抖动。&lt;/p&gt;
+
+&lt;p&gt;很闹心，在调了两三天没有结果的情况下。我做了一个判断：&lt;strong&gt;这个芯片的test pattern就是这个怂样，芯片没有问题，在正常工作（这个判断后续证明是对的）&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;bt1120时序驱动无输出&quot;&gt;BT1120时序驱动无输出&lt;/h3&gt;
+
+&lt;p&gt;假设芯片是正常的，也没有问题，那就回到先前的地方，继续调BT1120时序。BT1120时序网上到处都能找到，但是关于行时序，我发现很多文档说的跟标准不一样。标准的行时序是：&lt;br /&gt;
+` h_blank  | SAV | h_active | EAV&lt;code class=&quot;highlighter-rouge&quot;&gt;  
+但是很多地方说的实现方法是  
+&lt;/code&gt; EAV | h_blank  | SAV | h_active&lt;code class=&quot;highlighter-rouge&quot;&gt;  
+这样就会导致，在Vsync信号变化的那两行，EAV，SAV实现不一样，猜想了一下后端的工作原理，觉得其实这两种实现应该都可以工作，只不过前者是&lt;/code&gt;Vsync,Hsync同时有效，Vsync滞后Hsync无效&lt;code class=&quot;highlighter-rouge&quot;&gt;，后者是&lt;/code&gt;Vsync提前Hsync有效，Vsync，Hsync同时无效`。但是为了保险起见，那就不按标准实现，按网上的说法实现吧，修改之后，还是没有输出。&lt;/p&gt;
+
+&lt;h3 id=&quot;怀疑dh9801不能容忍时序抖动&quot;&gt;怀疑DH9801不能容忍时序抖动&lt;/h3&gt;
+
+&lt;p&gt;理轮上，DVP信号，是靠Hsync，Vsync来做时序同步的，因为 HBlank，VBlank 的长度有细微的变化都是不影响工作的，包括摄像头驱动，甚至图像采集了一半时序停了也能正常工作（只要不触发超时出错）。但是反复看过几遍datasheet后，开始怀疑DH9801芯片对时序极度敏感。于是给DH的工程师发了邮件，同时修改BT1120时序，把中间所有的时序抖动都去掉了。&lt;/p&gt;
+
+&lt;p&gt;然后CVI接收器接收到了正常的图像画面，DH工程师也回了邮件&lt;strong&gt;“DH9801严格按照手册中的时序工作”&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;做了一个测试，在Hsync中多加入1,2个pclk，发现图像抖得很厉害，再增加一些额外的时钟周期，就不能正常工作接收到图像了。&lt;/p&gt;
+
+&lt;h3 id=&quot;vsync之间最多可以插入200个pclk&quot;&gt;Vsync之间最多可以插入200个pclk&lt;/h3&gt;
+
+&lt;p&gt;为了系统有最小的视频时延，不增加额外的视频时延，在MCMM中并没有采取帧缓存同步的方式，因为一使用帧缓存方式来做同步，就会额外增加40~80+ms的延时（看缓存工作方式）。MCMM中使用的是FIFO同步，MCMM会紧跟着最慢的那个摄像头的时序来做输出，保证额外的时延&amp;lt;40ms。那就意味着MCMM没有办法跟DH9801的时序严格同步，而是很大可能会比DH9801的时序慢一点点。计算了一下，按照市面采购晶振+-5pps的精度。720P\25fps@74.25Mhz的摄像头，每一帧的时序误差应该是+-150pclk。&lt;/p&gt;
+
+&lt;p&gt;必须想办法在驱动DH9801的BT1120时序中插入抖动，否则没法工作。于是测试在帧与帧之间插入抖动时间，测试的结果是，如果帧与帧之间插入不大于200pclk的时隙，则DH9801仍然正常工作，但是图像可能感觉会产生轻微的偶尔的不太能够感觉出来的抖动。但是如果帧与帧之间插入400+pclks，那么CVI接收器接收到的图像就会明显的跳动，影响观看了。&lt;/p&gt;
+
+&lt;h3 id=&quot;功能完善&quot;&gt;功能完善&lt;/h3&gt;
+
+&lt;p&gt;解决时序抖动的问题之后，又增加了图像切换的功能，终于完成了MCMM驱动DH9801输出CVI信号的工作。记录一下，因为DH9801的接口时序 设计有点 出乎意料，想一想，当初做设计的那个前端工程师应该完全没有考虑过摄像头图像的时间偏差和同步的问题，就这么定版交付了。&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 15 Oct 2017 00:00:00 +0800</pubDate>
@@ -228,7 +278,9 @@
     
       <item>
         <title>Dvp接口调试记录汇总</title>
-        <description>&lt;p&gt;手头有一个Imx6的开发板E9，带有Dvp摄像头接口，这个板子上Dvp接口是双排针，飞线很方便，查看Imx6的TRM，确认Imx6的Dvp接口支持的pclk非常高，最高能到240Mhz，于是再这个Dvp接口上做了很多并行摄像头接口的测试工作，这里把前期的调试记录汇总到一起，以便参考。&lt;/p&gt;
+        <description>&lt;!--more--&gt;
+
+&lt;p&gt;手头有一个Imx6的开发板E9，带有Dvp摄像头接口，这个板子上Dvp接口是双排针，飞线很方便，查看Imx6的TRM，确认Imx6的Dvp接口支持的pclk非常高，最高能到240Mhz，于是再这个Dvp接口上做了很多并行摄像头接口的测试工作，这里把前期的调试记录汇总到一起，以便参考。&lt;/p&gt;
 
 &lt;h3 id=&quot;fpag-dvp输出极限频率&quot;&gt;Fpag dvp输出极限频率&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;2017-08&lt;/strong&gt;&lt;br /&gt;
@@ -327,7 +379,9 @@ imx6在连接fpga之间，也连接了ov3640，mt9v034两个摄像头板，i2c�
     
       <item>
         <title>xu3 qt编译</title>
-        <description>&lt;h3 id=&quot;参考资料&quot;&gt;&lt;font color=&quot;#bb6688&quot;&gt;参考资料&lt;/font&gt;&lt;/h3&gt;
+        <description>&lt;!--more--&gt;
+
+&lt;h3 id=&quot;参考资料&quot;&gt;&lt;font color=&quot;#bb6688&quot;&gt;参考资料&lt;/font&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;http://wiki.qt.io/ODROID-XU3&quot;&gt;Qt5 on Xu3 官方资料&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://wiki.qt.io/Building_Qt_5_from_Git&quot;&gt;Qt5 Xu3 依赖&lt;/a&gt;&lt;br /&gt;
 https://doc-snapshots.qt.io/qt5-dev/embedded-linux.html&lt;br /&gt;&lt;/p&gt;
@@ -529,7 +583,9 @@ sudo rm /var/lib/dpkg/lock&lt;/p&gt;
     
       <item>
         <title>xu3 开发环境相关</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/linux7985/article/details/6005267&quot;&gt;pkg-config&lt;/a&gt;&lt;br /&gt;
+        <description>&lt;!--more--&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/linux7985/article/details/6005267&quot;&gt;pkg-config&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://wayland.freedesktop.org/building.html&quot;&gt;wayland build&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=96&amp;amp;t=20026&quot;&gt;wayland driver for xu4&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://odroid.com/dokuwiki/doku.php?id=en:odroid-xu3&quot;&gt;xu3主页&lt;/a&gt; &lt;br /&gt;
@@ -648,9 +704,9 @@ QtPro文件说明 &lt;a href=&quot;http://blog.csdn.net/woniuye/article/details/
 &lt;p&gt;MCIM-U3使用了TI DS90UB914作为摄像头接收端，只能连接使用TI DS90UB913作为发送端的LVDS接口摄像头。如果要使用其他传输接口的摄像头，需要定制对应接口芯片的接口板。&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/mcu3c-shot1.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;img src=&quot;/images/mcu3c-shot1.jpg&quot; /&gt;
 &lt;/div&gt;
-
+&lt;!--more--&gt;
 &lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
 &lt;h3 id=&quot;帧同步&quot;&gt;帧同步&lt;/h3&gt;
 &lt;p&gt;MCIM-U3硬件上实现了多路摄像头图像的同步功能，在实现方法上使用了FIFO的机制，以便保证灵活的Host端设备适配。这里的图像同步功能并非通过Sync信号实现不同摄像头之间的真正同步，而是指在图像缓存中，通过FIFO对图像进行时序对齐，传输给Host端的图像已经是数据头部对齐的，Host端无需通过软件对摄像头进行图像头对齐。通过FIFO方法实现图像头对齐的缺陷是显而易见的，虽然在应用层取得的图像是同步的，但是实际上，这些摄像头之间的图像一定存在或多或少（一般是+-20ms之间）的时间差，对于需要摄像头严格时间同步的应用来说，是不可用的，但是对于时序要求不严格的应用，就不存在大问题。毕竟，能够摄像头之间硬件帧同步的方案在成本上要高很多。需要Sensor支持 Sync信号同时传输方案支持 反向传输下发Sync信号，市面上可能找到的方案，不管是T家的还是M家的，成本都不低。&lt;/p&gt;
@@ -733,9 +789,9 @@ Intel Z8350 , Z8750 win7 »» USB3.0使用Libub-win均不能正常工作，可�
 &lt;p&gt;MCIM-D只是MCMM开发过程中的中间版本，使用了LVDS接口的摄像头输入，最多支持6路视频输入，8bits或者16bits DVP输出。&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/capture-shot2.jpg&quot; width=&quot;600&quot; /&gt;
+&lt;img src=&quot;/images/capture-shot2.jpg&quot; /&gt;
 &lt;/div&gt;
-
+&lt;!--more--&gt;
 &lt;p&gt;测试图片为MCIM-D跟E9( IMX6Q )开发板连接采集图片拍摄，因为只显示了Y分量，所以是绿色的。&lt;/p&gt;
 </description>
         <pubDate>Tue, 30 Aug 2016 00:00:00 +0800</pubDate>
@@ -751,7 +807,8 @@ Intel Z8350 , Z8750 win7 »» USB3.0使用Libub-win均不能正常工作，可�
     
       <item>
         <title>Capture Code Porting</title>
-        <description>&lt;h3 id=&quot;后续追加&quot;&gt;后续追加&lt;/h3&gt;
+        <description>&lt;!--more--&gt;
+&lt;h3 id=&quot;后续追加&quot;&gt;后续追加&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;2015&lt;/strong&gt;&lt;br /&gt;
 后续有修改过几次，从ti板子上移植到imx6板子上的capture完全跑通，并正常了，其中核心的问题是需要设置系统中关于图像采集的几个参数，包括每行内存大小，最大行Size，最大mem大小，以及还有一个参数是涉及图像是原始数据还是ISP scale的数据，都会对图像分辨率，显示产生影响。最开始调试，图像总是不对，还是没搞清这些参数所致。&lt;/p&gt;
 
