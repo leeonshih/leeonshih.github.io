@@ -6,9 +6,100 @@
 </description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 May 2018 18:57:38 +0800</pubDate>
-    <lastBuildDate>Wed, 30 May 2018 18:57:38 +0800</lastBuildDate>
+    <pubDate>Tue, 07 Aug 2018 11:24:13 +0800</pubDate>
+    <lastBuildDate>Tue, 07 Aug 2018 11:24:13 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>MCIM-A(Multi-Camera input Module with AHD output)</title>
+        <description>&lt;h2 id=&quot;mcim-a&quot;&gt;MCIM-A&lt;/h2&gt;
+
+&lt;p&gt;MCIM-A（Multi-Camera input Module with AHD output) was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCIM-A make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcim-a-1.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;!--more--&gt;
+
+&lt;div align=&quot;center&quot;&gt;NVP6021AHD输出模块。&lt;/div&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcmc-descript.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;h3 id=&quot;摄像头&quot;&gt;摄像头&lt;/h3&gt;
+&lt;p&gt;板卡支持AHD 720P摄像头输入，AHD接口的摄像头市面上型号很多，AHD也广泛使用于安防监控，汽车倒车影像等领域。板卡的摄像头接口中，给摄像头供电是5V电源，因此，只要是市面上可以采购到的 5V供电、720P分辨率的AHD摄像头都能支持接入。板卡最多支持6路AHD摄像头接入。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcim-a-2.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;使用MIPI输出，在RK3288，Android平台 实现3D AVM功能。720P显示分辨率全屏输出， 25fps毫无压力，CPU和GPU都表示工作不饱和。&lt;/p&gt;
+
+&lt;h3 id=&quot;nstc-or-pal&quot;&gt;Nstc or Pal&lt;/h3&gt;
+&lt;p&gt;板卡支持30fps和25fps的摄像头，但是目前所有的测试都是使用的25fps的PAL制摄像头。&lt;/p&gt;
+
+&lt;h3 id=&quot;灵活的输出&quot;&gt;灵活的输出&lt;/h3&gt;
+&lt;p&gt;AHD输出实现之后，加上前期的CVI，MIPI，MCIM实际上已经成为了一个通用性和灵活性都比较强的接口模块了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;灵活的接口&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;能够根据后端设备支持的接口类型，选择AHD输出，8bits DVP输出，16bits DVP输出 , 2lanes MIPI或者4lanes MIPI输出。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;灵活的分辨率&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;能够根据后端设备的接口带宽和处理能力，选择 720P（4x640x360），1080P（4x960x540)或者 2.5K（4x1280x720）输出。&lt;/p&gt;
+
+&lt;h3 id=&quot;关于avm的思考&quot;&gt;关于AVM的思考&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;海思方案的缺陷&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;使用MCIM模块跟车机对接，实现AVM功能，在成本上， 比第二代海思方案的360全景产品更低一点。并且可以实现3D AVM，流媒体后视等 海思方案无法实现的功能。海思方案的缺陷在于，天生的处理能力差，不适合做图像处理，海思方案之所以能够这么火，是因为找到了一个行业的狭缝，刚刚能用，价格很低，正规方案成本死活降不下来。海思只能输出 800x480@12fps 左右的2D AVM画面， 这个性能天花板是海思芯片做AVM方案的死穴。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;独立的360盒子已经没有太多的商业价值&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;现在的360盒子都在跟车机对接， 但是360盒子跟车机对接实际上是很鸡肋， 两个系统搭载一起，其中一个系统的目的就是向另一个系统提供一个功能接口，不管是从系统结构，性能，还是技术上，都很古怪。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4合1采集芯片兼容性不好&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;现有的芯片厂商也有4摄像头输入合1，单接口输出的方案， 但是这几个方案都无一例外使用了MIPI的虚通道的接口模式， 所以中低档的SOC很难对接这种解决方案， 目前能够对接的也就是 IMX6， T7 等特定芯片，大宗产品使用的MT，高通等 方案都没法直接使用这种低成本的单芯片方案。Nextchip的片子也明确只能再IMX6, T7上使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;T7方案做车机，性能不好&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;T7方案如果是作为车机方案，应该是走不远。 车机厂商不会因为一个360功能就把自己现在的产品整套方案全部换成 T7， 不光是成本的问题， 还有T7的CPU（A7）和GPU（mali400mp2）性能都不强，T7推出太晚，已经错过了时机。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;T7做AVM盒子性价比不高&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;如果使用T7单独来做AVM产品，那么又存在性价比不高的问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;AVM&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;AVM本质上就是多摄像头输入 + 图像合成算法。所以不管用什么方案，用什么系统， 本质上就是在解决这两个问题。现在绝大多数中低档SOC不支持多摄像头输入， 是因为摄像头接口标准很多， 支持哪一种这个很难决策，支持任何一种方案，都意味着IC成本增加，市场接受度降低。所以可以预见的未来，中低端IC厂商的SOC都不会针对AVM增加多摄像头输入能力。&lt;/p&gt;
+
+&lt;p&gt;高端方案例如 Nvidia，J6是早就支持的， 但是也会选择高档一些的接口标准，以免降低了档次和芯片的规格指标。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;关于分辨率&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;对于现在的主流AVM方案来说， 4个720P摄像头输入都是劣势而不是优势。 因为对于车机显示频的 1024x600或者1280x720显示清晰度来说， 能得到最好图像效果的摄像头应该是  720x480 的数字摄像头（场模式，模拟信号调试方式，导致了很严重的图像质量劣化）， 使用4个720P摄像头来合成一个 800x480的全景画面， 因为分辨率降低太多，所以需要3x3或者4x4的算子来采样， 而双线性插值的 2x2采样不够用。&lt;/p&gt;
+
+&lt;p&gt;4x720P的图像采集，缓存，遍历， 本身就成了了大多数中低端SOC的性能负担， 例如在IMX6上， GPU合成AVM跑30fps一点问题都没有，但是一旦打开视频输入， 输出就会被降低 12fps上下。妥妥的腰斩。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MCIM替代海思AVM&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;如果使用MCIM跟车机方案对接，来实现AVM功能， 那么很有可能能够替掉海思二代盒子，抢下30%~50%的市场份额。按照后装市场100万台/年的市场容量， 那么一年应该有 30~50万台的份额，15M~25M ￥的利润（单台利润假设￥50）。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Jun 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000//project/2018/06/06/mcim-a.html</link>
+        <guid isPermaLink="true">http://localhost:4000//project/2018/06/06/mcim-a.html</guid>
+        
+        <category>Board</category>
+        
+        
+        <category>Project</category>
+        
+      </item>
     
       <item>
         <title>车载环视-要不要联网</title>
@@ -165,17 +256,17 @@ cond(no)-&amp;gt;op2-&amp;gt;e
       </item>
     
       <item>
-        <title>MCMM(Multi-Camera input &amp; Mipi output Module)</title>
-        <description>&lt;h2 id=&quot;mcmm&quot;&gt;MCMM&lt;/h2&gt;
+        <title>MCIM-M(Multi-Camera input Module with Mipi output)</title>
+        <description>&lt;h2 id=&quot;mcim-m&quot;&gt;MCIM-M&lt;/h2&gt;
 
-&lt;p&gt;MCMM（Multi-Camera input &amp;amp; Mipi output Module）was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCMM make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
+&lt;p&gt;MCIM-M（Multi-Camera input Module with Mipi output) was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCIM-M make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;
 &lt;img src=&quot;/images/mcmc-descript.jpg&quot; /&gt;
 &lt;/div&gt;
 &lt;!--more--&gt;
 
-&lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 &lt;h3 id=&quot;摄像头&quot;&gt;摄像头&lt;/h3&gt;
 &lt;p&gt;板卡支持AHD 720P摄像头输入，AHD接口的摄像头市面上型号很多，AHD也广泛使用于安防监控，汽车倒车影像等领域。板卡的摄像头接口中，给摄像头供电是5V电源，因此，只要是市面上可以采购到的 5V供电、720P分辨率的AHD摄像头都能支持接入。&lt;/p&gt;
 
@@ -195,9 +286,9 @@ cond(no)-&amp;gt;op2-&amp;gt;e
   &lt;li&gt;4 x half 720P&lt;sup id=&quot;fnref:half720p&quot;&gt;&lt;a href=&quot;#fn:half720p&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;    »» 8bits dvp ,pclk &amp;lt;=  100M&lt;/li&gt;
   &lt;li&gt;4 x half 720P  + 720P  »»  8bit dvp, pclk = 148.5M&lt;/li&gt;
   &lt;li&gt;4 x 720P »» 16bit dvp, pclk = 148.5M&lt;/li&gt;
-  &lt;li&gt;4 x half 720p + 2 x 720P »» 4 lanes mipi&lt;/li&gt;
-  &lt;li&gt;4 x 720P 				»» 4 lanes mipi&lt;/li&gt;
-  &lt;li&gt;6 x 720P				»» 4 lanes mipi&lt;/li&gt;
+  &lt;li&gt;4 x half 720p + 2 x 720P »» 4 lanes mipi
+ . 4 x 720P 				»» 4 lanes mipi
+ . 6 x 720P				»» 4 lanes mipi&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;div class=&quot;footnotes&quot;&gt;
@@ -209,8 +300,8 @@ cond(no)-&amp;gt;op2-&amp;gt;e
 &lt;/div&gt;
 </description>
         <pubDate>Fri, 01 Dec 2017 21:08:09 +0800</pubDate>
-        <link>http://localhost:4000//project/2017/12/01/mcmm.html</link>
-        <guid isPermaLink="true">http://localhost:4000//project/2017/12/01/mcmm.html</guid>
+        <link>http://localhost:4000//project/2017/12/01/mcim-m.html</link>
+        <guid isPermaLink="true">http://localhost:4000//project/2017/12/01/mcim-m.html</guid>
         
         <category>Board</category>
         
@@ -220,19 +311,19 @@ cond(no)-&amp;gt;op2-&amp;gt;e
       </item>
     
       <item>
-        <title>MCMM驱动CVI输出</title>
-        <description>&lt;h3 id=&quot;mcmm对接dh9801实现cvi输出&quot;&gt;MCMM对接DH9801实现CVI输出&lt;/h3&gt;
+        <title>MCIM驱动CVI输出</title>
+        <description>&lt;h3 id=&quot;mcim对接dh9801实现cvi输出&quot;&gt;MCIM对接DH9801实现CVI输出&lt;/h3&gt;
 
-&lt;p&gt;碰到一个需求，希望将4个摄像头视频集成到一路CVI输出（我也没有办法，人家的设备上只有一个CVI输入接口，想要连接额外的摄像头，只能通过CVI信号输入），于是就上手开始调试DH9801，本来打算是三周时间连硬件带软件全部调试完成，但是中间碰到一个糟心的地方，前后花了三周多时间才调通。&lt;/p&gt;
+&lt;p&gt;碰到一个需求，希望将4个摄像头视频集成到一路CVI输出（我也没有办法，人家的设备上只有一个CVI输入接口，想要连接额外的摄像头，只能通过CVI信号输入），于是就上手开始调试DH9801，本来打算是三周时间连硬件带软件全部调试完成，但是中间碰到一个糟心的地方，前后花了一个半月才调通。&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/mcmm-to-cvi-1.jpg&quot; /&gt;
+&lt;img src=&quot;/images/MCMM-to-cvi-1.jpg&quot; /&gt;
 &lt;/div&gt;
 &lt;!--more--&gt;
 
 &lt;h3 id=&quot;测试模式工作不稳定&quot;&gt;测试模式工作不稳定&lt;/h3&gt;
 
-&lt;p&gt;DH9801的接口板是由合作方制作的，焊接完成后我拿到板子跟MCMM连接到一起，进行测试。DH9801的驱动程序是由原厂的工程师提供，所以不需要查看PDF，也不需要研究DH9801的工作原理，工作配置和杂七杂八的东西。同时原厂还提供了一个二十来页的的调试说明手册，这个手册很有帮助，虽然很简单，但是官方能够提供这么一个简单的文档，基本上就能把芯片的工作说清楚，让使用者很快把芯片用起来。还提供了一个调试说明，以流程图的形式指导使用者怎么对芯片进行调试，不过这个流程图基本没什么用处。因为如果开发人员没有做错什么事情的话，那一定完全不需要这个流程图，如果开发人员做了错误的事情，那么一定不会按照教科书里的样式出现错误。&lt;/p&gt;
+&lt;p&gt;DH9801的接口板是由合作方制作的，焊接完成后我拿到板子跟MCIM连接到一起，进行测试。DH9801的驱动程序是由原厂的工程师提供，所以不需要查看PDF，也不需要研究DH9801的工作原理，工作配置和杂七杂八的东西。同时原厂还提供了一个二十来页的的调试说明手册，这个手册很有帮助，虽然很简单，但是官方能够提供这么一个简单的文档，基本上就能把芯片的工作说清楚，让使用者很快把芯片用起来。还提供了一个调试说明，以流程图的形式指导使用者怎么对芯片进行调试，不过这个流程图基本没什么用处。因为如果开发人员没有做错什么事情的话，那一定完全不需要这个流程图，如果开发人员做了错误的事情，那么一定不会按照教科书里的样式出现错误。&lt;/p&gt;
 
 &lt;p&gt;上电，外围信号检查一遍，没什么问题，就修改FPGA逻辑，按照BT1120时序输出720P时序。调了一天并没有图像输出，把可能出错的地方都检查了，就回过去做芯片自检测试，芯片有一个test pattern。调到test pattern输出后，CVI接收器能够显示彩条图像，但是图像持续的抖动。心想测试输出都不稳定，那正常信号没输出是正常的，于是开始各种方法检测test pattern，包括想办法调整晶振信号质量（换好晶振，换成fpga输出时钟），结果test pattern始终要持续的抖动。&lt;/p&gt;
 
@@ -256,20 +347,31 @@ cond(no)-&amp;gt;op2-&amp;gt;e
 
 &lt;h3 id=&quot;vsync之间最多可以插入200个pclk&quot;&gt;Vsync之间最多可以插入200个pclk&lt;/h3&gt;
 
-&lt;p&gt;为了系统有最小的视频时延，不增加额外的视频时延，在MCMM中并没有采取帧缓存同步的方式，因为一使用帧缓存方式来做同步，就会额外增加40~80+ms的延时（看缓存工作方式）。MCMM中使用的是FIFO同步，MCMM会紧跟着最慢的那个摄像头的时序来做输出，保证额外的时延&amp;lt;40ms。那就意味着MCMM没有办法跟DH9801的时序严格同步，而是很大可能会比DH9801的时序慢一点点。计算了一下，按照市面采购晶振+-5pps的精度。720P\25fps@74.25Mhz的摄像头，每一帧的时序误差应该是+-150pclk。&lt;/p&gt;
+&lt;p&gt;为了系统有最小的视频时延，不增加额外的视频时延，在MCIM中并没有采取帧缓存同步的方式，因为一使用帧缓存方式来做同步，就会额外增加40~80+ms的延时（看缓存工作方式）。MCIM中使用的是FIFO同步，MCIM会紧跟着最慢的那个摄像头的时序来做输出，保证额外的时延&amp;lt;40ms。那就意味着MCIM没有办法跟DH9801的时序严格同步，而是很大可能会比DH9801的时序慢一点点。计算了一下，按照市面采购晶振+-5pps的精度。720P\25fps@74.25Mhz的摄像头，每一帧的时序误差应该是+-150pclk。&lt;/p&gt;
 
 &lt;p&gt;必须想办法在驱动DH9801的BT1120时序中插入抖动，否则没法工作。于是测试在帧与帧之间插入抖动时间，测试的结果是，如果帧与帧之间插入不大于200pclk的时隙，则DH9801仍然正常工作，但是图像可能感觉会产生轻微的偶尔的不太能够感觉出来的抖动。但是如果帧与帧之间插入400+pclks，那么CVI接收器接收到的图像就会明显的跳动，影响观看了。&lt;/p&gt;
 
 &lt;h3 id=&quot;功能完善&quot;&gt;功能完善&lt;/h3&gt;
 
-&lt;p&gt;解决时序抖动的问题之后，又增加了图像切换的功能，终于完成了MCMM驱动DH9801输出CVI信号的工作。记录一下，因为DH9801的接口时序 设计有点 出乎意料，想一想，当初做设计的那个前端工程师应该完全没有考虑过摄像头图像的时间偏差和同步的问题，就这么定版交付了。&lt;/p&gt;
+&lt;p&gt;解决时序抖动的问题之后，又增加了图像切换的功能，终于完成了MCIM驱动DH9801输出CVI信号的工作。记录一下，因为DH9801的接口时序 设计有点 出乎意料，&lt;del&gt;想一想，当初做设计的那个前端工程师应该完全没有考虑过摄像头图像的时间偏差和同步的问题，就这么定版交付了。&lt;/del&gt; （这句话是错的）&lt;/p&gt;
 
+&lt;h3 id=&quot;201804-补充&quot;&gt;201804 补充&lt;/h3&gt;
+
+&lt;p&gt;上面这段话是错的。&lt;/p&gt;
+
+&lt;p&gt;后来我又调试了AHD输出（NVP6021），刚开始没有仔细思考这个问题，只是觉得CVI设计有问题， 后来再调试NVP6021的时候也发现AHD信号同样对输入时序极其敏感。脑子里郁闷了两天之后想起来以前调试CVI的经验，再想想电视信号， 我就明白了。 CVI跟AHD都是模拟信号， 异步信号，必须要严格的时序敏感，才能保证接收端用一个存在偏差的时钟，能够准确的采样出在传输线上多少产生了畸变的信号波形。&lt;strong&gt;模拟不熟悉，一直在用数字的习惯去思考模拟信号&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;后续在MCIM上增加了帧滑动机制，摄像头如果时钟慢， 那么MCIM会若干秒钟自动重复一帧图像， 如果摄像头时钟快，那么MCIM会若干秒钟自动跳过一帧图像。输出时序不用再增加时序抖动来匹配前端摄像头输入的时钟偏差了，也就这解决了这个时序敏感的问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;视频系统通过插帧丢帧来同步时钟快慢问题是基本方法，为啥最早没这么做，因为懒，当初觉得插入时序抖动是最省事的方法，于是就这样用了一年多。&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 15 Oct 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//hardware/2017/10/15/mcmm-to-cvi.html</link>
-        <guid isPermaLink="true">http://localhost:4000//hardware/2017/10/15/mcmm-to-cvi.html</guid>
+        <link>http://localhost:4000//hardware/2017/10/15/mcim-to-cvi.html</link>
+        <guid isPermaLink="true">http://localhost:4000//hardware/2017/10/15/mcim-to-cvi.html</guid>
         
         <category>Hardware</category>
+        
+        <category>Board</category>
         
         
         <category>Hardware</category>
@@ -707,7 +809,7 @@ QtPro文件说明 &lt;a href=&quot;http://blog.csdn.net/woniuye/article/details/
 &lt;img src=&quot;/images/mcu3c-shot1.jpg&quot; /&gt;
 &lt;/div&gt;
 &lt;!--more--&gt;
-&lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 &lt;h3 id=&quot;帧同步&quot;&gt;帧同步&lt;/h3&gt;
 &lt;p&gt;MCIM-U3硬件上实现了多路摄像头图像的同步功能，在实现方法上使用了FIFO的机制，以便保证灵活的Host端设备适配。这里的图像同步功能并非通过Sync信号实现不同摄像头之间的真正同步，而是指在图像缓存中，通过FIFO对图像进行时序对齐，传输给Host端的图像已经是数据头部对齐的，Host端无需通过软件对摄像头进行图像头对齐。通过FIFO方法实现图像头对齐的缺陷是显而易见的，虽然在应用层取得的图像是同步的，但是实际上，这些摄像头之间的图像一定存在或多或少（一般是+-20ms之间）的时间差，对于需要摄像头严格时间同步的应用来说，是不可用的，但是对于时序要求不严格的应用，就不存在大问题。毕竟，能够摄像头之间硬件帧同步的方案在成本上要高很多。需要Sensor支持 Sync信号同时传输方案支持 反向传输下发Sync信号，市面上可能找到的方案，不管是T家的还是M家的，成本都不低。&lt;/p&gt;
 
@@ -802,91 +904,6 @@ Intel Z8350 , Z8750 win7 »» USB3.0使用Libub-win均不能正常工作，可�
         
         
         <category>Project</category>
-        
-      </item>
-    
-      <item>
-        <title>Capture Code Porting</title>
-        <description>&lt;!--more--&gt;
-&lt;h3 id=&quot;后续追加&quot;&gt;后续追加&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;2015&lt;/strong&gt;&lt;br /&gt;
-后续有修改过几次，从ti板子上移植到imx6板子上的capture完全跑通，并正常了，其中核心的问题是需要设置系统中关于图像采集的几个参数，包括每行内存大小，最大行Size，最大mem大小，以及还有一个参数是涉及图像是原始数据还是ISP scale的数据，都会对图像分辨率，显示产生影响。最开始调试，图像总是不对，还是没搞清这些参数所致。&lt;/p&gt;
-
-&lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
-&lt;p&gt;http://bbs.csdn.net/topics/390362302   imx6q上调cmos的帖子&lt;/p&gt;
-
-&lt;h3 id=&quot;nfs不能挂载问题&quot;&gt;NFS不能挂载问题&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;2014-06-05&lt;/strong&gt;&lt;br /&gt;
-今天打算在imx6板子上跑nfs，计划是在windows下coding，然后再vm下跑ubuntu编译，然后imx6通过nfs直接挂目标所在目录运行。按照网上的教程在ubuntu上安装nfs server，把exports目录指向vm共享的windows目录，结果客户端不能加载，在ubuntu下自己加载nfs也挂不上。更换其他目录之后，可以挂载上，看来不能使用vm的windows共享目录。&lt;/p&gt;
-
-&lt;p&gt;在imx6下挂载nfs时，也遇到问题。&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ # mount -t nfs 192.168.0.164:/opt/Embedsky/Tools /mnt   
-svc: failed to register lockdv1 RPC service (errno 111).  
-mount: mounting 192.168.0.164:/opt/Embedsky/Tools on /mnt failed: Connection refused
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;后来按照网上搜索的提示，mount命令增加“-o nolock”参数，问题解决&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~ # mount -t nfs -o nolock 192.168.0.164:/opt/Embedsky/Tools /mnt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;输出图像分辨率问题和调试&quot;&gt;输出图像分辨率问题和调试&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;2014-06-24&lt;/strong&gt;&lt;br /&gt;
-这几天在imx6q板子（E9）上调试cmos采集和显示，抽间隙时间调了2周多，终于完成。&lt;/p&gt;
-
-&lt;p&gt;在linux中，使用v4l2这一层调试图像采集和显示，不用考虑底层具体硬件，只需要了解v4l2相关的接口即可。手头的imx6q只有android下的摄像头demo，在linux下没有相应的demo。通过文件比对，和menuconfig浏览配置，确认在linux下也是有ov3640驱动程序的。于是开始进行。&lt;/p&gt;
-
-&lt;p&gt;找了两三个其他版本其他系统上cmos采集显示的程序，后来使用的是DEVKIT8500（DM3730）开发板上的一个demo程序。先花了几天研究demo程序，学习了v4l2的接口和流程。然后将demo程序挪到imx6q的开发环境中，程序中有几个设备文件的绝对路径，但是是#undefine掉的，所以直接删除掉，程序没有大改，即可编译运行，然后报错，ok，第一步完成。&lt;/p&gt;
-
-&lt;p&gt;搜索linux文件目录，/driver下有 video0，video1，video16，video17 4个文件，估计camara应该是0,1，display应该是16，17。然后屏蔽掉capture代码，修改了宽高等display的参数，display功能就循环跑起来了，读了一个图片进行显示，一切正常。display基本没有多大改动就运行了。&lt;/p&gt;
-
-&lt;p&gt;开始打开capture部分代码，最开始在ioctl阶段，有很多命令都过去不，DQBUF, G_INPUT, EMU_STD……。查看了一下v4l2的文档，适当调整了代码顺序，修改了配置参数，逐个测试，后来所有的ioctl都能正确执行。这个阶段很混乱，到最后我也搞不清楚是怎么就跑通了。有点晕&lt;/p&gt;
-
-&lt;p&gt;问题1：如图所示（图中图标的文件名里，6~8位数字是分辨率，宽高挨着写的）&lt;/p&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/capture-ov3640-bug1.jpg&quot; width=&quot;600&quot; /&gt;
-&lt;/div&gt;
-
-&lt;p&gt;在采图时，只要设置参数fmt的宽或者高超过1024，就会出现格子状的效果，而且确定，格子其实是由n帧图像构成的，同一行，可能是一帧图像的数据交错乱序了，但是从上往下，有多少行，就有多少帧图像。只要将宽高设置小于1024，图像采集就完全没问题，而且缩放也正常。但是需要注意，图像的宽度设置小于1024时，图像buffer的每一行，仍然是1024的宽度。如上图所示，当宽度小于1024时，用1024的宽度保存图像就能看到正常的图像，但是多出的宽度就是灰色的，如果按实际fmt设置的宽度保存图像，图像就会错乱了。&lt;/p&gt;
-
-&lt;p&gt;当行列数设置超过1024时，但是跟1024是整数比例关系，例如1280x720，1536x1152，2048x1536，就能看到格子状的采集图像，如果是其他比例的宽高，可能就看不到格子状，就是完全乱了，看不到轮廓和规则的条纹。&lt;/p&gt;
-
-&lt;p&gt;网上找到一个哥们在imx6q上调ov3640的例子&lt;a href=&quot;http://bbs.csdn.net/topics/390362302&quot;&gt;http://bbs.csdn.net/topics/390362302&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;他说是full 分辨率的时候，得设置 S_INPUT 参数为1，按这个修改后无效，图像全乱了。后来我又主动去修改fmt中的bytesperline参数，扩大为两倍，从4096改为8192，没有效果。又尝试将sizeimage参数改大，扩大一倍，从6291456（4K x 1536）改为12582912，但是这时就提示IOCTL分配不了这么大的缓冲区给视频capture，参照上面的贴子，应该是需要修改一个8M限制的地方。目前还没有继续去修改跟进。&lt;/p&gt;
-
-&lt;p&gt;所以目前我调通的3640，只能采集1024x1024分辨率以下的图像。&lt;/p&gt;
-
-&lt;p&gt;但是应该也问题不大，3640的最大分辨率是2048x1536，但是实际上embedsky提供的驱动，不论在linux还是android下面采集图像，都明显只能采集到右半边（摄像头正对墙壁，拍摄的图像明显是偏右的半边墙），所以有可能其实embedsky提供的驱动程序配置的3640就是输出1024x768的（如果full输出，还得改采集端的驱动，所以embedsky图省事，直接开窗输出，设置ov3640寄存器直接输出半拉图像，并且开窗连startx，starty寄存器也都没考虑修改过，所以就直接输出偏右的半边图像）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/matou.jpg&quot; alt=&quot;picture&quot; /&gt;&lt;/p&gt;
-
-&lt;h3&gt;Original Jekyll instruction&lt;/h3&gt;
-
-&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def print_hi(name)
-  puts &quot;Hi, #{name}&quot;
-end
-print_hi('Tom')
-#=&amp;gt; prints 'Hi, Tom' to STDOUT.```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 24 Jun 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//drivers/2016/06/24/capture-code-debug.html</link>
-        <guid isPermaLink="true">http://localhost:4000//drivers/2016/06/24/capture-code-debug.html</guid>
-        
-        <category>Drivers</category>
-        
-        
-        <category>Drivers</category>
         
       </item>
     
