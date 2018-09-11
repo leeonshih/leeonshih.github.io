@@ -1,134 +1,80 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-#
-# ,--------.      ,--.   ,--. ,--.
-# '--.  .--',---.  \  `.'  /,-'  '-.
-#    |  |  | .-. :  .'    \ '-.  .-'
-#    |  |  \   --. /  .'.  \  |  |
-#    `--'   `----''--'   '--' `--'
+# Site settings 配置站点
+title: 'LeoShih的项目空间'
+description: '我，伪极客，貌似热爱技术其实又没什么技术，对艺术和设计着迷但是审美很糟烂。开辟这个空间的目的是记录和分享最近的项目进展。'
+keyword: 'LeoShih, 嵌入式, 车载系统'
+url: 'http://leeonshih.github.io' # your host
 
-text_color_theme: default #eg: default | dark | forest | ocean | chocolate | orange
-## Base settings ##
-# url:  #the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl: /
-title: LeoShih's blog
-description: > #this means to ignore newlines until "nav_lists:"
-  LeoShih's Blog
+# if you don't need baseurl, you should leave this value blank.
+baseurl: ''
 
-nav_lists:
-  - titles:
-      en: About
-      zh: 关于
-      zh-Hans: 关于
-      zh-Hant: 關於
-    url: /about.html
+# Navigation links
+nav:
+  home: '/'
+  tags: '/tags.html'
 
-# paths:
-#   base: /
-#   home: /
-#   all:  /all.html
-#   rss:  /feed.xml
+# Footer
+footer:
+  since: 2017
 
-## GitHub repository (if the site is hosted by GitHub) ##
-# repository:  #e.g. someone/someone.github.io
-# repository_tree:  #e.g. master
+# Author 配置博主信息
+author: 'LeoShih'
+nickname: 'Leo'
+bio: '嵌入式开发者<br>热爱技术&设计<br>本性悲观&迷幻'
+avatar: '/assets/img/matou.jpg'
 
-## Language & timezone ##
-lang: zh #the language of your site, eg: en(English), zh(简体中文), zh-Hans(简体中文), zh-Hant(繁體中文)
-#timezone: Asia/Shanghai #see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
+# Search
+search: true
 
-## Author & social ##
-author:
-  name: LeoShih
-  # email:  #your Email address e.g. someone@site.com
-  # facebook:  #your Facebook username
-  # twitter:  #your Twitter username
-  # github:  #your GitHub username
-  # googleplus:  #your Google+ username
-  # weibo:  #your Weibo username
-  # douban:  #your Douban username
-  # linkedin:  #your Linkedin username
+# Night mode
+nightMode: true
 
-## TOC
-toc:
-  # selectors: 'h1,h2,h3'
+# Comments 评论功能
+comments:
+  disqus: false
+  #disqus_url: 'https://liaokeyu.disqus.com/embed.js'
 
-## Comment system (Disqus) ##
-disqus:
-  # shortname:  #the Disqus shortname for the site
+# MathJax 公式支持 by Ray-Eldath
+mathjax: true
 
-## Comment system (gitalk) ##
-# please refer to https://github.com/gitalk/gitalk for more info.
-gitalk:
-  # clientID:  #Github Application Client ID
-  # clientSecret:  #Github Application Client Secret
-  # repository:  #Github repo
-  # owner:  #Github repo owner
-  # admin: #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
-    # - owner
+# Share
+social-share: true
+social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
 
-## Google Analytics ##
-# ga_tracking_id:  #Google analytics id for the site
+# theme color 主题皮肤
+theme-color: 'default'  # pink or default
 
-## Reading quantity (LeanCloud) ##
-leancloud:
-  # app_id:  #LeanCloud App id
-  # app_key:  #LeanCloud App key
-  # app_class:  #LeanCloud App class
+# Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
+postPatterns: 'circuitBoard'
 
-# mathjax: true
-# mathjax_autoNumber: true
-# mermaid: true
-# chart: true
+# SNS settings 配置社交网站
+# url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
+sns:
+  weibo: '//weibo.com/leeonshih'
+  #juejin: '//juejin.im/user/57a6f434165abd006159b4cc'
+  #instagram: '//www.instagram.com/steveliaocn'
+  github: '//github.com/leeonshih'
 
-## Paginate ##
+# Tags 设置标签
+recommend-tags: true # whether or not display recommend-tags on the sidebar
+recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
+
+# Build settings
 paginate: 15
-paginate_path: /blog/page:num
+paginate_path: 'page:num'
+exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
 
-## Post excerpts ##
-excerpt_separator: <!--more-->
-excerpt_type: html # text | html
-
-## Sources ##
-# sources: bootcss #eg: bootcss | unpkg
-
-## Build ##
+# Markdown
 markdown: kramdown
 highlighter: rouge
-permalink: date
+kramdown:
+  input: GFM
 
-exclude:
-  - CHANGELOG.md
-  - CHECKLIST.md
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README-*.md
-  - README.md
-  - gulpfile.js
-  - jekyll-text-theme.gemspec
-  - package-lock.json
-  - package.json
-  - /docs
-  - /node_modules
-  - /screenshots
-  - /test
-  - /vendor
-  ##- /_draft
+# RSS
+RSS: false
 
-include:
-  - /_draft
+# Permalink
+# See: https://github.com/kaeyleo/jekyll-theme-H2O/issues/35
+permalink: /:year/:month/:day/:title.html
 
-## Plugins ##
-plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate
-  - jemoji
-
-## Server ##
-server_url: "0.0.0.0"
+# Plugins
+plugins: [jekyll-paginate]

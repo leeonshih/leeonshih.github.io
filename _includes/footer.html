@@ -1,9 +1,11 @@
-<!-- footer -->
-<div class="col-xs-12 span9">
-  <p class="text-center">
-    <a href="https://github.com/billyfish152/Renge">Renge</a> is designed by
-    <a href="https://www.junchaowang.com">Junchao</a>.</p></div>
-</div>
-</div>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<footer class="g-footer">
+  <section>{{ site.title }} ©
+  {% assign current = "now" | date: "%Y" | plus: 0%}
+  {% unless site.footer.since and site.footer.since == current %}
+    {{ site.footer.since }}
+    -
+  {% endunless %}
+  {{ current }}
+  </section>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>

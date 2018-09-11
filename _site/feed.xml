@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LeoShih's blog</title>
-    <description>LeoShih's Blog
-</description>
-    <link>http://localhost:4000//</link>
-    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Aug 2018 12:01:29 +0800</pubDate>
-    <lastBuildDate>Fri, 10 Aug 2018 12:01:29 +0800</lastBuildDate>
+    <title>LeoShih的项目空间</title>
+    <description>我，伪极客，貌似热爱技术其实又没什么技术，对艺术和设计着迷但是审美很糟烂。开辟这个空间的目的是记录和分享最近的项目进展。</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 11 Sep 2018 16:54:46 +0800</pubDate>
+    <lastBuildDate>Tue, 11 Sep 2018 16:54:46 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -124,8 +123,8 @@
 
 </description>
         <pubDate>Wed, 06 Jun 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//project/2018/06/06/mcim-a.html</link>
-        <guid isPermaLink="true">http://localhost:4000//project/2018/06/06/mcim-a.html</guid>
+        <link>http://localhost:4000/2018/06/06/mcim-a.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/06/06/mcim-a.html</guid>
         
         <category>Board</category>
         
@@ -216,8 +215,8 @@
 &lt;/div&gt;
 </description>
         <pubDate>Thu, 18 Jan 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//update/2018/01/18/About-AVM-(does-avm-need-network-or-not).html</link>
-        <guid isPermaLink="true">http://localhost:4000//update/2018/01/18/About-AVM-(does-avm-need-network-or-not).html</guid>
+        <link>http://localhost:4000/2018/01/18/About-AVM-(does-avm-need-network-or-not).html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/18/About-AVM-(does-avm-need-network-or-not).html</guid>
         
         <category>车载环视</category>
         
@@ -280,8 +279,8 @@ cond(no)-&amp;gt;op2-&amp;gt;e
 &lt;/div&gt;
 </description>
         <pubDate>Fri, 22 Dec 2017 21:08:09 +0800</pubDate>
-        <link>http://localhost:4000//update/2017/12/22/Aodai.html</link>
-        <guid isPermaLink="true">http://localhost:4000//update/2017/12/22/Aodai.html</guid>
+        <link>http://localhost:4000/2017/12/22/Aodai.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/12/22/Aodai.html</guid>
         
         
         <category>update</category>
@@ -333,8 +332,8 @@ cond(no)-&amp;gt;op2-&amp;gt;e
 &lt;/div&gt;
 </description>
         <pubDate>Fri, 01 Dec 2017 21:08:09 +0800</pubDate>
-        <link>http://localhost:4000//project/2017/12/01/mcim-m.html</link>
-        <guid isPermaLink="true">http://localhost:4000//project/2017/12/01/mcim-m.html</guid>
+        <link>http://localhost:4000/2017/12/01/mcim-m.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/12/01/mcim-m.html</guid>
         
         <category>Board</category>
         
@@ -399,8 +398,8 @@ cond(no)-&amp;gt;op2-&amp;gt;e
 &lt;p&gt;&lt;strong&gt;视频系统通过插帧丢帧来同步时钟快慢问题是基本方法，为啥最早没这么做，因为懒，当初觉得插入时序抖动是最省事的方法，于是就这样用了一年多。&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 15 Oct 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//hardware/2017/10/15/mcim-to-cvi.html</link>
-        <guid isPermaLink="true">http://localhost:4000//hardware/2017/10/15/mcim-to-cvi.html</guid>
+        <link>http://localhost:4000/2017/10/15/mcim-to-cvi.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/10/15/mcim-to-cvi.html</guid>
         
         <category>Hardware</category>
         
@@ -408,6 +407,38 @@ cond(no)-&amp;gt;op2-&amp;gt;e
         
         
         <category>Hardware</category>
+        
+      </item>
+    
+      <item>
+        <title>MathJax Test</title>
+        <description>&lt;p&gt;mathjax in markdown :)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;这是一个不&lt;code class=&quot;highlighter-rouge&quot;&gt;align&lt;/code&gt;的公式&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall \alpha \in A, \quad a \cdot b = 0&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;这是一个&lt;code class=&quot;highlighter-rouge&quot;&gt;align&lt;/code&gt;的公式&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\text{for OTP : $\qquad$ if }\quad E(k,\:m)=c\\
+\begin{align}
+k\oplus m &amp;= c \\
+k &amp;= m\oplus c
+\end{align}
+\\
+\#\{\;k \in \mathscr K : \quad E(k,\:m)=c \;\}=1 \quad \forall m,\:c %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;公式块要想有较好的显示效果，必须在公式块标记符&lt;code class=&quot;highlighter-rouge&quot;&gt;$$&lt;/code&gt;&lt;strong&gt;前后&lt;/strong&gt;留有空行，否则公式将不能正常居中。行内公式无此问题。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Jul 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/07/30/mathjax-test.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/07/30/mathjax-test.html</guid>
+        
+        <category>mathjax</category>
+        
+        
+        <category>test</category>
         
       </item>
     
@@ -502,13 +533,179 @@ imx6在连接fpga之间，也连接了ov3640，mt9v034两个摄像头板，i2c�
 &lt;p&gt;&lt;strong&gt;示波器探头的实际寄生电容是12pF，探头上清清楚楚标记的。&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 17 May 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//hardware/2017/05/17/dvp-camera-test-memo.html</link>
-        <guid isPermaLink="true">http://localhost:4000//hardware/2017/05/17/dvp-camera-test-memo.html</guid>
+        <link>http://localhost:4000/2017/05/17/dvp-camera-test-memo.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/17/dvp-camera-test-memo.html</guid>
         
         <category>Hardware</category>
         
         
         <category>Hardware</category>
+        
+      </item>
+    
+      <item>
+        <title>H2O theme for Jekyll</title>
+        <description>&lt;p&gt;正如我在&lt;a href=&quot;http://weibo.com/1374146504/profile?topnav=1&amp;amp;wvr=6&quot;&gt;微博&lt;/a&gt;上所说的，使用&lt;a href=&quot;http://jekyll.com.cn/&quot;&gt;Jekyll&lt;/a&gt;半年以来一直没有令我满意的主题模板，所以开始计划自己写一套好看又好用的主题模板。设计之初就明确了极简主义，风格采用扁平化了，通过卡片式设计来进行区块分明的布局，参考了Medium的ui样式和知乎专栏的视觉风格。&lt;/p&gt;
+
+&lt;h2 id=&quot;h2o&quot;&gt;H2O&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;源码及使用文档 →&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realhome.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;新主题名叫”H2O”，基于Jekyll 3.0.x（使用&lt;code class=&quot;highlighter-rouge&quot;&gt;gem update jekyll&lt;/code&gt;升级Jekyll），Markdown的代码高亮不再支持pygments转而使用rouge，咱已经默认配置了 &lt;code class=&quot;highlighter-rouge&quot;&gt;highlighter: rouge&lt;/code&gt; 。用到的技术栈也很简单：引入jQuery类库，使用Sass编写样式，使用Gulp来编译Sass、合并压缩css、js，开源在&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;Github&lt;/a&gt;上，稍作配置即可用于你的Jekyll博客上。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-sketchdesign.png&quot; alt=&quot;Design with Sketch&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;使用Sketch完成H2O主题的原型设计&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-vs.jpg&quot; alt=&quot;My Jekyll themes&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;比之前漂亮不少吧，下面聊聊H2O的新特性。&lt;/p&gt;
+
+&lt;h2 id=&quot;新特性&quot;&gt;新特性&lt;/h2&gt;
+
+&lt;h3 id=&quot;主题配色&quot;&gt;主题配色&lt;/h3&gt;
+
+&lt;p&gt;支持两种主题配色——蓝色和粉色。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/kaeyleo/jekyll-theme-H2O/blob/master/screenshot/jekyll-theme-h2o-themecolor.jpg?raw=true&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;侧边栏&quot;&gt;侧边栏&lt;/h3&gt;
+
+&lt;p&gt;相比自己上一个版本的博客主题，首页增加了侧边栏，方便展示博主的个人信息和文章标签。&lt;/p&gt;
+
+&lt;h3 id=&quot;社交图标&quot;&gt;社交图标&lt;/h3&gt;
+
+&lt;p&gt;使用阿里的图标管理平台&lt;a href=&quot;http://iconfont.cn/&quot;&gt;Iconfont&lt;/a&gt;整理了一套&lt;strike&gt;墙内外&lt;/strike&gt;常用的社交图标，包括微博、知乎、掘金、简书、Github等十多个网站，鼠标悬停会显示该站的主题色。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-snstext.jpg&quot; alt=&quot;social iconfont&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;前后文导航&quot;&gt;前后文导航&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-nextpostnav.png&quot; alt=&quot;Next post navigator&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;自定义文章封面&quot;&gt;自定义文章封面&lt;/h3&gt;
+
+&lt;p&gt;在Markdown的&lt;a href=&quot;http://jekyll.com.cn/docs/frontmatter/&quot;&gt;文章头信息&lt;/a&gt;里添加cover参数来配置文章的封面图片，如果没有配置封面，则默认【主题色+底纹】的组合作为文章封面。值得一提的是，H2O有两种（粉、蓝）主题色和六种底纹（电路板、食物、云海、钻石等等）供你选择。&lt;/p&gt;
+
+&lt;h3 id=&quot;头图个性化底纹&quot;&gt;头图个性化底纹&lt;/h3&gt;
+
+&lt;p&gt;在没有图片的情况下单纯显示颜色会不会太无趣了点？于是想到了加入底纹元素，底纹素材是SVG格式的（保存在css样式里），加载比图片快很多。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-headerpatterns.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;代码高亮&quot;&gt;代码高亮&lt;/h3&gt;
+
+&lt;p&gt;模板引入了&lt;a href=&quot;http://prismjs.com&quot;&gt;Prism.js&lt;/a&gt;，一款轻量、可扩展的代码语法高亮库。&lt;/p&gt;
+
+&lt;p&gt;很多知名网站如&lt;a href=&quot;https://developer.mozilla.org/&quot;&gt;MDN&lt;/a&gt;、&lt;a href=&quot;https://css-tricks.com/&quot;&gt;css-tricks&lt;/a&gt;也在用它，JavaScript 之父 &lt;a href=&quot;https://brendaneich.com/&quot;&gt;Brendan Eich&lt;/a&gt; 也在个人博客上使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-highlight.png&quot; alt=&quot;代码高亮&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;遵循 &lt;a href=&quot;https://www.w3.org/TR/html5/grouping-content.html#the-pre-element&quot;&gt;HTML5&lt;/a&gt; 标准，Prism 使用语义化的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; 元素和 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;code&amp;gt;&lt;/code&gt; 元素来标记代码区块：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code class=&quot;language-css&quot;&amp;gt;p { color: red }&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在Markdown中你可以这样写：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ```css
+	p { color: red }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;支持语言：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;Sass&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+  &lt;li&gt;CoffeeScript&lt;/li&gt;
+  &lt;li&gt;Java&lt;/li&gt;
+  &lt;li&gt;C-like&lt;/li&gt;
+  &lt;li&gt;Swift&lt;/li&gt;
+  &lt;li&gt;PHP&lt;/li&gt;
+  &lt;li&gt;Go&lt;/li&gt;
+  &lt;li&gt;Python&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;第三方评论&quot;&gt;第三方评论&lt;/h3&gt;
+
+&lt;p&gt;由于多说关闭，又对国内其他第三方评论插件无感，所以将&lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus&lt;/a&gt;列为首选（目前模板也只提供了这个），请自备梯子。&lt;/p&gt;
+
+&lt;h3 id=&quot;移动端优化&quot;&gt;移动端优化&lt;/h3&gt;
+
+&lt;p&gt;响应式设计，对手机和平板等移动设备做了优化。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;关于阅读体验&quot;&gt;关于阅读体验&lt;/h3&gt;
+
+&lt;p&gt;我认为在内容质量相同的情况下，出色的沉浸式阅读体验是博客的核心。&lt;/p&gt;
+
+&lt;p&gt;H2O在这方面还有很多需要完善的地方，比如：&lt;strike&gt;代码高亮&lt;/strike&gt;、夜间模式、查看大图…&lt;/p&gt;
+
+&lt;h3 id=&quot;其他特性&quot;&gt;其他特性：&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;网页标题SEO优化&lt;/li&gt;
+  &lt;li&gt;标签索引，点击标签跳转到标签目录，即可查看对应的全部文章&lt;/li&gt;
+  &lt;li&gt;漂亮&lt;/li&gt;
+  &lt;li&gt;好看&lt;/li&gt;
+  &lt;li&gt;美&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;本想趁这次机会将整站https化的，但折腾了半天发现弹性web托管并不支持，所以暂时搁置https的想法。另外，博客统计工具一直使用的是&lt;a href=&quot;https://tongji.baidu.com&quot;&gt;百度统计&lt;/a&gt;，这次新增了Google Analytics。&lt;/p&gt;
+
+&lt;p&gt;这次从0到1，独自设计、开发再到发布大约用了一周时间，也算完成一个小小的开源项目了，后续也将持续完善和更新，欢迎&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;Star&lt;/a&gt;。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 18 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/04/18/new-theme-h2o.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/04/18/new-theme-h2o.html</guid>
+        
+        <category>jekyll</category>
+        
+        <category>前端开发</category>
+        
+        <category>设计</category>
+        
+        
+        <category>技术</category>
+        
+      </item>
+    
+      <item>
+        <title>Hello Jekyll</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Transform your plain text into static websites and blogs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;welcome&quot;&gt;Welcome&lt;/h3&gt;
+
+&lt;p&gt;This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such as getting your site up and running, creating and managing your content, customizing the way your site works and looks, deploying to various environments, and give you some advice on participating in the future development of Jekyll itself.&lt;/p&gt;
+
+&lt;h3 id=&quot;so-what-is-jekyll-exactlypermalink&quot;&gt;So what is Jekyll, exactly?Permalink&lt;/h3&gt;
+
+&lt;p&gt;Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;) and our &lt;a href=&quot;https://github.com/Shopify/liquid/wiki&quot;&gt;Liquid&lt;/a&gt; renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.&lt;/p&gt;
+
+&lt;h3 id=&quot;helpful-hintspermalink&quot;&gt;Helpful HintsPermalink&lt;/h3&gt;
+
+&lt;p&gt;Throughout this guide there are a number of small-but-handy pieces of information that can make using Jekyll easier, more interesting, and less hazardous. Here’s what to look out for.&lt;/p&gt;
+
+&lt;h3 id=&quot;video-test&quot;&gt;Video Test&lt;/h3&gt;
+
+&lt;iframe type=&quot;text/html&quot; width=&quot;100%&quot; height=&quot;385&quot; src=&quot;http://www.youtube.com/embed/gfmjMWjn-Xg&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Tue, 18 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/04/18/hello-jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/04/18/hello-jekyll.html</guid>
+        
+        <category>jekyll</category>
+        
         
       </item>
     
@@ -704,8 +901,8 @@ sudo rm /var/lib/dpkg/lock&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 10 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//devel/2017/02/10/xu3-qt-setup.html</link>
-        <guid isPermaLink="true">http://localhost:4000//devel/2017/02/10/xu3-qt-setup.html</guid>
+        <link>http://localhost:4000/2017/02/10/xu3-qt-setup.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/10/xu3-qt-setup.html</guid>
         
         <category>Devel</category>
         
@@ -713,230 +910,6 @@ sudo rm /var/lib/dpkg/lock&lt;/p&gt;
         
         
         <category>Devel</category>
-        
-      </item>
-    
-      <item>
-        <title>xu3 开发环境相关</title>
-        <description>&lt;!--more--&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/linux7985/article/details/6005267&quot;&gt;pkg-config&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://wayland.freedesktop.org/building.html&quot;&gt;wayland build&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=96&amp;amp;t=20026&quot;&gt;wayland driver for xu4&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;http://odroid.com/dokuwiki/doku.php?id=en:odroid-xu3&quot;&gt;xu3主页&lt;/a&gt; &lt;br /&gt;
-&lt;a href=&quot;http://www.embeddedlinux.org.cn/emb-linux/entry-level/201009/08-896.html&quot;&gt;猪哥工房菜&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://developer.arm.com/products/software/mali-drivers/user-space&quot;&gt;mali drivers&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
-&lt;p&gt;Xu4开发环境搭建  &lt;a href=&quot;http://www.zhimengzhe.com/linux/50121.html&quot;&gt;http://www.zhimengzhe.com/linux/50121.html&lt;/a&gt;&lt;br /&gt; 
-Xu3 Uboot编译 &lt;a href=&quot;http://odroid.com/dokuwiki/doku.php?id=en:xu3_building_u-boot&quot;&gt;http://odroid.com/dokuwiki/doku.php?id=en:xu3_building_u-boot&lt;/a&gt;&lt;br /&gt;
-Xu3编译环境搭建 &lt;a href=&quot;http://blog.csdn.net/aganlengzi/article/details/50036951&quot;&gt;http://blog.csdn.net/aganlengzi/article/details/50036951&lt;/a&gt;&lt;br /&gt;
-QtPro文件说明 &lt;a href=&quot;http://blog.csdn.net/woniuye/article/details/54927792&quot;&gt;http://blog.csdn.net/woniuye/article/details/54927792&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;image-burning&quot;&gt;Image burning&lt;/h3&gt;
-&lt;p&gt;从 www.odroid.com , www.hardkernel.com 都可以下载到完整的image 文件，lubuntu14.04, ubuntu16.04-mate 都有，windows下使用 &lt;strong&gt;Win32DiskImager_odroid_v13&lt;/strong&gt; 写入到 tf 卡或者 emmc 中，然后可以直接从 tf 或者 emmc 中启动。&lt;/p&gt;
-
-&lt;h3 id=&quot;understanding-mesa--mali&quot;&gt;Understanding Mesa &amp;amp; Mali&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=83&amp;amp;t=6933&quot;&gt;http://forum.odroid.com/viewtopic.php?f=83&amp;amp;t=6933&lt;/a&gt;&lt;br /&gt;
-这个帖子说了以下4点内容&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;xu3平台上，硬件加速依赖的是 mali driver，而不是 mesa。mali driver包括&lt;br /&gt;
-    &lt;ul&gt;
-      &lt;li&gt;开源内核驱动&lt;br /&gt;&lt;/li&gt;
-      &lt;li&gt;开源的EXA for X11&lt;br /&gt;&lt;/li&gt;
-      &lt;li&gt;二进制 libMali.so, 替代 libEGL（libEGL 是一个指向libMali 的符号链接）&lt;br /&gt;
-参考：&lt;a href=&quot;http://malideveloper.arm.com/develop-for-mali/drivers/&quot;&gt;http://malideveloper.arm.com/develop-for-mali/drivers/&lt;/a&gt;&lt;br /&gt;
-另外还有一个 fbdev 版本的 libMali.so , 这个版本仅需要内核驱动。可以下载并安装mali SDK，包含EGL的例子。&lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;libMali 在 /usr/lib/arm-linux-gnueabihf/mali-egl. /usr/lib/arm-linux-gnueabihf/libGEL.so 是一个指向前者的符号链接，可以手动修改这个符号链接，指向 /usr/lib/arm-linux-gnueabihf/mesa-egl/libEGL.so ,这时就是使用mesa的opengl-es软件了。mali 是作为alterantive 安装的，所以可以使用 update-alternatives 来切换 mesa 跟 mali。&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;hardkernel 的 Odroid 支持 GLES2.0（3.0 for XU3），EGL under X11； and fbdev版本需要自行下载替换。&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;可以在odroid上边直接编译，无需交叉编译，慢不了太多。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;qt-for-embeded-linux&quot;&gt;&lt;a href=&quot;https://doc-snapshots.qt.io/qt5-dev/embedded-linux.html&quot;&gt;Qt for embeded linux&lt;/a&gt;&lt;/h3&gt;
-&lt;font color=&quot;#44bb44&quot;&gt;这个帖子中间再次解释了configure时，prefix，hostprefix，extprefix的意思，基本说清楚了。 &lt;/font&gt;
-&lt;p&gt;这个帖子介绍了在嵌入式平台上，QT的一些系统性原理&lt;/p&gt;
-&lt;h4 id=&quot;configure&quot;&gt;configure&lt;/h4&gt;
-&lt;p&gt;编译Qt需要 toolchain，sysroot，额外可能还需要第三方的 EGL，OpenGL ES2.0 库。
-&lt;strong&gt;qtbase/mkspecs/devices&lt;/strong&gt; 包含了数个设备的配置和显卡适配代码，比如 linux-rasp-pi2-g++ mkspec 包含了树莓派2设备的各项设置，同时也包含了相关设备的eglfs hooks实现或者eglfs 集成插件。通过 &lt;strong&gt;-device&lt;/strong&gt; 参数可以选择设备型号。下边是树莓派编译Qt的参考配置代码&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./configure -release -opengl es2 -device linux-rasp-pi2-g++ -device-option CROSS_COMPILE=$TOOLCHAIN/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- -sysroot $ROOTFS -prefix /usr/local/qt5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;有两个重要参数，&lt;strong&gt;-device&lt;/strong&gt; , &lt;strong&gt;-sysroot&lt;/strong&gt;. Configure 的属性探测，会到 &lt;strong&gt;-sysroot&lt;/strong&gt; 指定的目录，而不是使用PC机上的标准位置，这种场景意味着主机上有什么跟我们的编译并不相关，我们是为一个目标系统进行编译，所以我们需要到目标系统的 根目录，也就是&lt;strong&gt;-sysroot&lt;/strong&gt;下边，去寻找libs 和headers。&lt;/p&gt;
-
-&lt;p&gt;在交叉编译情况下，configure自动设置 &lt;strong&gt;PKG_CONFIG_LIBDIR&lt;/strong&gt;,让&lt;strong&gt;pkg-configs&lt;/strong&gt;报告编译链接设置，基于&lt;strong&gt;-sysroot&lt;/strong&gt;而不是主机。需要注意的是，主机不能设置 PKG_CONFIG_PATH 变量，否则会指向主机的相关目录&lt;br /&gt;
-指定&lt;strong&gt;-sysroot&lt;/strong&gt;会自动设置&lt;strong&gt;--ysroot&lt;/strong&gt;参数，一些情况下，可以使用 &lt;strong&gt;-no-gcc-sysroot&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;-prefix&lt;/strong&gt; , 目标设备上想要部署的路径，&lt;strong&gt;实际上 make install 并不往 prefix 上部署任何东西，而是往 extprefix 上部署&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;-extprefix&lt;/strong&gt;, 如果不指定，那么默认是 &lt;strong&gt;sysroot + prefix&lt;/strong&gt;，但是sysroot经常可能会被 “污染”, 因此可以专门指定一下 extprefix（个人感觉好像没这么危险，基本没见指定extprefix的）。
-&lt;strong&gt;-hostprefix&lt;/strong&gt;, 如果指定，那么 qmake，rcc，uic 等二进制文件会放置到此路径，而不是 extprefix 路径。&lt;/p&gt;
-
-&lt;h4 id=&quot;platform&quot;&gt;platform&lt;/h4&gt;
-&lt;p&gt;从 &lt;strong&gt;Qt5.0&lt;/strong&gt; 开始，Qt不再包含自己的窗口系统 QWS 。嵌入式linux系统有多种platfrom可用：EGLFS（EGL FullScreen），LinuxFB，DirectFB，Wayland。依赖于Qt的配置，很多板子上，EGLFS是默认的选项。如果要用其他platfrom，可以修改QT_QPA_PLATFORM 环境变量或者 -platfrom 参数。&lt;/p&gt;
-
-&lt;p&gt;EGL是OpenGL和原生窗口系统之间的一个接口。EGL并不包含平台相关性，窗口的创建仍然由平台相关的方式来实现，所以EGL仍然需要GPU相关代码，或者EGL设备集成插件。&lt;/p&gt;
-
-&lt;p&gt;EGLFS是QT与EGL，OpenGL ES2.0 之间的一个插件，用来实现不依赖确定的原生窗口系统（比如X11，Wayland）的Qt应用。在带有GPU的嵌入式系统上，这是推荐的方案。&lt;/p&gt;
-
-&lt;p&gt;EGLFS强制top-level窗口全屏，并且，后续窗口都是其子窗口。因此EGLFS只有一个原生窗口，和EGL surface。因此EGLFS也带了进一步限制，就是不能再打开额外的OpenGL windows或者混合类似 windows的content。&lt;/p&gt;
-
-&lt;p&gt;LinuxFB，使用fbdev进行绘图，只能软件渲染，没法使用硬件加速。&lt;/p&gt;
-
-&lt;p&gt;XCB，是X11的一个插件，主要用于桌面Linux platform，&lt;strong&gt;在嵌入式系统中，XCB不推荐&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;Wayland， X11的潜在替代品。很多嵌入式ubuntu使用Wayland，并且有更好的性能，主要是为了解决 X11 冗余复杂和低性能的问题。&lt;/p&gt;
-
-&lt;p&gt;另，应该还有minimal，offscreen等，也就是用于测试qt程序，应该是没有显示的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=6615&quot;&gt;Mali SDK&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=23010&quot;&gt;Link OpenGL ES3.0 on ubuntu&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=21315&quot;&gt;Qt5.6 Mali&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=16305&quot;&gt;Qt5 for xu3/xu4&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=15528&quot;&gt;OpenGL ES demo&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=15524&quot;&gt;EGL problem&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=12484&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=12115&quot;&gt;can’t run OpenGL es&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=11919&quot;&gt;ES3.0 game load fail&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=8679&quot;&gt;glmark2-es2 score&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=8114&quot;&gt;OpenGL speed up&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=6020&quot;&gt;odroid forum&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?p=140416&quot;&gt;wayland&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;https://devtalk.nvidia.com/default/topic/803737/qt-opengl-eglfs-egl-xcb-x11-wayland-jetson-board-tk1/&quot;&gt;egl error&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;issues-&quot;&gt;&lt;font color=&quot;#bb6688&quot;&gt;ISSUES &lt;/font&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;不能启动&quot;&gt;不能启动&lt;/h4&gt;
-&lt;p&gt;中间碰到过一次问题，系统启动到  &lt;strong&gt;&lt;em&gt;Freeing unused kernel memory：***K&lt;/em&gt;&lt;/strong&gt; 时就卡死了， 网上搜索都是说什么文件系统 page size 不对或者其他问题，但是本身又没有对文件系统进行操作，只好重新烧写 image 文件，还是卡在这个位置，再次重新写入 image，但是写入之间将 tf 卡分区完全删除，格式化一下，再次写入后可以正常启动。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/u010162887/article/details/52081369&quot;&gt;ubuntu16.04 wifi设置&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/hzkdac1007/article/details/46813673&quot;&gt;xu3wifi和远程的例子&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/l_backkom/article/details/39780935&quot;&gt;wpa_supplicant安装&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_65aee6e801018ida.html&quot;&gt;vi上下左右变ABCD&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 09 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//devel/2017/02/09/xu3-enviroment-setup.html</link>
-        <guid isPermaLink="true">http://localhost:4000//devel/2017/02/09/xu3-enviroment-setup.html</guid>
-        
-        <category>Devel</category>
-        
-        <category>Xu3</category>
-        
-        
-        <category>Devel</category>
-        
-      </item>
-    
-      <item>
-        <title>MCIM-U3(Multi-Camera Input Module with Usb3.0 Output)</title>
-        <description>&lt;h2 id=&quot;mcim-u3&quot;&gt;MCIM-U3&lt;/h2&gt;
-
-&lt;p&gt;MCIM-U3(Multi-Camera Input Module with Usb3.0 Output)实现了多路高清数字摄像头输入，同步，打包和USB3.0 接口输出的功能。带有USB3.0接口的设备，通过MCIM-U3即可实现4路720P摄像头的实时Capture和Preview。&lt;/p&gt;
-
-&lt;p&gt;MCIM-U3针对的是需要实时视频采集处理并且对视频延时敏感的场合，因此MCIM-U3并不对视频进行压缩编码，而是直接将原始数据以最小的延时扔给Host设备。&lt;/p&gt;
-
-&lt;p&gt;MCIM-U3使用了TI DS90UB914作为摄像头接收端，只能连接使用TI DS90UB913作为发送端的LVDS接口摄像头。如果要使用其他传输接口的摄像头，需要定制对应接口芯片的接口板。&lt;/p&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/mcu3c-shot1.jpg&quot; /&gt;
-&lt;/div&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;h3 id=&quot;帧同步&quot;&gt;帧同步&lt;/h3&gt;
-&lt;p&gt;MCIM-U3硬件上实现了多路摄像头图像的同步功能，在实现方法上使用了FIFO的机制，以便保证灵活的Host端设备适配。这里的图像同步功能并非通过Sync信号实现不同摄像头之间的真正同步，而是指在图像缓存中，通过FIFO对图像进行时序对齐，传输给Host端的图像已经是数据头部对齐的，Host端无需通过软件对摄像头进行图像头对齐。通过FIFO方法实现图像头对齐的缺陷是显而易见的，虽然在应用层取得的图像是同步的，但是实际上，这些摄像头之间的图像一定存在或多或少（一般是+-20ms之间）的时间差，对于需要摄像头严格时间同步的应用来说，是不可用的，但是对于时序要求不严格的应用，就不存在大问题。毕竟，能够摄像头之间硬件帧同步的方案在成本上要高很多。需要Sensor支持 Sync信号同时传输方案支持 反向传输下发Sync信号，市面上可能找到的方案，不管是T家的还是M家的，成本都不低。&lt;/p&gt;
-
-&lt;h3 id=&quot;丢帧&quot;&gt;丢帧&lt;/h3&gt;
-&lt;p&gt;MCIM-U3使用了USB3.0作为与Host端通信的接口，不同于DVP（并行数字视频端口）或者MIPI这样的标准摄像头接口输出固定的信号时序，USB是无法保障稳定带宽的。多个设备之间的占用竞争会导致带宽变化，如果同一个USB接口上连接了其他高速设备，也有可能出现MCIM-U3可以占用的带宽波动。而视频又是需要保证带宽的，因此MCIM-U3根据USB带宽不稳定的特点，设计了丢帧机制，也就是说，如果Host端读取摄像头视频的速度赶不上视频的帧率，造成数据堆积，MCIM-U3会丢弃无法读取的图像帧，从而实现自动的帧率调节。&lt;/p&gt;
-
-&lt;h3 id=&quot;速率&quot;&gt;速率&lt;/h3&gt;
-&lt;p&gt;USB3.0的最高传输速率应该可以达到接近500MB。
-Cypress 的CYUSB3014芯片 FIFO接口的最大速率是400MB。理论上来说，通过CYUSB3014芯片的USB3.0可以实时传输7路 720P@25fps的摄像头图像，但是因为Host端USB3.0硬件带宽瓶颈，Host端驱动软件效率等问题，实际上可以达到的速度远远低于这个理论速度。通常情况下，根据Host端硬件的同步，传输2~4路 720P@25fps 的实时视频数据 是完全没问题的。&lt;/p&gt;
-
-&lt;h3 id=&quot;测试&quot;&gt;测试&lt;/h3&gt;
-&lt;p&gt;在MCIM-U3开发之前，我们对不同的硬件平台进行了USB3.0的速率测试，以便评估在不同的方案上，是否可以通过USB3.0实时传输多路高清视频，测试过的软硬件和结果如下。所有的测试都是Host 端 Bulk in。测试的是数据上传的速率。&lt;/p&gt;
-
-&lt;h4 id=&quot;2015-03-01&quot;&gt;2015-03-01&lt;/h4&gt;
-&lt;p&gt;测试方法，win7下使用的是cypress自带的带宽测试程序，ubuntu使用的是测试demo，自己修改了源码，测量204800个包，每个包16KB，然后记录时间。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;T430 win7 »»» 440MB/s &lt;br /&gt;
-T430 ubuntu »»» 240MB/s  (16KB x 200K次 = 13s) &lt;br /&gt;
-TK1 ubuntu »»» 80MB/s (16KB x 200K次 = 40s）&lt;br /&gt;
-XU3 Lubuntu »»» 107MB/s (16KB x 200K次 = 30s)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&quot;2015-07-01&quot;&gt;2015-07-01&lt;/h4&gt;
-&lt;p&gt;最初以为libusb库的包大小最大是16KB，后来进一步测试，发现包的大小可以改大，改大之后，速度明显有了提升。&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;T430 ubuntu »»» 305MB/s  ( 1MB x 10K次 = 33s)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&quot;2016-10-18&quot;&gt;2016-10-18&lt;/h4&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;QT + libusb-win32-1.2.6.0    （16KB x 100K次 =  12.6s）= 126MB/s&lt;br /&gt;
-VS2013 + libusb-win32-1.2.6.0  （16KB x 100K次 =  12.6s)      约= 126MB/s&lt;br /&gt;
-cypress streamer     310MB/s&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&quot;2016-12&quot;&gt;2016-12&lt;/h4&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;TK1 ubuntu »» 125MB/s (1MB包 Bulkin )&lt;br /&gt;
-XU3 ubuntu »» 175MB/s (1MB包 Bulkin）&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&quot;2017-03&quot;&gt;2017-03&lt;/h4&gt;
-&lt;p&gt;手头正好有两个intel Atom 芯片的二合一平板（台电X16），于是也进行了测试。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;RK3399 ubuntu »» usb3.0 bulk transfer 报错，后续没有再跟进测试，可以识别设备，可以枚举设备，但是程序执行到提交 bulk_transfer就会宕掉。&lt;br /&gt;
-Intel Z8350 , Z8750 win7 »» USB3.0使用Libub-win均不能正常工作，可以识别设备，可以枚举设备，但是一开始 bulk tranfser，设备就会出错丢失，重新连接。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;em&gt;测试结果发现libusb-win32速度比较慢，在win7上，直接用streamer测试，一个速度达到320MB/s的slavefifo控件，用libusb-win32 只能跑到126MB/s左右，感觉应该是libusb-win32底层接口的机制限制了性能。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;关于在不同的平台上测试USB3.0 速率的过程，请参考 标签USB30 下的其他文章。&lt;/p&gt;
-
-&lt;h2 id=&quot;多路图像采集效果双路&quot;&gt;多路图像采集效果（双路）&lt;/h2&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/capture-shot1.jpg&quot; width=&quot;600&quot; /&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 02 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//project/2017/02/02/mcim-u3.html</link>
-        <guid isPermaLink="true">http://localhost:4000//project/2017/02/02/mcim-u3.html</guid>
-        
-        <category>Board</category>
-        
-        <category>USB3.0</category>
-        
-        
-        <category>Project</category>
-        
-      </item>
-    
-      <item>
-        <title>MCIM-D(Multi-Camera Input Module with Dvp Output)</title>
-        <description>&lt;h2 id=&quot;mcim-d&quot;&gt;MCIM-D&lt;/h2&gt;
-
-&lt;p&gt;MCIM-D只是MCMM开发过程中的中间版本，使用了LVDS接口的摄像头输入，最多支持6路视频输入，8bits或者16bits DVP输出。&lt;/p&gt;
-
-&lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/capture-shot2.jpg&quot; /&gt;
-&lt;/div&gt;
-&lt;!--more--&gt;
-&lt;p&gt;测试图片为MCIM-D跟E9( IMX6Q )开发板连接采集图片拍摄，因为只显示了Y分量，所以是绿色的。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 30 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000//project/2016/08/30/mcim-d.html</link>
-        <guid isPermaLink="true">http://localhost:4000//project/2016/08/30/mcim-d.html</guid>
-        
-        <category>Board</category>
-        
-        
-        <category>Project</category>
         
       </item>
     

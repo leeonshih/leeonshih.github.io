@@ -1,187 +1,455 @@
-# [TeXt Theme](https://github.com/kitian616/jekyll-TeXt-theme)
+## jekyll-theme-H2O
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-text-theme.svg)](https://github.com/kitian616/jekyll-TeXt-theme/releases)
-[![license](https://img.shields.io/github/license/kitian616/jekyll-TeXt-theme.svg)](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/LICENSE)
-[![Travis](https://img.shields.io/travis/kitian616/jekyll-TeXt-theme.svg)](https://travis-ci.org/kitian616/jekyll-TeXt-theme)
+基于Jekyll的博客主题模板，简洁轻量。
 
-![TeXt Theme](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.png)
+另外，还有此主题的[Ghost版本](https://github.com/eastpiger/ghost-theme-H2O) by [eastpiger](https://github.com/eastpiger)
 
-![TeXt Theme Details](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-details.png)
+### Preview
 
-[Demo](https://tianqi.name/jekyll-TeXt-theme/) | [English (Beta)](https://github.com/kitian616/jekyll-TeXt-theme/blob/master/README-en.md)
+#### [在线预览 Live Demo →](http://liaokeyu.com/)
 
-TeXt is a succinct theme for blogging.
+![](screenshot/jekyll-theme-h2o-realhome.jpg)
 
-TeXt 是针对博客的一款简洁的主题，它虽然简洁但并不简单。它参考了 iOS 11 的风格，有大而突出的标题和圆润的按钮及卡片。
+![](screenshot/jekyll-theme-h2o-realm.png)
 
-## Features
+如果你喜欢这个博客模板，请在右上角star一下，非常感谢～
 
-- 响应式
-- 分页（[jekyll-paginate](https://github.com/jekyll/jekyll-paginate)）
-- 文章目录
-- 文章标签
-- 搜索（标题）
-- 阅读次数统计（[LeanCloud](https://leancloud.cn/)）
-- Emoji（[Jemoji](https://github.com/jekyll/jemoji)）
-- 评论（[Disqus](https://disqus.com/), [gitalk](https://gitalk.github.io/)）
-- Google Analytics
-- 联系方式设置（Email, Facebook, Twitter, 微博, 知乎……）
-- Web 语意化
-- 网站图标的自动化工具（[gulp-svg2png](https://www.npmjs.com/package/gulp-svg2png), [gulp-to-ico](https://www.npmjs.com/package/gulp-to-ico)）
-- Color Theme
-- 数学公式（[MathJax](https://www.mathjax.org/)）
-- 流程图， 序列图，甘特图（[mermaid](https://mermaidjs.github.io/)）
-- 柱状图，折线图，饼图，雷达图（[chartjs](http://www.chartjs.org/)）
-- RSS（[jekyll-feed](https://github.com/jekyll/jekyll-feed)）
-- 多语言支持（English | 简体中文 | 繁體中文）
+If you like this theme or using it, please give a ⭐️ for motivation ;)
 
-下面简要的介绍下使用的方法，当然如果你对 Jekyll 比较了解可以直接看后面的高级部分，这是该主题增加的一些特有功能。
+如果想体验手机浏览效果，可以扫一下二维码：
 
-## How To Use
+![](screenshot/1494404591.png)
 
-最简单的方法是直接 **Fork** 到你的 GitHub 仓库然后更改其名称为 `<username>.github.io`，稍等一会儿访问 `https://<username>.github.io` 即可看到一个空的博客页，接下来你可以把它 Clone 到本地修改后提交。
+Using your smartphone to scan the QR Code
 
-当然你也可以在 [Releases 页面](https://github.com/kitian616/jekyll-TeXt-theme/releases) 下载最新版本源码，或直接 Clone 代码到本地。
+### Features 特性
 
-另外，因为每个版本都是作为一个 [Gem](https://rubygems.org/gems/jekyll-text-theme) 发布的，所以你也可以通过 Jekyll 的主题系统安装该主题，这种方式可以很方便的升级保持最新，但不支持 GitHub 的自动编译，详见 [Jekyll: 主题](http://jekyllcn.com/docs/themes/)。项目的 ./test 目录就是一个使用主题系统的例子。
+#### CN
 
-### 配置
+- 代码高亮
+- 夜间模式
+- Disqus评论系统
+- 粉蓝两种主题色
+- 头图个性化底纹
+- 响应式设计
+- 社交图标
+- SEO标题优化
+- 文章标签索引
+- 博客文章搜索
+- 复制文章内容自动添加版权
 
-在 ./\_config.yml 文件里按照说明加上你的信息，例如你的名字和联系方式，网站的标题和描述等等。
+#### EN
 
-在 ./about.md 中写上你的简单介绍，例如我叫小明之类的。
+- Code highlight
+- Night mode
+- Disqus Comment System
+- Theme color: Blue & Pink
+- Hero Patterns
+- Responsive design
+- SNS Icon
+- Title SEO
+- Tags system
+- Search
+- Copyright text on copy event
 
-### 写博客
+### Usage 快速开始
 
-使用 Markdown 编写文章，位于 ./\_posts 目录（需要自行创建）下，文件名采用日期 + 标题的形式，形如 `2017-02-02-Very-Long-Title`，可参考 ./test/\_posts 目录。
+首先你需要安装Jekyll，请查看文档: [快速指南](http://jekyll.com.cn/docs/quickstart/)
 
-可以在头信息里设置文章的一些基本信息，包括标题、发布时间和标签等。当然，如果你不设置标题和发布时间，系统会使用文件名中的标题和发布时间，详见 [Jekyll: 头信息](http://jekyllcn.com/docs/frontmatter/)。当然，该主题在原有的基础上增加了一些属性，这在后面会讲到。
+如果你已经安装了Jekyll，请检查版本是否为3.0.x，你可以使用 ```gem update jekyll``` 命令进行升级。
 
-#### 摘要
+使用 ```gem install jekyll-paginate``` 或 ```sudo gem install jekyll-paginate``` 安装Jekyll的分页插件。
 
-该主题的摘要有两种模式——TEXT 模式和 HTML 模式。 当 ./\_config.yml 配置项 `excerpt_type` 的值为 `text` 时是 TEXT 模式，为 `html` 时是 HTML 模式，**默认为 TEXT 模式**。
+> H2O主题基于Jekyll 3.2.1版本，不同版本之间可能存在部分差异，具体请参考[官方更新文档](https://jekyllrb.com/news/)
 
-TEXT 模式的摘要为纯文本，会过滤掉一切非文本元素（标题，链接，列表，表格，图片等等），且截取前 350 个字符。
+点击右上角Fork按钮在你的Github上创建分支，或者```clone```到本地。
 
-HTML 模式的摘要为 HTML 文档，与文章内容一致，并且 **默认展示整篇文章的内容**。若想控制摘要内容，需要在文章中想要显示到的地方加上 `<!--more-->`，详见 [Jekyll: 文章摘要](http://jekyll.com.cn/docs/posts/#_6)。
+``` git clone https://github.com/kaeyleo/jekyll-theme-H2O.git ```
 
-> 提示：为了首页更好的展示效果，个人还是推荐使用 HTML 模式，并自己在文章中加上 `<!--more-->`。
+最后，在命令行输入 ```jekyll server``` 开启服务，就能在本地预览主题了。
 
-### 安装环境（非必须）
+如果需要部署到线上环境，请参照配置文档的 **开始** 章节进行操作。
 
-具体可参考 [Jekyll: 安装](http://jekyllcn.com/docs/installation/)。
+### Document 配置文档
 
-请确保你的电脑上配置好了 Ruby 开发环境。(ruby, bundle, Command Line Tools(macOS) ...)
+#### CN
 
-首先安装 github-pages（包含了 Jekyll 以及一些插件），在项目根目录执行 `bundle install` 即可安装。
+- 开始
+	- [站点信息](#站点信息)
+	- [写一篇文章](#写一篇文章)
+- 组件
+	- [导航](#导航)
+	- [侧边栏](#侧边栏)
+	- [社交图标](#社交图标)
+	- [个人简介](#个人简介)
+	- [标签](#标签)
+	- [文章搜索](#文章搜索)
+	- [代码高亮](#代码高亮)
+	- [夜间模式](#夜间模式)
+- 个性化
+	- [博客封面、主题皮肤](#主题皮肤)
+	- [头图底纹](#头图底纹)
+- 高级部分
+	- [自定义](#自定义)
+- 集成服务
+	- [Disqus](#disqus)
+	- [Share.js](#sharejs)
 
-推荐安装 Node.js 环境，可以获得更好的开发体验。
+#### EN
 
-### 本地服务（非必须）
+- Get Started
+	- [Site Settings](#站点信息)
+	- [Write Posts](#写一篇文章)
+- Components
+	- [Navigation Menu](#导航)
+	- [Sidebar](#侧边栏)
+	- [SNS Icons](#社交图标)
+	- [Personal Information](#个人简介)
+	- [Tags](#标签)
+	- [Search](#文章搜索)
+	- [Syntax Highlight](#代码高亮)
+	- [Night Mode](#夜间模式)
+- Style
+	- [Theme Color](#主题皮肤)
+	- [Hero Background Patterns](#头图底纹)
+- Advanced
+	- [Customization](#自定义)
+- Plugins
+	- [Disqus](#Disqus)
+	- [Share.js](#Share.js)
 
-如果你安装了 Node.js 环境，只需要在项目根目录运行 `npm run dev` 即可启动本地服务。
 
-如果没有安装 Node.js 环境，则是：
+You can easily get started by modifying _config.yml
 
-```console
-bundle exec jekyll serve -H 0.0.0.0
+#### 站点信息
+
+你可以通用修改 `_config.yml` 文件来轻松的开始搭建自己的博客
+
+```
+# Site settings
+title: '廖柯宇的独立博客' # 你的博客网站标题
+description: '很高兴能在这里与你分享我对技术和生活的思考。' # 站点描述
+keyword: '廖柯宇, 廖柯宇的独立博客, 前端, 设计' # 网站关键词
+url: 'http://liaokeyu.com' # 站点url
+baseurl: ''
+
+# Build settings
+paginate: 6 # 一页放几篇文章
+paginate_path: 'page:num'
 ```
 
-命令执行成功后在浏览器中访问 [http://localhost:4000/](http://localhost:4000/) 即可看到页面。
+其实大部分参数已经默认配置好了，你只需要通过文档了解它们，然后根据自己的需求去`_config.yml`文件里修改即可。
 
-### 部署与提交
+#### 写一篇文章
 
-推荐部署到 GitHub Pages 上，简单而免费，详见 [Jekyll: GitHub Pages](http://jekyllcn.com/docs/github-pages/)。
+文章一般都放在`_posts`文件夹里，每篇文章的开头都需要设置一些头信息：
 
-如果你是下载或者 Clone 的源码，那么你需要在 GitHub 上建立一个 Repository，然后把项目代码 push 到其对应的分支上（如果以 `<username>.github.io` 命名则对应分支为 `master` ，其他的为 `gh-pages`，详见 [Github Pages: Configuring a publishing source for GitHub Pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/)）。
+```
+---
+layout: post
+title: 'H2O theme for Jekyll'
+subtitle: '或许是最漂亮的Jekyll主题'
+date: 2017-04-18
+categories: 技术
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
+tags: jekyll 前端开发 设计
+---
+```
 
-如果你是通过 Jekyll 的主题系统安装的，那么你需要把本地编译好的代码 push 到上文所说的对应分支上。
+#### 导航
 
-当然你也可以部署到到其他地方。
+博客顶部的导航栏信息需要以下面的格式进行配置：
 
-## 高级
+```
+# Navigation links
+nav:
+  home: '/'
+  tags: '/tags.html'
+```
 
-### 多语言
+导航链接需要写上完整的html文件名，它们都是放于根目录下的，如果自建文件夹，请务必在`exclude` 参数中增加自建文件夹的文件名:
 
-该主题支持 English、简体中文和繁體中文，只需在 ./\_config.yml 中设置对应 `lang` 项即可。设置后整个网站的主题文字（导航，阅读更多，文章数统计，日期格式，文章协议等等）会变为设置的语言，多语言的配置文件为 ./_data/locale.yml，你可以自由的修改和增加语言。
+```
+# Build settings
+exclude: ['node_modules', 'dev', 'package.json', '自定义的文件夹名字']
+```
 
-另外，该主题也支持对某篇文章（页面）单独设置语言，只需在 Markdown 或页面 HTML 文件的头信息中设置 `lang` 项，其优先级高于 ./\_config.yml 中设置的值。设置后该文章（页面）的主题文字会变为头信息中设置的语言。
+这样做是为了在Jekyll运行时排除某些文件被复制到运行文件`_site`里去。
 
-> 提示：当前的 `lang` 值可选值为 en(English), zh(简体中文), zh-Hans(简体中文), zh-Hant(繁體中文)。
+#### 侧边栏
 
-### Color Theme
+![](screenshot/jekyll-theme-h2o-sideBar.png)
 
-颜色主题位于文件夹 ./\_sass/colors 中，修改 ./\_config.yml 中的 text_color_theme 项为以下值即可更换颜色主题，默认主题为 default。
+侧边栏分为两个部分：【个人简介】和【推荐标签】。当屏幕宽度小于960px时，侧边栏会被隐藏。
 
-| `default` | `dark` | `forest` |
-| --- |  --- | --- |
-| ![default](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/colors_default.png) | ![dark](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/colors_dark.png) | ![forest](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/colors_forest.png) |
+#### 社交图标
 
-| `ocean` | `chocolate` | `orange` |
-| --- |  --- | --- |
-| ![ocean](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/colors_ocean.png) | ![chocolate](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/colors_chocolate.png) | ![orange](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/colors_orange.png) |
+使用阿里的图标管理平台Iconfont整理了一套常用的社交图标用于博客的个人简介上，包括微博、知乎、掘金、简书、Github等十三个网站，并且对鼠标悬停时的样式颜色进行了优化。
 
-更多颜色主题敬请期待。
+配置格式如下：
 
-### 网站图标
+```
+# SNS settings 配置社交网站url
+sns:
+  weibo: '//weibo.com/lovecolcol'
+  juejin: '//juejin.im/user/57a6f434165abd006159b4cc'
+  instagram: '//www.instagram.com/steveliaocn'
+  github: '//github.com/kaeyleo'
+```
 
-该主题自带了一个“银杏叶”图标，你可以把它替换为自己的图标。网站的图标位于 ./favicon.ico 和 ./assets/images/logo 目录下。你会看到 logo 目录中有很多的 png 文件和一个 svg 矢量图文件。那些 png 图片实际上就是根据 svg 矢量图生成的不同大小的图片，这些图片是一些场景可能会用到的大图标，像 iOS 和 Android 的固定到屏幕和 Windows 10 的磁贴。
+sns属性可选参数：
 
-该主题提供了一个自动化脚本能将 svg 矢量图自动生成 favicon 和 png 文件。你所要做的是：
+社交网站 | 参数
+--------|----
+微博 | `weibo`
+推特 | `twitter`
+Github | `github`
+知乎 | `zhihu`
+掘金 | `juejin`
+豆瓣 | `douban`
+简书 | `jianshu`
+UI中国 | `uicn`
+领英 | `linkedin`
+Facebook | `facebook`
+Youtube | `youtube`
+Instagram | `instagram`
+Dribbble | `dribbble`
+Behance | `behance`
+Medium | `medium`
+VK | `vk`
 
-1. 安装 Node.js 环境
+#### 个人简介
 
-2. 在项目根目录执行 `npm i` 命令
+首页侧边栏和文章页面底部都会显示你的个人简介
 
-3. 替换 ./assets/images/logo 目录下的 logo.svg 文件
+```
+# Author 配置博主信息
+author: 'Jack'
+nickname: 'xx'
+bio: '程序员'
+avatar: 'assets/img/avatar.jpg'
+```
 
-4. 执行 `npm run artwork` 命令，此时 favicon 和 png 便会替换为新 logo.svg 生成的文件
+#### 标签
 
-当然如果要追求各个尺寸下图标的显示效果，那还得对不同尺寸的图片进行修改和优化。
+对侧边栏的标签模块进行相应配置：
 
-### 评论系统
+```
+# Tags
+recommend-tags: true
+recommend-condition-size: 12
 
-目前支持 Disqus 和 gitalk 评论系统，优先使用 Disqus。
+```
+
+Tags配置说明：
+
+ 属性 | 参数 | 描述
+-----|-----|-------
+`recommend-tags` | `true`, `false` | 是否显示推荐标签
+`recommend-condition-size` | `12` 或其他数字 | 推荐标签个数限制
+
+#### 文章搜索
+
+![](screenshot/jekyll-theme-h2o-search.png)
+
+基于Jekyll服务器生成文章索引文件 `search.json` 为博客提供搜索服务。输入文章标题或与文章标签相关的关键字即可。
+
+搜索功能默认是开启的，以卡片的样式显示在侧边栏底部。如需关闭请将配置文件 `_config.yml` 中 `search ` 属性的值改为 `false` 。
+
+```
+# Search
+search: true
+```
+
+说明 | 参数
+----|-----
+开启搜索功能 | `true`
+关闭搜索功能 | `false`
+
+#### 代码高亮
+
+模板引入了[Prism.js](http://prismjs.com)，一款轻量、可扩展的代码语法高亮库。
+
+很多知名网站如[MDN](https://developer.mozilla.org/)、[css-tricks](https://css-tricks.com/)也在用它，就连 JavaScript 之父 [Brendan Eich](https://brendaneich.com/) 也在个人博客上使用。
+
+![代码高亮](http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-highlight.png)
+
+遵循 [HTML5](https://www.w3.org/TR/html5/grouping-content.html#the-pre-element) 标准，Prism 使用语义化的 `<pre>` 元素和 `<code>` 元素来标记代码区块：
+
+```
+<pre><code class="language-css">p { color: red }</code></pre>
+```
+
+在Markdown中你可以这样写：
+
+
+	 ```css
+		p { color: red }
+	 ```
+
+支持语言：
+
+- HTML
+- CSS
+- Sass
+- JavaScript
+- CoffeeScript
+- Java
+- C-like
+- Swift
+- PHP
+- Go
+- Python
+
+#### 夜间模式
+
+晚11点至次日凌晨6点自动开启夜间模式。如果不需要，则将配置文件 `_config.yml` 中 `nightMode ` 属性的值改为 `false` 即可。
+
+```
+# Night mode
+nightMode: true
+```
+
+说明 | 参数
+----|-----
+开启夜间模式 | `true`
+关闭夜间模式 | `false`
+
+#### 主题皮肤
+
+![](screenshot/jekyll-theme-h2o-themecolor.jpg)
+
+支持两种主题颜色蓝色（默认）和粉色
+
+主要效果体现在首页博客封面、顶部导航栏的logo以及鼠标悬停时文字显示的颜色效果。
+
+```
+# theme color
+theme-color: 'default' # pink or default
+```
+
+颜色 | 参数
+----|-----
+蓝色 | `default`
+粉色 | `pink`
+
+如果你希望在博客封面显示图片，需要去index.html文件中的头信息中添加 `header-img` 配置：
+
+```
+---
+layout: default
+home-title: Steven的博客
+description: 开发者，创造者
+header-img: assets/img/banner.jpg
+---
+```
+
+#### 头图底纹
+
+![](screenshot/jekyll-theme-h2o-heroPatterns.png)
+
+在没有图片的情况下单纯显示颜色会不会太无趣了点？于是想到了加入底纹元素，底纹素材是SVG格式的（保存在css样式里），加载比图片快很多。六种底纹（电路、食物、云海、钻石等等）供你选择，配置如下：
+
+```
+# Hero background patterns
+postPatterns: 'circuitBoard'
+```
+
+`postPatterns` 属性参数配置：
+
+底纹描述  |  参数
+------|------
+电路 | `circuitBoard`
+圆环 | `overlappingCircles`
+吃货日常：啃打鸡 | `food`
+土豪必备：钻石| `glamorous`
+圈圈叉叉 | `ticTacToe`
+中国风：云海 | `seaOfClouds`
+
+#### 自定义
+
+主题开发使用的技术栈也比较简单：引入jQuery类库、使用Sass代替CSS编写样式，使用Gulp完成Sass的编译、CSS和JavaScript的代码合并压缩等任务。
+
+如果你喜欢折腾，想对模板的代码进行修改，需要使用命令 `npm install` 安装 `package.json` 中的依赖，然后 `gulp` 一下即可开始你的自定义之旅。
+
+在了解H2O主题的目录结构之前，确保你对[Jekyll目录结构](http://jekyll.com.cn/docs/structure/)有所了解。
+
+```
+	.
+	├── _config.yml # 配置文件
+	├── _includes # 页面组件方便重用
+	|   ├── footer.html # 页脚
+	|   └── head.html # html文档的头部内容
+	|   └── header.html # 顶部菜单栏
+	|   └── pageNav.html # 文章列表分页组件
+	├── _layouts # 布局模板
+	|   ├── default.html # 默认模板
+	|   └── post.html # 文章页面模板
+	├── _posts # 这里放文章
+	|   ├── 2017-05-03-elements-of-javascript-style.md # 命名格式：年-月-日-文章标题.md
+	|   └── 2007-02-21-life-on-mars.md
+	├── _site # Jekyll将源码处理后生成的站点文件，里面的内容可直接发布
+	├── assets # 存放用于线上环境的静态资源，如需修改css和js文件请到dev文件夹
+	|   ├── css # dev文件夹中sass编译后的样式文件
+	|   └── fonts # 字体文件
+	|   └── icons # 图标文件
+	|   └── img #  图片文件
+	|   └── js # dev文件夹中处理后的脚本文件
+	├── dev # 开发文件
+	|   ├── js # 存放脚本源码
+	|   └── sass # 样式源码
+	|       └── app.scss # 整合下面的所有样式文件
+	|       └── base.scss # 引入字体、Reset部分样式
+	|       └── common.scss # 模板的主要样式
+	|       └── helper.scss # 工具样式
+	|       └── layouts.scss # 响应式布局
+	└── gulpfile.js # 自动化任务脚本
+	└── index.html # 模板首页
+	└── tags.html # 标签页面
+	└── 404.html # 404页面
+	└── package.json # 管理项目的依赖项
+```
+
+值得注意的是，css及js的源码都在 `dev` 文件夹中，每一次保存 gulp 都会对它们进行处理并保存到 `assets` 文件夹以供 `_site` 上线环境使用。
 
 #### Disqus
 
-在 ./\_config.yml 文件的 `disqus.shortname` 项填上你在 [Disqus](https://disqus.com/) 上为网站建立的 site 对应的 shortname 即可，需要注意的是 Disqus 在大陆是无法直接访问的。
+[Disqus](https://disqus.com/)是一个第三方社交评论插件，体验相当不错。
 
-#### gitalk
+在配置文件 `_config.yml` 中找到comments的相关配置，设置 `disqus` 参数为 `true` 打开评论功能（ `false` 为关闭），并且设置 `disqus_url`。
 
-在 ./\_config.yml 文件的 `gitalk` 的子项（`clientID`,`clientSecret`, `repository`, `owner`, `admin`）填上 gitalk 的对应参数 即可，详见 [gitalk 中文文档](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)。
+```
+# Comments
+comments:
+	disqus: true
+	disqus_url: 'https://your-disqus-username.disqus.com/embed.js'
+```
 
-> 注意：使用评论系统必须在文章的头信息中设置 key 值（可用字符集：`字母`、`数字` 及 `- _ : .`）。
+注：`disqus` 默认值为 `false`
 
-### 阅读量统计
+#### Share.js
 
-在 ./\_config.yml 文件 `leancloud` 的 `app_id`、`app_key`、`app_class` 项分别填上你在 [LeanCloud](https://leancloud.cn) 为网站建立的应用的对应参数。
+为了让文章更方便地分享，使用了第三方分享插件[Share.js](https://github.com/overtrue/share.js)，支持一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
 
-> 注意：使用阅读量统计必须在文章的头信息中设置 key 值（可用字符集：`字母`、`数字` 及 `- _ : .`）。
+```
+# Share
+social-share: true # 开启或者关闭分享功能
+social-share-items: ['wechat', 'weibo', 'douban','twitter']
+```
 
-### Google Analytics
+### Contribution 贡献
 
-在 ./\_config.yml 文件的 `ga_tracking_id` 项填上你在 [Google Analytics](https://analytics.google.com) 上为网站建立的媒体资源对应的跟踪 ID。
+Any types of contribution are welcome. Thanks.
 
-### Markdown 头信息增强
+接受各种形式的贡献，包括不限于提交问题与需求，修复代码。等待您的 ```Pull Request```
 
-除了 Jekyll 官方的头信息外，该主题增加了一些头信息。
+#### 感谢参与代码贡献的伙伴
 
-| 变量名称       | 可选值          | 描述 |
-| ---           | ---           | --- |
-| key           |               | 评论系统和阅读量统计使用的文章标识符，如果未设置则评论和统计无效。可用字符集：`字母`、`数字` 及 `- _ : .` |
-| lang          | en/zh/zh-Hans/zh-Hant | 该文章的语言，其优先级高于  ./\_config.yml 中设置的值 |
-| modify_date   |               | 该文章的修改时间，不影响首页文章排序（`date` 代表发表时间，会影响文章排序） |
-| comment       | true/false    | 该文章是否能够评论，默认为 true（当然你也可以通过不设置 key 来实现，但是这样的话统计也失效了） |
-| mathjax       | true/false    | 该文章是否需要使用 MathJax 公式，默认为 false（此时只会在该文章页面中解析 MathJax 公式。当然你也可以配置 _config.yml 中的 `mathjax` 项为 true，让网站全局支持 MathJax 公式） |
-| mermaid       | true/false    | 该文章是否需要使用 Mermaid 绘制流程图 |
-| chart         | true/false    | 该文章是否需要使用 Chart 绘制图标 |
+- [Ray-Eldath](https://github.com/Ray-Eldath)
+- [sctop](https://github.com/sctop)
+- [bananaappletw](https://github.com/bananaappletw)
+- [moycat](https://github.com/moycat)
 
-### 其他资源
+### License 许可证
 
-在 ./\_includes/icon/social 目录下有很多的社交产品图标，例如 Behance、Flickr、QQ、微信等，方便修改和使用。
-
-## 示例
-
-- [Demo](https://tianqi.name/jekyll-TeXt-theme/)
-- [Qi's blog](https://tianqi.name/blog/)
+Jekyll-Theme-H2O is licensed under [MIT](https://github.com/kaeyleo/jekyll-theme-H2O/blob/master/LICENSE).
