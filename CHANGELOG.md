@@ -34,7 +34,7 @@
 
 ### Enhancements
 
-- Use new liquid syntax `{%-` `-%}` to avoid unnecessary output whitespace
+- Use new liquid syntax `{%-` & `-%}` to avoid unnecessary output whitespace
 
 - Add paths.base config
 
