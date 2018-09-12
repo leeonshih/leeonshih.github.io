@@ -5,8 +5,8 @@
     <description>我，伪极客，貌似热爱技术其实又没什么技术，对艺术和设计着迷但是审美很糟烂。开辟这个空间的目的是记录和分享最近的项目进展。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Sep 2018 17:37:58 +0800</pubDate>
-    <lastBuildDate>Tue, 11 Sep 2018 17:37:58 +0800</lastBuildDate>
+    <pubDate>Wed, 12 Sep 2018 11:17:59 +0800</pubDate>
+    <lastBuildDate>Wed, 12 Sep 2018 11:17:59 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -28,6 +28,7 @@
 &lt;/div&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
 &lt;h3 id=&quot;摄像头&quot;&gt;摄像头&lt;/h3&gt;
 &lt;p&gt;板卡支持AHD 720P摄像头输入，AHD接口的摄像头市面上型号很多，AHD也广泛使用于安防监控，汽车倒车影像等领域。板卡的摄像头接口中，给摄像头供电是5V电源，因此，只要是市面上可以采购到的 5V供电、720P分辨率的AHD摄像头都能支持接入。板卡最多支持6路AHD摄像头接入。&lt;/p&gt;
 
