@@ -5,52 +5,103 @@
     <description>我，伪极客，貌似热爱技术其实又没什么技术，对艺术和设计着迷但是审美很糟烂。开辟这个空间的目的是记录和分享最近的项目进展。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Sep 2018 11:21:23 +0800</pubDate>
-    <lastBuildDate>Wed, 12 Sep 2018 11:21:23 +0800</lastBuildDate>
+    <pubDate>Wed, 12 Sep 2018 17:07:46 +0800</pubDate>
+    <lastBuildDate>Wed, 12 Sep 2018 17:07:46 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
-        <title>MCIM-A(Multi-Camera input Module with AHD output)</title>
-        <description>&lt;h2 id=&quot;mcim-a&quot;&gt;MCIM-A&lt;/h2&gt;
+        <title>NeXt AVM</title>
+        <description>&lt;h2 id=&quot;next-avm&quot;&gt;NeXt Avm&lt;/h2&gt;
 
-&lt;p&gt;MCIM-A（Multi-Camera input Module with AHD output) was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCIM-A make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
+&lt;p&gt;NeXtAvm = MCIM +  Mirroria&lt;/p&gt;
 
-&lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/mcim-a-1.jpg&quot; /&gt;
-&lt;/div&gt;
+&lt;h3 id=&quot;mcim&quot;&gt;MCIM&lt;/h3&gt;
+
+&lt;p&gt;Multi-Cameras Input Module 是一个提供多摄像头接入功能的外设模块，支持 dvp 输出，mipi输出，ahd输出，usb输出等多种接口。&lt;/p&gt;
+
+&lt;h3 id=&quot;mirroria&quot;&gt;Mirroria&lt;/h3&gt;
+
+&lt;p&gt;Mirror In the Air 是一个3D AVM APP， 支持android系统，同时也有 linux 的发布版本。可以实现 3D AVM，流媒体后视镜，行车记录仪等功能。&lt;/p&gt;
+
+&lt;p&gt;主要特点&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;支持目前主流的AVM自动拼接图形。&lt;/li&gt;
+  &lt;li&gt;支持2D，3D画面。&lt;/li&gt;
+  &lt;li&gt;支持分屏显示。&lt;/li&gt;
+  &lt;li&gt;支持动态轨迹。&lt;/li&gt;
+  &lt;li&gt;支持上百种常见车型和车漆颜色设置。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;后续&lt;/p&gt;
+
+&lt;p&gt;车道线检测，行人检测的功能都在开发中。&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;div align=&quot;center&quot;&gt;NVP6021AHD输出模块。&lt;/div&gt;
+&lt;h2 id=&quot;demo&quot;&gt;DEMO&lt;/h2&gt;
 
 &lt;div align=&quot;center&quot;&gt;
-&lt;img src=&quot;/images/mcmc-descript.jpg&quot; /&gt;
+&lt;img src=&quot;/images/lianjiesj-s.jpg&quot; /&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;h3 id=&quot;摄像头&quot;&gt;摄像头&lt;/h3&gt;
-&lt;p&gt;板卡支持AHD 720P摄像头输入，AHD接口的摄像头市面上型号很多，AHD也广泛使用于安防监控，汽车倒车影像等领域。板卡的摄像头接口中，给摄像头供电是5V电源，因此，只要是市面上可以采购到的 5V供电、720P分辨率的AHD摄像头都能支持接入。板卡最多支持6路AHD摄像头接入。&lt;/p&gt;
+&lt;p&gt;使用Usb输出连接手机，Android平台 实现3D AVM功能。&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;
 &lt;img src=&quot;/images/mcim-a-2.jpg&quot; /&gt;
 &lt;/div&gt;
 
-&lt;p&gt;使用MIPI输出，在RK3288，Android平台 实现3D AVM功能。720P显示分辨率全屏输出， 25fps毫无压力，CPU和GPU都表示工作不饱和。&lt;/p&gt;
+&lt;p&gt;使用MIPI输出连接RK3288开发板，Android平台 实现3D AVM功能，720P显示分辨率全屏输出。&lt;/p&gt;
 
-&lt;h3 id=&quot;nstc-or-pal&quot;&gt;Nstc or Pal&lt;/h3&gt;
-&lt;p&gt;板卡支持30fps和25fps的摄像头，但是目前所有的测试都是使用的25fps的PAL制摄像头。&lt;/p&gt;
+&lt;h4 id=&quot;测试视频1&quot;&gt;测试视频1&lt;/h4&gt;
 
-&lt;h3 id=&quot;灵活的输出&quot;&gt;灵活的输出&lt;/h3&gt;
-&lt;p&gt;AHD输出实现之后，加上前期的CVI，MIPI，MCIM实际上已经成为了一个通用性和灵活性都比较强的接口模块了。&lt;/p&gt;
+&lt;iframe height=&quot;498&quot; width=&quot;640&quot; src=&quot;http://player.youku.com/embed/XMzgyMDk0MzE2OA==&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;strong&gt;灵活的接口&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;MCIM通过Usb连接到手机，运行3D AVM。&lt;/p&gt;
 
-&lt;p&gt;能够根据后端设备支持的接口类型，选择AHD输出，8bits DVP输出，16bits DVP输出 , 2lanes MIPI或者4lanes MIPI输出。&lt;/p&gt;
+&lt;h4 id=&quot;测试视频2&quot;&gt;测试视频2&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;灵活的分辨率&lt;/strong&gt;&lt;/p&gt;
+&lt;iframe height=&quot;498&quot; width=&quot;640&quot; src=&quot;http://player.youku.com/embed/XMzgyMDk0NjE1Ng==&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;能够根据后端设备的接口带宽和处理能力，选择 720P（4x640x360），1080P（4x960x540)或者 2.5K（4x1280x720）输出。&lt;/p&gt;
+&lt;p&gt;MIPI输出连接RK3288，25fps流畅运行，不卡顿&lt;/p&gt;
+
+&lt;h4 id=&quot;测试视频3&quot;&gt;测试视频3&lt;/h4&gt;
+
+&lt;iframe height=&quot;498&quot; width=&quot;640&quot; src=&quot;http://player.youku.com/embed/XMzgyMDkwMzU4NA==&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Tue, 03 Jul 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/03/AVM-NeXt.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/03/AVM-NeXt.html</guid>
+        
+        <category>车载环视</category>
+        
+        
+        <category>Project</category>
+        
+      </item>
+    
+      <item>
+        <title>新一代车载环视解决方案</title>
+        <description>&lt;h2 id=&quot;next-gen-avm-solution&quot;&gt;neXt Gen Avm Solution&lt;/h2&gt;
+
+&lt;p&gt;目前市面上所有的 AVM 产品都是一个设备主机盒子的形态。主机内部包含完整的硬件，系统固件，算法代码，控制逻辑和交互界面。&lt;/p&gt;
+
+&lt;p&gt;在这种情况下，为了降低成本和价格，势必选择很低端的SOC，从而导致SOC算力不强， 输出的画面分辨率不高，只能显示单一的2D画面等问题。&lt;/p&gt;
+
+&lt;p&gt;如果选择高性能的能够实现AVM的SOC方案， 又会发现成本增长数倍。&lt;/p&gt;
+
+&lt;p&gt;其实，在这两者之间存在着大量的各种品牌型号的，性能强劲，成本低廉的SOC，广泛应用于车机，车载系统，平板等领域，它们不能应用于AVM产品唯一的原因就是——&lt;strong&gt;不能接入4个摄像头。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;所以，AVM产品需要解决的其实是两个技术问题：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;用低成本解决多摄像头接入。&lt;/li&gt;
+  &lt;li&gt;AVM算法和模型。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;解决这两个问题，就可以在任意平台和系统上实现AVM功能，而无关SOC方案。&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h3 id=&quot;关于avm的思考&quot;&gt;关于AVM的思考&lt;/h3&gt;
 
@@ -108,24 +159,106 @@
 
 &lt;p&gt;&lt;strong&gt;MCIM替代海思AVM&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;如果使用MCIM跟车机方案对接，来实现AVM功能， 那么很有希望能够替掉海思二代盒子，抢下30%~50%的市场份额。按照后装市场100万台/年的市场容量， 那么一年应该有 30~50万台的份额，15M~25M ￥的利润（单台利润假设￥50）。&lt;/p&gt;
+&lt;p&gt;如果使用MCIM跟车机方案对接，来实现AVM功能， 那么很有希望能够成为通用的3D版AVM解决方案。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcim-a-2.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;使用MIPI输出，在RK3288，Android平台 实现3D AVM功能。720P显示分辨率全屏输出， 25fps毫无压力，CPU和GPU都表示工作不饱和。&lt;/p&gt;
 
 &lt;h4 id=&quot;测试视频1&quot;&gt;测试视频1&lt;/h4&gt;
 
 &lt;p&gt;25fps流畅运行，不卡顿&lt;/p&gt;
 
-&lt;iframe frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;498&quot; src=&quot;https://v.qq.com/iframe/player.html?vid=m0752e1ht5c&amp;amp;tiny=0&amp;amp;auto=0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe height=&quot;498&quot; width=&quot;640&quot; src=&quot;http://player.youku.com/embed/XMzgyMDk0NjE1Ng==&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;h4 id=&quot;测试视频2&quot;&gt;测试视频2&lt;/h4&gt;
 
 &lt;p&gt;25fps流畅运行，不卡顿，不会像海思方案那样看到明显的图像一帧一帧跳动。&lt;/p&gt;
 
-&lt;iframe frameborder=&quot;0&quot; width=&quot;640&quot; height=&quot;498&quot; src=&quot;https://v.qq.com/iframe/player.html?vid=w0752nlcmjq&amp;amp;tiny=0&amp;amp;auto=0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe height=&quot;498&quot; width=&quot;640&quot; src=&quot;http://player.youku.com/embed/XMzgyMDk2Nzk0OA==&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Tue, 03 Jul 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/03/AVM-About-NeXt.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/03/AVM-About-NeXt.html</guid>
+        
+        <category>车载环视</category>
+        
+        
+        <category>Project</category>
+        
+      </item>
+    
+      <item>
+        <title>MCIM(Multi-Camera input Module)</title>
+        <description>&lt;h2 id=&quot;mcim&quot;&gt;MCIM&lt;/h2&gt;
+
+&lt;p&gt;MCIM（Multi-Camera input Module ) was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCIM make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcmc-descript.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;h3 id=&quot;摄像头&quot;&gt;摄像头&lt;/h3&gt;
+&lt;p&gt;板卡支持AHD 720P摄像头输入，AHD接口的摄像头市面上型号很多，AHD也广泛使用于安防监控，汽车倒车影像等领域。板卡的摄像头接口中，给摄像头供电是5V电源，因此，只要是市面上可以采购到的 5V供电、720P分辨率的AHD摄像头都能支持接入。板卡最多支持6路AHD摄像头接入。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcim-a-2.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;使用MIPI输出，在RK3288，Android平台 实现3D AVM功能。720P显示分辨率全屏输出， 25fps毫无压力，CPU和GPU都表示工作不饱和。&lt;/p&gt;
+
+&lt;h3 id=&quot;nstc-or-pal&quot;&gt;Nstc or Pal&lt;/h3&gt;
+&lt;p&gt;板卡支持30fps和25fps的摄像头，但是目前所有的测试都是使用的25fps的PAL制摄像头。&lt;/p&gt;
+
+&lt;h3 id=&quot;灵活的输出&quot;&gt;灵活的输出&lt;/h3&gt;
+&lt;p&gt;AHD输出实现之后，加上前期的CVI，MIPI，MCIM实际上已经成为了一个通用性和灵活性都比较强的接口模块了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;灵活的接口&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;能够根据后端设备支持的接口类型，选择AHD输出，8bits DVP输出，16bits DVP输出 , 1lanes , 2lanes或者4lanes MIPI输出。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;灵活的分辨率&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;能够根据后端设备的接口带宽和处理能力，选择 720P（4x640x360），1080P（4x960x540)或者 2.5K（4x1280x720）输出。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 02 Jul 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/02/mcim.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/02/mcim.html</guid>
+        
+        <category>Board</category>
+        
+        
+        <category>Project</category>
+        
+      </item>
+    
+      <item>
+        <title>MCIM-AHD</title>
+        <description>&lt;h2 id=&quot;mcim-with-ahd-output&quot;&gt;MCIM with AHD output&lt;/h2&gt;
+
+&lt;p&gt;NVP6021 接口芯片调试完成，调试过程中没有遇到太多问题，跟调试CVI输出的时候一样， 主要就是确保时序正常。只要确保时序正常，AHD接收器就能收到并显示正常的视频。尝试在输出时序中加入很小的抖动，很明显就能观察到视频不稳定或者视频信号丢失。&lt;/p&gt;
+
+&lt;p&gt;毕竟是模拟信号，所以只能靠两端严格设定好时序来进行同步，因此对时序很敏感， 但同时也因为必须按照严格定好的时序来工作，所以芯片的驱动就会很简单， 基本没有复杂的配置和调试。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcim-a-1.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;!--more--&gt;
+
+&lt;div align=&quot;center&quot;&gt;NVP6021AHD输出模块。&lt;/div&gt;
 
 </description>
         <pubDate>Wed, 06 Jun 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/06/06/mcim-a.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/06/06/mcim-a.html</guid>
+        <link>http://localhost:4000/2018/06/06/mcim-ahd.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/06/06/mcim-ahd.html</guid>
         
         <category>Board</category>
         
@@ -216,8 +349,8 @@
 &lt;/div&gt;
 </description>
         <pubDate>Thu, 18 Jan 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/01/18/About-AVM-(does-avm-need-network-or-not).html</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/01/18/About-AVM-(does-avm-need-network-or-not).html</guid>
+        <link>http://localhost:4000/2018/01/18/AVM-does-avm-need-network-or-not.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/18/AVM-does-avm-need-network-or-not.html</guid>
         
         <category>车载环视</category>
         
@@ -289,10 +422,10 @@ cond(no)-&amp;gt;op2-&amp;gt;e
       </item>
     
       <item>
-        <title>MCIM-M(Multi-Camera input Module with Mipi output)</title>
-        <description>&lt;h2 id=&quot;mcim-m&quot;&gt;MCIM-M&lt;/h2&gt;
+        <title>MCIM-MIPI</title>
+        <description>&lt;h2 id=&quot;mcim使用mipi输出&quot;&gt;MCIM使用Mipi输出&lt;/h2&gt;
 
-&lt;p&gt;MCIM-M（Multi-Camera input Module with Mipi output) was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCIM-M make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
+&lt;p&gt;MCIM（Multi-Camera input Module) was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCIM make the soc captures four or five or six videos , and make some special need possible.&lt;/p&gt;
 
 &lt;div align=&quot;center&quot;&gt;
 &lt;img src=&quot;/images/mcmc-descript.jpg&quot; /&gt;
@@ -307,11 +440,8 @@ cond(no)-&amp;gt;op2-&amp;gt;e
 
 &lt;p&gt;输出接口使用8bits DVP的时候，如果后端处理器能够支持148.5Mhz的 pclk时钟，那么板卡最大可以输出 6 x 1280x360@25fps 或者  6 x 640x720@25fps的图像。&lt;/p&gt;
 
-&lt;h3 id=&quot;nstc-or-pal&quot;&gt;Nstc or Pal&lt;/h3&gt;
-&lt;p&gt;板卡支持30fps和25fps的摄像头，但是目前所有的带宽测试都是基于25fps的摄像头进行计算和测试的。如果使用输出30fps的摄像图，可以正常工作，但是并不能保证在所有配置下都能达到 30fps的帧率输出。&lt;/p&gt;
-
 &lt;h3 id=&quot;输出接口&quot;&gt;输出接口&lt;/h3&gt;
-&lt;p&gt;输出接口支持8bits DVP，16 bits DVP，2lanes MIPI 或者 4lanes MIPI。&lt;/p&gt;
+&lt;p&gt;1lanes &amp;amp; 2lanes &amp;amp; 4lanes MIPI。&lt;/p&gt;
 
 &lt;h3 id=&quot;使用配置&quot;&gt;使用配置&lt;/h3&gt;
 
@@ -324,6 +454,11 @@ cond(no)-&amp;gt;op2-&amp;gt;e
  . 6 x 720P				»» 4 lanes mipi&lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;/images/mcim-a-2.jpg&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;使用MIPI输出，在RK3288，Android平台 实现3D AVM功能。&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:half720p&quot;&gt;
@@ -333,8 +468,8 @@ cond(no)-&amp;gt;op2-&amp;gt;e
 &lt;/div&gt;
 </description>
         <pubDate>Fri, 01 Dec 2017 21:08:09 +0800</pubDate>
-        <link>http://localhost:4000/2017/12/01/mcim-m.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/12/01/mcim-m.html</guid>
+        <link>http://localhost:4000/2017/12/01/mcim-mipi.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/12/01/mcim-mipi.html</guid>
         
         <category>Board</category>
         
@@ -344,8 +479,8 @@ cond(no)-&amp;gt;op2-&amp;gt;e
       </item>
     
       <item>
-        <title>MCIM驱动CVI输出</title>
-        <description>&lt;h3 id=&quot;mcim对接dh9801实现cvi输出&quot;&gt;MCIM对接DH9801实现CVI输出&lt;/h3&gt;
+        <title>MCIM-CVI</title>
+        <description>&lt;h3 id=&quot;mcim驱动dh9801实现cvi输出&quot;&gt;MCIM驱动DH9801实现CVI输出&lt;/h3&gt;
 
 &lt;p&gt;碰到一个需求，希望将4个摄像头视频集成到一路CVI输出（我也没有办法，人家的设备上只有一个CVI输入接口，想要连接额外的摄像头，只能通过CVI信号输入），于是就上手开始调试DH9801，本来打算是三周时间连硬件带软件全部调试完成，但是中间碰到一个糟心的地方，前后花了一个半月才调通。&lt;/p&gt;
 
@@ -399,47 +534,13 @@ cond(no)-&amp;gt;op2-&amp;gt;e
 &lt;p&gt;&lt;strong&gt;视频系统通过插帧丢帧来同步时钟快慢问题是基本方法，为啥最早没这么做，因为懒，当初觉得插入时序抖动是最省事的方法，于是就这样用了一年多。&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 15 Oct 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/10/15/mcim-to-cvi.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/10/15/mcim-to-cvi.html</guid>
-        
-        <category>Hardware</category>
+        <link>http://localhost:4000/2017/10/15/mcim-cvi.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/10/15/mcim-cvi.html</guid>
         
         <category>Board</category>
         
         
         <category>Hardware</category>
-        
-      </item>
-    
-      <item>
-        <title>MathJax Test</title>
-        <description>&lt;p&gt;mathjax in markdown :)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;这是一个不&lt;code class=&quot;highlighter-rouge&quot;&gt;align&lt;/code&gt;的公式&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall \alpha \in A, \quad a \cdot b = 0&lt;/script&gt;
-
-&lt;p&gt;&lt;strong&gt;这是一个&lt;code class=&quot;highlighter-rouge&quot;&gt;align&lt;/code&gt;的公式&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\text{for OTP : $\qquad$ if }\quad E(k,\:m)=c\\
-\begin{align}
-k\oplus m &amp;= c \\
-k &amp;= m\oplus c
-\end{align}
-\\
-\#\{\;k \in \mathscr K : \quad E(k,\:m)=c \;\}=1 \quad \forall m,\:c %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;公式块要想有较好的显示效果，必须在公式块标记符&lt;code class=&quot;highlighter-rouge&quot;&gt;$$&lt;/code&gt;&lt;strong&gt;前后&lt;/strong&gt;留有空行，否则公式将不能正常居中。行内公式无此问题。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 30 Jul 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/07/30/mathjax-test.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/07/30/mathjax-test.html</guid>
-        
-        <category>mathjax</category>
-        
-        
-        <category>test</category>
         
       </item>
     
@@ -541,172 +642,6 @@ imx6在连接fpga之间，也连接了ov3640，mt9v034两个摄像头板，i2c�
         
         
         <category>Hardware</category>
-        
-      </item>
-    
-      <item>
-        <title>H2O theme for Jekyll</title>
-        <description>&lt;p&gt;正如我在&lt;a href=&quot;http://weibo.com/1374146504/profile?topnav=1&amp;amp;wvr=6&quot;&gt;微博&lt;/a&gt;上所说的，使用&lt;a href=&quot;http://jekyll.com.cn/&quot;&gt;Jekyll&lt;/a&gt;半年以来一直没有令我满意的主题模板，所以开始计划自己写一套好看又好用的主题模板。设计之初就明确了极简主义，风格采用扁平化了，通过卡片式设计来进行区块分明的布局，参考了Medium的ui样式和知乎专栏的视觉风格。&lt;/p&gt;
-
-&lt;h2 id=&quot;h2o&quot;&gt;H2O&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;源码及使用文档 →&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realhome.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;新主题名叫”H2O”，基于Jekyll 3.0.x（使用&lt;code class=&quot;highlighter-rouge&quot;&gt;gem update jekyll&lt;/code&gt;升级Jekyll），Markdown的代码高亮不再支持pygments转而使用rouge，咱已经默认配置了 &lt;code class=&quot;highlighter-rouge&quot;&gt;highlighter: rouge&lt;/code&gt; 。用到的技术栈也很简单：引入jQuery类库，使用Sass编写样式，使用Gulp来编译Sass、合并压缩css、js，开源在&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;Github&lt;/a&gt;上，稍作配置即可用于你的Jekyll博客上。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-sketchdesign.png&quot; alt=&quot;Design with Sketch&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;使用Sketch完成H2O主题的原型设计&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-vs.jpg&quot; alt=&quot;My Jekyll themes&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;比之前漂亮不少吧，下面聊聊H2O的新特性。&lt;/p&gt;
-
-&lt;h2 id=&quot;新特性&quot;&gt;新特性&lt;/h2&gt;
-
-&lt;h3 id=&quot;主题配色&quot;&gt;主题配色&lt;/h3&gt;
-
-&lt;p&gt;支持两种主题配色——蓝色和粉色。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/kaeyleo/jekyll-theme-H2O/blob/master/screenshot/jekyll-theme-h2o-themecolor.jpg?raw=true&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;侧边栏&quot;&gt;侧边栏&lt;/h3&gt;
-
-&lt;p&gt;相比自己上一个版本的博客主题，首页增加了侧边栏，方便展示博主的个人信息和文章标签。&lt;/p&gt;
-
-&lt;h3 id=&quot;社交图标&quot;&gt;社交图标&lt;/h3&gt;
-
-&lt;p&gt;使用阿里的图标管理平台&lt;a href=&quot;http://iconfont.cn/&quot;&gt;Iconfont&lt;/a&gt;整理了一套&lt;strike&gt;墙内外&lt;/strike&gt;常用的社交图标，包括微博、知乎、掘金、简书、Github等十多个网站，鼠标悬停会显示该站的主题色。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-snstext.jpg&quot; alt=&quot;social iconfont&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;前后文导航&quot;&gt;前后文导航&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-nextpostnav.png&quot; alt=&quot;Next post navigator&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;自定义文章封面&quot;&gt;自定义文章封面&lt;/h3&gt;
-
-&lt;p&gt;在Markdown的&lt;a href=&quot;http://jekyll.com.cn/docs/frontmatter/&quot;&gt;文章头信息&lt;/a&gt;里添加cover参数来配置文章的封面图片，如果没有配置封面，则默认【主题色+底纹】的组合作为文章封面。值得一提的是，H2O有两种（粉、蓝）主题色和六种底纹（电路板、食物、云海、钻石等等）供你选择。&lt;/p&gt;
-
-&lt;h3 id=&quot;头图个性化底纹&quot;&gt;头图个性化底纹&lt;/h3&gt;
-
-&lt;p&gt;在没有图片的情况下单纯显示颜色会不会太无趣了点？于是想到了加入底纹元素，底纹素材是SVG格式的（保存在css样式里），加载比图片快很多。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-headerpatterns.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;代码高亮&quot;&gt;代码高亮&lt;/h3&gt;
-
-&lt;p&gt;模板引入了&lt;a href=&quot;http://prismjs.com&quot;&gt;Prism.js&lt;/a&gt;，一款轻量、可扩展的代码语法高亮库。&lt;/p&gt;
-
-&lt;p&gt;很多知名网站如&lt;a href=&quot;https://developer.mozilla.org/&quot;&gt;MDN&lt;/a&gt;、&lt;a href=&quot;https://css-tricks.com/&quot;&gt;css-tricks&lt;/a&gt;也在用它，JavaScript 之父 &lt;a href=&quot;https://brendaneich.com/&quot;&gt;Brendan Eich&lt;/a&gt; 也在个人博客上使用。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-highlight.png&quot; alt=&quot;代码高亮&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;遵循 &lt;a href=&quot;https://www.w3.org/TR/html5/grouping-content.html#the-pre-element&quot;&gt;HTML5&lt;/a&gt; 标准，Prism 使用语义化的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; 元素和 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;code&amp;gt;&lt;/code&gt; 元素来标记代码区块：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code class=&quot;language-css&quot;&amp;gt;p { color: red }&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;在Markdown中你可以这样写：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ```css
-	p { color: red }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;```&lt;/p&gt;
-
-&lt;p&gt;支持语言：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;HTML&lt;/li&gt;
-  &lt;li&gt;CSS&lt;/li&gt;
-  &lt;li&gt;Sass&lt;/li&gt;
-  &lt;li&gt;JavaScript&lt;/li&gt;
-  &lt;li&gt;CoffeeScript&lt;/li&gt;
-  &lt;li&gt;Java&lt;/li&gt;
-  &lt;li&gt;C-like&lt;/li&gt;
-  &lt;li&gt;Swift&lt;/li&gt;
-  &lt;li&gt;PHP&lt;/li&gt;
-  &lt;li&gt;Go&lt;/li&gt;
-  &lt;li&gt;Python&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;第三方评论&quot;&gt;第三方评论&lt;/h3&gt;
-
-&lt;p&gt;由于多说关闭，又对国内其他第三方评论插件无感，所以将&lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus&lt;/a&gt;列为首选（目前模板也只提供了这个），请自备梯子。&lt;/p&gt;
-
-&lt;h3 id=&quot;移动端优化&quot;&gt;移动端优化&lt;/h3&gt;
-
-&lt;p&gt;响应式设计，对手机和平板等移动设备做了优化。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;关于阅读体验&quot;&gt;关于阅读体验&lt;/h3&gt;
-
-&lt;p&gt;我认为在内容质量相同的情况下，出色的沉浸式阅读体验是博客的核心。&lt;/p&gt;
-
-&lt;p&gt;H2O在这方面还有很多需要完善的地方，比如：&lt;strike&gt;代码高亮&lt;/strike&gt;、夜间模式、查看大图…&lt;/p&gt;
-
-&lt;h3 id=&quot;其他特性&quot;&gt;其他特性：&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;网页标题SEO优化&lt;/li&gt;
-  &lt;li&gt;标签索引，点击标签跳转到标签目录，即可查看对应的全部文章&lt;/li&gt;
-  &lt;li&gt;漂亮&lt;/li&gt;
-  &lt;li&gt;好看&lt;/li&gt;
-  &lt;li&gt;美&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
-
-&lt;p&gt;本想趁这次机会将整站https化的，但折腾了半天发现弹性web托管并不支持，所以暂时搁置https的想法。另外，博客统计工具一直使用的是&lt;a href=&quot;https://tongji.baidu.com&quot;&gt;百度统计&lt;/a&gt;，这次新增了Google Analytics。&lt;/p&gt;
-
-&lt;p&gt;这次从0到1，独自设计、开发再到发布大约用了一周时间，也算完成一个小小的开源项目了，后续也将持续完善和更新，欢迎&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;Star&lt;/a&gt;。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 18 Apr 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/04/18/new-theme-h2o.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/04/18/new-theme-h2o.html</guid>
-        
-        <category>jekyll</category>
-        
-        <category>前端开发</category>
-        
-        <category>设计</category>
-        
-        
-        <category>技术</category>
-        
-      </item>
-    
-      <item>
-        <title>Hello Jekyll</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;Transform your plain text into static websites and blogs.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;welcome&quot;&gt;Welcome&lt;/h3&gt;
-
-&lt;p&gt;This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such as getting your site up and running, creating and managing your content, customizing the way your site works and looks, deploying to various environments, and give you some advice on participating in the future development of Jekyll itself.&lt;/p&gt;
-
-&lt;h3 id=&quot;so-what-is-jekyll-exactlypermalink&quot;&gt;So what is Jekyll, exactly?Permalink&lt;/h3&gt;
-
-&lt;p&gt;Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;) and our &lt;a href=&quot;https://github.com/Shopify/liquid/wiki&quot;&gt;Liquid&lt;/a&gt; renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.&lt;/p&gt;
-
-&lt;h3 id=&quot;helpful-hintspermalink&quot;&gt;Helpful HintsPermalink&lt;/h3&gt;
-
-&lt;p&gt;Throughout this guide there are a number of small-but-handy pieces of information that can make using Jekyll easier, more interesting, and less hazardous. Here’s what to look out for.&lt;/p&gt;
-
-&lt;h3 id=&quot;video-test&quot;&gt;Video Test&lt;/h3&gt;
-
-&lt;iframe type=&quot;text/html&quot; width=&quot;100%&quot; height=&quot;385&quot; src=&quot;http://www.youtube.com/embed/gfmjMWjn-Xg&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Tue, 18 Apr 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/04/18/hello-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/04/18/hello-jekyll.html</guid>
-        
-        <category>jekyll</category>
-        
         
       </item>
     

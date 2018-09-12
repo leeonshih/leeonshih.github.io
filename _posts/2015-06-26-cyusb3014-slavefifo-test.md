@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Cyusb3014 Slavefifo Test
+title:  Cyusb3014 Slavefifo 调试
 date:   2015-06-26
 categories: Hardware
 tags: USB3.0 Hardware

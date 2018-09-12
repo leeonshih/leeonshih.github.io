@@ -2,10 +2,10 @@
 layout: post
 title: 'H2O theme for Jekyll'
 subtitle: '或许是最漂亮的Jekyll主题'
-date: 2017-04-18
+date: 2014-04-18
 categories: 技术
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
-tags: jekyll 前端开发 设计
+tags: jekyll
 ---
 
 正如我在[微博](http://weibo.com/1374146504/profile?topnav=1&wvr=6)上所说的，使用[Jekyll](http://jekyll.com.cn/)半年以来一直没有令我满意的主题模板，所以开始计划自己写一套好看又好用的主题模板。设计之初就明确了极简主义，风格采用扁平化了，通过卡片式设计来进行区块分明的布局，参考了Medium的ui样式和知乎专栏的视觉风格。
@@ -77,7 +77,7 @@ tags: jekyll 前端开发 设计
 ```
  ```css
 	p { color: red }
- ```
+```
 ```
 
 支持语言：
@@ -123,3 +123,5 @@ H2O在这方面还有很多需要完善的地方，比如：<strike>代码高亮
 本想趁这次机会将整站https化的，但折腾了半天发现弹性web托管并不支持，所以暂时搁置https的想法。另外，博客统计工具一直使用的是[百度统计](https://tongji.baidu.com)，这次新增了Google Analytics。
 
 这次从0到1，独自设计、开发再到发布大约用了一周时间，也算完成一个小小的开源项目了，后续也将持续完善和更新，欢迎[Star](https://github.com/kaeyleo/jekyll-theme-H2O)。
+
+```

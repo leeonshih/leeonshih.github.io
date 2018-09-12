@@ -1,54 +1,32 @@
 ---
 layout: post
-title:  MCIM-A(Multi-Camera input Module with AHD output)
-date:   2018-06-06
-cover: 'https://leeonshih.github.io/images/mcim-a-1.jpg'
+title:  新一代车载环视解决方案
+date:   2018-07-03
+cover: 'https://leeonshih.github.io/images/zk2.jpg'
 categories: Project
-tags: Board
+tags: 车载环视
 ---
 
-## MCIM-A
+## neXt Gen Avm Solution
 
-MCIM-A（Multi-Camera input Module with AHD output) was designed to accomplish multi-camera videos input via single video interface.  In most soc (especially general-purpose soc) , there are no more than two video input interfaces that what are dvp or mipi. MCIM-A make the soc captures four or five or six videos , and make some special need possible. 
+目前市面上所有的 AVM 产品都是一个设备主机盒子的形态。主机内部包含完整的硬件，系统固件，算法代码，控制逻辑和交互界面。
 
-<div align="center">
-<img src="/images/mcim-a-1.jpg" />
-</div>
+在这种情况下，为了降低成本和价格，势必选择很低端的SOC，从而导致SOC算力不强， 输出的画面分辨率不高，只能显示单一的2D画面等问题。
+
+如果选择高性能的能够实现AVM的SOC方案， 又会发现成本增长数倍。
+
+其实，在这两者之间存在着大量的各种品牌型号的，性能强劲，成本低廉的SOC，广泛应用于车机，车载系统，平板等领域，它们不能应用于AVM产品唯一的原因就是——**不能接入4个摄像头。**
+
+所以，AVM产品需要解决的其实是两个技术问题：
+
+1. 用低成本解决多摄像头接入。
+2. AVM算法和模型。
+
+解决这两个问题，就可以在任意平台和系统上实现AVM功能，而无关SOC方案。
 
 <!--more-->
 
-<div align="center">NVP6021AHD输出模块。</div>
 
-
-
-<div align="center">
-<img src="/images/mcmc-descript.jpg" />
-</div>
-
-## Usage
-
-### 摄像头
-板卡支持AHD 720P摄像头输入，AHD接口的摄像头市面上型号很多，AHD也广泛使用于安防监控，汽车倒车影像等领域。板卡的摄像头接口中，给摄像头供电是5V电源，因此，只要是市面上可以采购到的 5V供电、720P分辨率的AHD摄像头都能支持接入。板卡最多支持6路AHD摄像头接入。
-
-<div align="center">
-<img src="/images/mcim-a-2.jpg" />
-</div>
-
-使用MIPI输出，在RK3288，Android平台 实现3D AVM功能。720P显示分辨率全屏输出， 25fps毫无压力，CPU和GPU都表示工作不饱和。
-
-### Nstc or Pal
-板卡支持30fps和25fps的摄像头，但是目前所有的测试都是使用的25fps的PAL制摄像头。
-
-### 灵活的输出
-AHD输出实现之后，加上前期的CVI，MIPI，MCIM实际上已经成为了一个通用性和灵活性都比较强的接口模块了。
-
-**灵活的接口**
-
-能够根据后端设备支持的接口类型，选择AHD输出，8bits DVP输出，16bits DVP输出 , 2lanes MIPI或者4lanes MIPI输出。
-
-**灵活的分辨率**
-
-能够根据后端设备的接口带宽和处理能力，选择 720P（4x640x360），1080P（4x960x540)或者 2.5K（4x1280x720）输出。
 
 ### 关于AVM的思考
 
@@ -110,17 +88,26 @@ AVM如果作为车机的配件，现在的几款产品都很鸡肋。海思方�
 
 **MCIM替代海思AVM**
 
-如果使用MCIM跟车机方案对接，来实现AVM功能， 那么很有希望能够替掉海思二代盒子，抢下30%~50%的市场份额。按照后装市场100万台/年的市场容量， 那么一年应该有 30~50万台的份额，15M~25M ￥的利润（单台利润假设￥50）。
+如果使用MCIM跟车机方案对接，来实现AVM功能， 那么很有希望能够成为通用的3D版AVM解决方案。
+
+
+
+<div align="center">
+<img src="/images/mcim-a-2.jpg" />
+</div>
+
+使用MIPI输出，在RK3288，Android平台 实现3D AVM功能。720P显示分辨率全屏输出， 25fps毫无压力，CPU和GPU都表示工作不饱和。
+
+
 
 #### 测试视频1
 
 25fps流畅运行，不卡顿
 
-<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=m0752e1ht5c&tiny=0&auto=0" allowfullscreen></iframe>
+<iframe height='498' width='640' src='http://player.youku.com/embed/XMzgyMDk0NjE1Ng==' frameborder='0' allowfullscreen></iframe>
 
 #### 测试视频2
 
 25fps流畅运行，不卡顿，不会像海思方案那样看到明显的图像一帧一帧跳动。
 
-<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=w0752nlcmjq&tiny=0&auto=0" allowfullscreen></iframe>
-
+<iframe height='498' width='640' src='http://player.youku.com/embed/XMzgyMDk2Nzk0OA==' frameborder='0' allowfullscreen></iframe>
