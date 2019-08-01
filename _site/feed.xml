@@ -5,80 +5,9 @@
     <description>我，伪极客，貌似热爱技术其实又没什么技术，对艺术和设计着迷但是审美很糟烂。开辟这个空间的目的是记录和分享最近的项目进展。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Sep 2018 18:03:41 +0800</pubDate>
-    <lastBuildDate>Wed, 12 Sep 2018 18:03:41 +0800</lastBuildDate>
+    <pubDate>Thu, 03 Jan 2019 13:44:46 +0800</pubDate>
+    <lastBuildDate>Thu, 03 Jan 2019 13:44:46 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
-    
-      <item>
-        <title>NeXt AVM</title>
-        <description>&lt;h2 id=&quot;next-avm&quot;&gt;NeXt Avm&lt;/h2&gt;
-
-&lt;p&gt;NeXtAvm = MCIM +  Mirroria&lt;/p&gt;
-
-&lt;h3 id=&quot;mcim&quot;&gt;MCIM&lt;/h3&gt;
-
-&lt;p&gt;Multi-Cameras Input Module 是一个提供多摄像头接入功能的外设模块，支持 dvp 输出，mipi输出，ahd输出，usb输出等多种接口。&lt;/p&gt;
-
-&lt;h3 id=&quot;mirroria&quot;&gt;Mirroria&lt;/h3&gt;
-
-&lt;p&gt;Mirror In the Air 是一个3D AVM APP， 支持android系统，同时也有 linux 的发布版本。可以实现 3D AVM，流媒体后视镜，行车记录仪等功能。&lt;/p&gt;
-
-&lt;p&gt;主要特点&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;支持目前主流的AVM自动拼接图形。&lt;/li&gt;
-  &lt;li&gt;支持2D，3D画面。&lt;/li&gt;
-  &lt;li&gt;支持分屏显示。&lt;/li&gt;
-  &lt;li&gt;支持动态轨迹。&lt;/li&gt;
-  &lt;li&gt;支持上百种常见车型和车漆颜色设置。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;后续&lt;/p&gt;
-
-&lt;p&gt;车道线检测，行人检测的功能都在开发中。&lt;/p&gt;
-
-&lt;h2 id=&quot;形态和接口&quot;&gt;形态和接口&lt;/h2&gt;
-
-&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/kuangjiatu-1.png&quot; /&gt;&lt;/div&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;demo&quot;&gt;DEMO&lt;/h2&gt;
-
-&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/lianjiesj-s.jpg&quot; /&gt;&lt;/div&gt;
-
-&lt;p&gt;使用Usb输出连接手机，Android平台 实现3D AVM功能。&lt;/p&gt;
-
-&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;/images/mcim-a-2.jpg&quot; /&gt;&lt;/div&gt;
-
-&lt;p&gt;使用MIPI输出连接RK3288开发板，Android平台 实现3D AVM功能，720P显示分辨率全屏输出。&lt;/p&gt;
-
-&lt;h4 id=&quot;测试视频1&quot;&gt;测试视频1&lt;/h4&gt;
-
-&lt;iframe height=&quot;498&quot; width=&quot;640&quot; src=&quot;http://player.youku.com/embed/XMzgyMDk0MzE2OA==&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;MCIM通过Usb连接到手机，运行3D AVM。&lt;/p&gt;
-
-&lt;h4 id=&quot;测试视频2&quot;&gt;测试视频2&lt;/h4&gt;
-
-&lt;iframe height=&quot;498&quot; width=&quot;640&quot; src=&quot;http://player.youku.com/embed/XMzgyMDk0NjE1Ng==&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;MIPI输出连接RK3288，25fps流畅运行，不卡顿&lt;/p&gt;
-
-&lt;h4 id=&quot;测试视频3&quot;&gt;测试视频3&lt;/h4&gt;
-
-&lt;iframe height=&quot;498&quot; width=&quot;640&quot; src=&quot;http://player.youku.com/embed/XMzgyMDkwMzU4NA==&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Tue, 03 Jul 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/07/03/AVM-NeXt.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/07/03/AVM-NeXt.html</guid>
-        
-        <category>车载环视</category>
-        
-        
-        <category>Project</category>
-        
-      </item>
     
       <item>
         <title>新一代车载环视解决方案</title>
@@ -839,6 +768,118 @@ sudo rm /var/lib/dpkg/lock&lt;/p&gt;
         <pubDate>Fri, 10 Feb 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/02/10/xu3-qt-setup.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/02/10/xu3-qt-setup.html</guid>
+        
+        <category>Devel</category>
+        
+        <category>Xu3</category>
+        
+        
+        <category>Devel</category>
+        
+      </item>
+    
+      <item>
+        <title>xu3 开发环境相关</title>
+        <description>&lt;!--more--&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/linux7985/article/details/6005267&quot;&gt;pkg-config&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://wayland.freedesktop.org/building.html&quot;&gt;wayland build&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=96&amp;amp;t=20026&quot;&gt;wayland driver for xu4&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://odroid.com/dokuwiki/doku.php?id=en:odroid-xu3&quot;&gt;xu3主页&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;http://www.embeddedlinux.org.cn/emb-linux/entry-level/201009/08-896.html&quot;&gt;猪哥工房菜&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://developer.arm.com/products/software/mali-drivers/user-space&quot;&gt;mali drivers&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+&lt;p&gt;Xu4开发环境搭建  &lt;a href=&quot;http://www.zhimengzhe.com/linux/50121.html&quot;&gt;http://www.zhimengzhe.com/linux/50121.html&lt;/a&gt;&lt;br /&gt; 
+Xu3 Uboot编译 &lt;a href=&quot;http://odroid.com/dokuwiki/doku.php?id=en:xu3_building_u-boot&quot;&gt;http://odroid.com/dokuwiki/doku.php?id=en:xu3_building_u-boot&lt;/a&gt;&lt;br /&gt;
+Xu3编译环境搭建 &lt;a href=&quot;http://blog.csdn.net/aganlengzi/article/details/50036951&quot;&gt;http://blog.csdn.net/aganlengzi/article/details/50036951&lt;/a&gt;&lt;br /&gt;
+QtPro文件说明 &lt;a href=&quot;http://blog.csdn.net/woniuye/article/details/54927792&quot;&gt;http://blog.csdn.net/woniuye/article/details/54927792&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;image-burning&quot;&gt;Image burning&lt;/h3&gt;
+&lt;p&gt;从 www.odroid.com , www.hardkernel.com 都可以下载到完整的image 文件，lubuntu14.04, ubuntu16.04-mate 都有，windows下使用 &lt;strong&gt;Win32DiskImager_odroid_v13&lt;/strong&gt; 写入到 tf 卡或者 emmc 中，然后可以直接从 tf 或者 emmc 中启动。&lt;/p&gt;
+
+&lt;h3 id=&quot;understanding-mesa--mali&quot;&gt;Understanding Mesa &amp;amp; Mali&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=83&amp;amp;t=6933&quot;&gt;http://forum.odroid.com/viewtopic.php?f=83&amp;amp;t=6933&lt;/a&gt;&lt;br /&gt;
+这个帖子说了以下4点内容&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;xu3平台上，硬件加速依赖的是 mali driver，而不是 mesa。mali driver包括&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;开源内核驱动&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;开源的EXA for X11&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;二进制 libMali.so, 替代 libEGL（libEGL 是一个指向libMali 的符号链接）&lt;br /&gt;
+参考：&lt;a href=&quot;http://malideveloper.arm.com/develop-for-mali/drivers/&quot;&gt;http://malideveloper.arm.com/develop-for-mali/drivers/&lt;/a&gt;&lt;br /&gt;
+另外还有一个 fbdev 版本的 libMali.so , 这个版本仅需要内核驱动。可以下载并安装mali SDK，包含EGL的例子。&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;libMali 在 /usr/lib/arm-linux-gnueabihf/mali-egl. /usr/lib/arm-linux-gnueabihf/libGEL.so 是一个指向前者的符号链接，可以手动修改这个符号链接，指向 /usr/lib/arm-linux-gnueabihf/mesa-egl/libEGL.so ,这时就是使用mesa的opengl-es软件了。mali 是作为alterantive 安装的，所以可以使用 update-alternatives 来切换 mesa 跟 mali。&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;hardkernel 的 Odroid 支持 GLES2.0（3.0 for XU3），EGL under X11； and fbdev版本需要自行下载替换。&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;可以在odroid上边直接编译，无需交叉编译，慢不了太多。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;qt-for-embeded-linux&quot;&gt;&lt;a href=&quot;https://doc-snapshots.qt.io/qt5-dev/embedded-linux.html&quot;&gt;Qt for embeded linux&lt;/a&gt;&lt;/h3&gt;
+&lt;font color=&quot;#44bb44&quot;&gt;这个帖子中间再次解释了configure时，prefix，hostprefix，extprefix的意思，基本说清楚了。 &lt;/font&gt;
+&lt;p&gt;这个帖子介绍了在嵌入式平台上，QT的一些系统性原理&lt;/p&gt;
+&lt;h4 id=&quot;configure&quot;&gt;configure&lt;/h4&gt;
+&lt;p&gt;编译Qt需要 toolchain，sysroot，额外可能还需要第三方的 EGL，OpenGL ES2.0 库。
+&lt;strong&gt;qtbase/mkspecs/devices&lt;/strong&gt; 包含了数个设备的配置和显卡适配代码，比如 linux-rasp-pi2-g++ mkspec 包含了树莓派2设备的各项设置，同时也包含了相关设备的eglfs hooks实现或者eglfs 集成插件。通过 &lt;strong&gt;-device&lt;/strong&gt; 参数可以选择设备型号。下边是树莓派编译Qt的参考配置代码&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./configure -release -opengl es2 -device linux-rasp-pi2-g++ -device-option CROSS_COMPILE=$TOOLCHAIN/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- -sysroot $ROOTFS -prefix /usr/local/qt5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;有两个重要参数，&lt;strong&gt;-device&lt;/strong&gt; , &lt;strong&gt;-sysroot&lt;/strong&gt;. Configure 的属性探测，会到 &lt;strong&gt;-sysroot&lt;/strong&gt; 指定的目录，而不是使用PC机上的标准位置，这种场景意味着主机上有什么跟我们的编译并不相关，我们是为一个目标系统进行编译，所以我们需要到目标系统的 根目录，也就是&lt;strong&gt;-sysroot&lt;/strong&gt;下边，去寻找libs 和headers。&lt;/p&gt;
+
+&lt;p&gt;在交叉编译情况下，configure自动设置 &lt;strong&gt;PKG_CONFIG_LIBDIR&lt;/strong&gt;,让&lt;strong&gt;pkg-configs&lt;/strong&gt;报告编译链接设置，基于&lt;strong&gt;-sysroot&lt;/strong&gt;而不是主机。需要注意的是，主机不能设置 PKG_CONFIG_PATH 变量，否则会指向主机的相关目录&lt;br /&gt;
+指定&lt;strong&gt;-sysroot&lt;/strong&gt;会自动设置&lt;strong&gt;--ysroot&lt;/strong&gt;参数，一些情况下，可以使用 &lt;strong&gt;-no-gcc-sysroot&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-prefix&lt;/strong&gt; , 目标设备上想要部署的路径，&lt;strong&gt;实际上 make install 并不往 prefix 上部署任何东西，而是往 extprefix 上部署&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;-extprefix&lt;/strong&gt;, 如果不指定，那么默认是 &lt;strong&gt;sysroot + prefix&lt;/strong&gt;，但是sysroot经常可能会被 “污染”, 因此可以专门指定一下 extprefix（个人感觉好像没这么危险，基本没见指定extprefix的）。
+&lt;strong&gt;-hostprefix&lt;/strong&gt;, 如果指定，那么 qmake，rcc，uic 等二进制文件会放置到此路径，而不是 extprefix 路径。&lt;/p&gt;
+
+&lt;h4 id=&quot;platform&quot;&gt;platform&lt;/h4&gt;
+&lt;p&gt;从 &lt;strong&gt;Qt5.0&lt;/strong&gt; 开始，Qt不再包含自己的窗口系统 QWS 。嵌入式linux系统有多种platfrom可用：EGLFS（EGL FullScreen），LinuxFB，DirectFB，Wayland。依赖于Qt的配置，很多板子上，EGLFS是默认的选项。如果要用其他platfrom，可以修改QT_QPA_PLATFORM 环境变量或者 -platfrom 参数。&lt;/p&gt;
+
+&lt;p&gt;EGL是OpenGL和原生窗口系统之间的一个接口。EGL并不包含平台相关性，窗口的创建仍然由平台相关的方式来实现，所以EGL仍然需要GPU相关代码，或者EGL设备集成插件。&lt;/p&gt;
+
+&lt;p&gt;EGLFS是QT与EGL，OpenGL ES2.0 之间的一个插件，用来实现不依赖确定的原生窗口系统（比如X11，Wayland）的Qt应用。在带有GPU的嵌入式系统上，这是推荐的方案。&lt;/p&gt;
+
+&lt;p&gt;EGLFS强制top-level窗口全屏，并且，后续窗口都是其子窗口。因此EGLFS只有一个原生窗口，和EGL surface。因此EGLFS也带了进一步限制，就是不能再打开额外的OpenGL windows或者混合类似 windows的content。&lt;/p&gt;
+
+&lt;p&gt;LinuxFB，使用fbdev进行绘图，只能软件渲染，没法使用硬件加速。&lt;/p&gt;
+
+&lt;p&gt;XCB，是X11的一个插件，主要用于桌面Linux platform，&lt;strong&gt;在嵌入式系统中，XCB不推荐&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;Wayland， X11的潜在替代品。很多嵌入式ubuntu使用Wayland，并且有更好的性能，主要是为了解决 X11 冗余复杂和低性能的问题。&lt;/p&gt;
+
+&lt;p&gt;另，应该还有minimal，offscreen等，也就是用于测试qt程序，应该是没有显示的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=6615&quot;&gt;Mali SDK&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=23010&quot;&gt;Link OpenGL ES3.0 on ubuntu&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=21315&quot;&gt;Qt5.6 Mali&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=16305&quot;&gt;Qt5 for xu3/xu4&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=15528&quot;&gt;OpenGL ES demo&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=15524&quot;&gt;EGL problem&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=12484&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=12115&quot;&gt;can’t run OpenGL es&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=11919&quot;&gt;ES3.0 game load fail&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=8679&quot;&gt;glmark2-es2 score&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=8114&quot;&gt;OpenGL speed up&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?f=95&amp;amp;t=6020&quot;&gt;odroid forum&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://forum.odroid.com/viewtopic.php?p=140416&quot;&gt;wayland&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;https://devtalk.nvidia.com/default/topic/803737/qt-opengl-eglfs-egl-xcb-x11-wayland-jetson-board-tk1/&quot;&gt;egl error&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;issues-&quot;&gt;&lt;font color=&quot;#bb6688&quot;&gt;ISSUES &lt;/font&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;不能启动&quot;&gt;不能启动&lt;/h4&gt;
+&lt;p&gt;中间碰到过一次问题，系统启动到  &lt;strong&gt;&lt;em&gt;Freeing unused kernel memory：***K&lt;/em&gt;&lt;/strong&gt; 时就卡死了， 网上搜索都是说什么文件系统 page size 不对或者其他问题，但是本身又没有对文件系统进行操作，只好重新烧写 image 文件，还是卡在这个位置，再次重新写入 image，但是写入之间将 tf 卡分区完全删除，格式化一下，再次写入后可以正常启动。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/u010162887/article/details/52081369&quot;&gt;ubuntu16.04 wifi设置&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/hzkdac1007/article/details/46813673&quot;&gt;xu3wifi和远程的例子&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://blog.csdn.net/l_backkom/article/details/39780935&quot;&gt;wpa_supplicant安装&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_65aee6e801018ida.html&quot;&gt;vi上下左右变ABCD&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/02/09/xu3-enviroment-setup.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/09/xu3-enviroment-setup.html</guid>
         
         <category>Devel</category>
         
